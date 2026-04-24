@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700;
+  }
+}
+
+html,body{
+    font-family: "Noto Sans TC", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+    scroll-behavior: smooth;
+}
