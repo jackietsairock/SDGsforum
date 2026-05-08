@@ -32,7 +32,7 @@
 
 <template>
     <div class="content_wrap z-10">
-        <div class="intro_box bg-white max-w-[1200px] z-20 p-10 mx-auto rounded-2xl shadow-lg">
+        <div class="intro_box bg-[#f9f9f9] max-w-[1200px] z-20 p-10 mx-auto rounded-2xl shadow-lg">
             <Title :infoData="infoData" />
             <div :class="['intro_text','intro_text3' , { 'pc': width >= 1200 }, { 'mb': width < 1200}]">
                 <p class="text-[#4a4a4a] mb-10 text-xl sm:text-2xl" v-html="infoData.text[0]"></p>

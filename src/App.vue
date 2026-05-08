@@ -75,8 +75,6 @@ applySeo(seo)
 
 #intro{
     padding: 90px 55px;
-    background: url('./assets/image/bg-1.jpg') fixed center center no-repeat;
-    background-size: cover;
 }
 
 

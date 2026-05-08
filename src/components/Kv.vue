@@ -29,13 +29,13 @@
 </script>
 
 <template>
-    <div :class="['kv_area', { 'pc': windowWidth >= 1024 }, { 'mb': windowWidth < 1024}]">
+    <div :class="['kv_area bg-[#f9f9f9]', { 'pc': windowWidth >= 1024 }, { 'mb': windowWidth < 1024}]">
         <p class="sr-only">
             2026人資長論壇主題為 AI新世代人才永續新篇章，活動將於 2026 年 4 月 29 日在陽明交通大學國際會議廳舉行。
         </p>
         <div class="kv_box" :style="{ width: setDivResize.width + 'px', height: setDivResize.height + 'px' }" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000">
-            <img class="kv-img01" src="../assets/image/kv-img01.png" alt="2026人資長論壇主視覺標題">
-            <img class="kv-img02" src="../assets/image/kv-img02.png" alt="AI新世代人才永續新篇章活動視覺">
+            <img class="bigtext" :style="{ display: windowWidth >= 1024 ? 'block' : 'none'}" src="../assets/image/bigtext.png" alt="2026永續城市交流論壇主視覺標題">
+            <img class="phonetext" :style="{ display: windowWidth < 1024 ? 'block' : 'none'}" src="../assets/image/phonetext.png" alt="2026永續城市交流論壇主視覺標題">
         </div>
     </div>
 </template>
@@ -46,8 +46,24 @@
         display: block;
         width: 100%;
         height: 100vh;
-        background: url('../assets/image/bg-kv.jpg') bottom center no-repeat;
+        background: url('../assets/image/big-main.jpg') center center no-repeat;
         background-size: cover;
+    }
+
+    .kv_area::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        height: 96px;
+        z-index: 1;
+        pointer-events: none;
+        background: linear-gradient(to bottom, rgba(249, 249, 249, 0), rgba(249, 249, 249, 0.74));
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 38%, #000 100%);
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 38%, #000 100%);
     }
 
     .kv_area.pc{
@@ -63,24 +79,26 @@
         top: 5%;
         bottom: 0;
         margin: auto;
+        z-index: 2;
     }
 
-    .kv-img01{
+    .bigtext{
         position: absolute;
         display: block;
         z-index: 2;
-        width: 55%;
-        left: 0;
-        top: -18%;
+        width: 75%;
+        left: 0%;
+        top: 10%;
         margin: 0 auto;
     }
 
-    .kv-img02{
+    .phonetext{
         position: absolute;
         display: block;
-        width: 45%;
-        right: 0;
-        top: 0%;
+        z-index: 2;
+        width: 100%;
+        left: 0;
+        top: 5%;
         margin: 0 auto;
     }
 
@@ -98,8 +116,14 @@
 
     @media screen and (max-width:1024px) {
         .kv_area{
-            background: url('../assets/image/bg-kv2.jpg') center center no-repeat;
+            background: url('../assets/image/phone-main.jpg') center center no-repeat;
             background-size: cover;
+        }
+
+        .kv_area::after{
+            height: 72px;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
         }
 
         .kv_area.mb{
@@ -110,16 +134,12 @@
             top: -9%;
         }
 
-        .kv-img01{
+        .bigtext{
             width: 100%;
             top: -5%;
             right: 0;
         }
-        .kv-img02{
-            width: 80%;
-            top: 70%;
-            left: 0;
-        }
+       
     }
 
     @media screen and (max-width:820px) {
