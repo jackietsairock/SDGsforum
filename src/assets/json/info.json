@@ -7,14 +7,14 @@
             "tagClassName":"intro"
         },{
             "tag":false,
-            "tagName":"講者陣容",
-            "tagUrl":"#speaker",
-            "tagClassName":"speaker"
-        },{
-            "tag":false,
             "tagName":"活動議程",
             "tagUrl":"#agenda",
             "tagClassName":"agenda"
+        },{
+            "tag":false,
+            "tagName":"講者陣容",
+            "tagUrl":"#speaker",
+            "tagClassName":"speaker"
         },{
             "tag":false,
             "tagName":"立即報名",
@@ -25,12 +25,6 @@
             "tagName":"交通資訊",
             "tagUrl":"#traffic",
             "tagClassName":"traffic"
-        },
-        {
-            "tag":false,
-            "tagName":"精彩回顧",
-            "tagUrl":"#event",
-            "tagClassName":"event"
         }
     ],
     "content":[

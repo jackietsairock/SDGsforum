@@ -1,8 +1,19 @@
 <script setup>
-    import { ref } from 'vue'
+    import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+
+    const props = defineProps(
+        {
+            menu: {
+                type: Array,
+                default: () => []
+            }
+        }
+    );
 
     // 定義一個狀態來控制選單的開啟或關閉
     const isMenuOpen = ref(false)
+    const activeTagUrl = ref('')
+    const menuItems = computed(() => props.menu ?? [])
 
     // 切換選單的開啟狀態
     const toggleMenu = () => {
@@ -15,8 +26,53 @@
         return headerHeight
     }
 
+    const getHashMenuItems = () => menuItems.value.filter((item) => item.tagUrl?.startsWith('#'))
+
+    const updateActiveTag = () => {
+        const hashItems = getHashMenuItems()
+
+        if (!hashItems.length) {
+            activeTagUrl.value = ''
+            return
+        }
+
+        const scrollPosition = window.scrollY + getHeaderOffset() + 12
+        let currentTagUrl = hashItems[0].tagUrl
+
+        hashItems.forEach((item) => {
+            const section = document.querySelector(item.tagUrl)
+
+            if (!section) {
+                return
+            }
+
+            const sectionTop = section.getBoundingClientRect().top + window.scrollY
+
+            if (scrollPosition >= sectionTop) {
+                currentTagUrl = item.tagUrl
+            }
+        })
+
+        activeTagUrl.value = currentTagUrl
+    }
+
+    let ticking = false
+
+    const handleScroll = () => {
+        if (ticking) {
+            return
+        }
+
+        ticking = true
+        window.requestAnimationFrame(() => {
+            updateActiveTag()
+            ticking = false
+        })
+    }
+
     const handleClick = (tagUrl, event) => {
         isMenuOpen.value = false;
+        activeTagUrl.value = tagUrl
 
         if (!tagUrl?.startsWith('#')) {
             return
@@ -38,11 +94,17 @@
         history.replaceState(null, '', tagUrl)
     }
 
-    defineProps(
-        {
-            menu: Array
-        }
-    );
+    onMounted(() => {
+        activeTagUrl.value = window.location.hash || getHashMenuItems()[0]?.tagUrl || ''
+        updateActiveTag()
+        window.addEventListener('scroll', handleScroll, { passive: true })
+        window.addEventListener('resize', handleScroll)
+    })
+
+    onBeforeUnmount(() => {
+        window.removeEventListener('scroll', handleScroll)
+        window.removeEventListener('resize', handleScroll)
+    })
 </script>
 
 <template>
@@ -53,10 +115,11 @@
 
         <nav :class="{ open: isMenuOpen }" aria-label="頁面導覽">
             <a
-                v-for="(item, idx) in menu"
+                v-for="(item, idx) in menuItems"
                 :key="idx"
                 :href="item.tagUrl"
-                :class="['text-lg', item.tagClassName,'sm:text-xl','text-center font-bold']"
+                :class="['menu_link', 'text-lg', item.tagClassName,'sm:text-xl','text-center font-bold', { active: activeTagUrl === item.tagUrl }]"
+                :aria-current="activeTagUrl === item.tagUrl ? 'page' : undefined"
                 @click="handleClick(item.tagUrl, $event)"
             >
                 {{ item.tagName }}
@@ -144,7 +207,7 @@
     .menu_icon span {
         display: block;
         height: 3px;
-        background-color: #30c4a2;
+        background-color: #168ee2;
         border-radius: 2px;
         /* transition: all 0.3s ease; */
     }
@@ -159,7 +222,7 @@
     }
 
     .menu_icon:hover span {
-        background-color: #30c4a2;
+        background-color: #168ee2;
     }
 
     .menu_icon.open {
@@ -183,13 +246,14 @@
         position: absolute;
         display: flex;
         flex-direction: row;
-        position: absolute;
         top: 0;
         bottom: 0;
         right: 25px;
+        align-items: center;
+        gap: 16px;
         background-color: #fff;
         margin: auto 0;
-        height: fit-content;
+        height: 100%;
         width: fit-content;
     }
 
@@ -199,29 +263,42 @@
 
     nav a {
         position: relative;
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-decoration: none;
-        color: #30c4a2;
-        padding: 0.5rem 1rem;
+        color: #2f2f2f;
+        min-width: 112px;
+        height: 36px;
+        padding: 0 1.15rem;
+        line-height: 1;
+        letter-spacing: 0;
+        isolation: isolate;
+        transition: color 0.2s ease;
     }
 
-    nav a::after{
+    nav a::before{
         content:'';
         position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto 0;
-        height: 40%;
-        border-right: 1px solid #188d71;
+        inset: 1px 8px;
+        background-color: #168ee2;
+        transform: skewX(-28deg);
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 0.2s ease;
     }
 
-    nav a:last-child::after{
-        display: none;
+    nav a:hover,
+    nav a.active {
+        color: #168ee2;
     }
 
-    nav a:hover {
-        color: #188d71;
+    nav a.active {
+        color: #fff;
+    }
+
+    nav a.active::before {
+        opacity: 1;
     }
 
     @media screen and (max-width: 1920px) {
@@ -273,20 +350,29 @@
         nav{
             display: none;
             flex-direction: column;
+            align-items: stretch;
+            gap: 0;
             width: 100%;
             right: 0;
             top: 55px;
             margin: 0 auto;
             padding: 1rem 0;
+            height: 100vh;
         }
 
         nav a{
+            min-width: 0;
+            width: 100%;
+            height: 52px;
             padding: 1.2rem 0;
             border-bottom: 1px solid #d8d8d8;
         }
 
-        nav a::after{
-            display: none;
+        nav a::before{
+            inset: 9px auto;
+            left: 50%;
+            width: min(180px, calc(100% - 48px));
+            transform: translateX(-50%) skewX(-28deg);
         }
 
         nav a:last-child{
