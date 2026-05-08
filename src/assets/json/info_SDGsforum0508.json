@@ -245,6 +245,45 @@
             "titleEnColor":"#20776e"
         },
         {
+            "title":"抽好禮",
+            "titleColor":"#30c4a2",
+            "titleEn":"Gift",
+            "titleEnColor":"#20776e",
+            "giftInfo":{
+                "img":"gift_img.jpg",
+                "info":[
+                    {
+                        "title":"全程參與抽好禮",
+                        "description":[
+                            {
+                                "label":"活動說明",
+                                "info":{
+                                    "type":"list-dot",
+                                    "detail":[
+                                        "參與全程論壇者，於活動結束時現場抽出兩張 DEER CHASER 日月潭遊獵行腳住宿券（價值23,000元）",
+                                        "依所得稅法規定，贈品價值超過20,000元以上，需申報，並預先扣繳10%機會中獎稅。"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "title":"日月潭 遊獵行腳　<br class='black 2xl:hidden'>讓世界看見台灣之美",
+                        "description":[
+                            {
+                                "label":"榮獲世界級建築、酒店、渡假村及旅遊設計類十項大獎",
+                                "info":{
+                                    "type":"text",
+                                    "detail":[
+                                        "巴黎設計獎、法國設計獎、加拿大未來設計獎、瑞士 BLT 建築設計獎、新加坡 GADA 全球建築設計獎、美國 IDA 國際設計獎、瑞士 LIV 酒店設計獎、義大利米蘭設計獎、芬蘭 Arch 設計獎、義大利 A' Design 設計大獎"
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },{
             "title":"免費報名參加",
             "titleColor":"#30c4a2",
             "titleEn":"sign up",
@@ -482,6 +521,48 @@
                             "img":"logo2-1.png",
                             "imgClass":"b3-half",
                             "alt":"台灣永續金融"
+                        },
+                        {
+                            "href":"https://www.ftrc.nccu.edu.tw/",
+                            "target":"_blank",
+                            "img":"logo2-2.png",
+                            "imgClass":"b0",
+                            "alt":"國立政大金融科技研究中心"
+                        },
+                        {
+                            "href":"https://www.icryobank.com/about/birth",
+                            "target":"_blank",
+                            "img":"logo2-4.png",
+                            "imgClass":"b3-half",
+                            "alt":"台灣愛生育"
+                        },
+                        {
+                            "href":"https://www.shionogi.com/tw/zh/",
+                            "target":"_blank",
+                            "img":"logo2-3.png",
+                            "imgClass":"b3",
+                            "alt":"台灣塩野義"
+                        },
+                        {
+                            "href":"https://www.aicarept.com/",
+                            "target":"_blank",
+                            "img":"logo2-5.png",
+                            "imgClass":"b6-half",
+                            "alt":"生生優動"
+                        },
+                        {
+                            "href":"https://www.carnegie.com.tw/",
+                            "target":"_blank",
+                            "img":"spon2-0.png",
+                            "imgClass":"b3-half",
+                            "alt":"卡內基"
+                        },
+                        {
+                            "href":"https://deerchaser.com.tw/zh_tw/",
+                            "target":"_blank",
+                            "img":"spon2-1.png",
+                            "imgClass":"b3-half",
+                            "alt":"遊獵行腳"
                         }
                     ]
                 },
@@ -494,6 +575,55 @@
                             "img":"ESG_logo.png",
                             "imgClass":"b3",
                             "alt":"ESG"
+                        },
+                        {
+                            "href":"https://esgschool.businesstoday.com.tw/",
+                            "target":"_blank",
+                            "img":"esg-school-logo.png",
+                            "imgClass":"b5-half",
+                            "alt":"ESG學院"
+                        },
+                        {
+                            "href":"https://www.104.com.tw/",
+                            "target":"_blank",
+                            "img":"logo2_3-2.png",
+                            "imgClass":"b3-half",
+                            "alt":"104人力銀行"
+                        },
+                        {
+                            "href":"https://idipc.hccg.gov.tw/",
+                            "target":"_blank",
+                            "img":"logo3-5.png",
+                            "imgClass":"b2-half",
+                            "alt":"新竹市工商發展投資策進會"
+                        },
+                        {
+                            "href":"https://www.idipc-hsinchu.org.tw/",
+                            "target":"_blank",
+                            "img":"logo3-4.png",
+                            "imgClass":"b4",
+                            "alt":"新竹縣工商策進會"
+                        },
+                        {
+                            "href":"https://icdipc.tycg.gov.tw/",
+                            "target":"_blank",
+                            "img":"logo3-1.png",
+                            "imgClass":"b4",
+                            "alt":"桃園市工商策進會"
+                        },
+                        {
+                            "href":"https://www.facebook.com/p/%E6%96%B0%E7%AB%B9%E5%B8%82%E5%95%86%E6%A5%AD%E6%9C%83-100063911835817/",
+                            "target":"_blank",
+                            "img":"logo3-6.png",
+                            "imgClass":"b3",
+                            "alt":"新竹市商業會"
+                        },
+                        {
+                            "href":"https://www.cpmah.org.tw/",
+                            "target":"_blank",
+                            "img":"logo3-3.png",
+                            "imgClass":"b2-half",
+                            "alt":"新竹市企業經理協進會"
                         }
                     ]
                 }

@@ -50,12 +50,6 @@
         <a href="https://www.businesstoday.com.tw/" class="btnet_logo_box btnet_logo_box1" aria-label="前往今周刊官網">
             <img src="../assets/image/30th_logo.png" class="btnet_logo1" alt="今周刊 30 週年 logo">
         </a>
-        <a href="https://esg.businesstoday.com.tw/" class="btnet_logo_box btnet_logo_box2" aria-label="前往今周 ESG 頻道">
-            <img src="../assets/image/ESG_logo.png" class="btnet_logo2" alt="今周 ESG logo">
-        </a>
-        <a href="https://esgschool.businesstoday.com.tw/" class="btnet_logo_box btnet_logo_box3" aria-label="前往 ESG 學院">
-            <img src="../assets/image/esg-school-logo.png" class="btnet_logo2" alt="ESG 學院 logo">
-        </a>
 
         <nav :class="{ open: isMenuOpen }" aria-label="頁面導覽">
             <a

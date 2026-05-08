@@ -60,56 +60,6 @@ const eventSliderSettings = {
 
 <template>
     <div class="content_wrap z-20">
-        <Title :infoData="infoData" />
-        <div class="event_box max-w-[1366px] p-10 mx-auto mb-10 sm:mb-50">
-            <div class="event_warp">
-                <VSlickCarousel class="event_slider" v-bind="eventSliderSettings">
-                    <template #prevArrow="arrowSlotProps">
-                        <button
-                            type="button"
-                            :class="['event_arrow', 'event_arrow_prev', { 'is-disabled': !arrowSlotProps.disabled }]"
-                            :disabled="!arrowSlotProps.disabled"
-                            @click="arrowSlotProps.onClick()"
-                            aria-label="上一張"
-                        >
-                            <span class="event_arrow_icon"></span>
-                        </button>
-                    </template>
-                    <template #nextArrow="arrowSlotProps">
-                        <button
-                            type="button"
-                            :class="['event_arrow', 'event_arrow_next', { 'is-disabled': !arrowSlotProps.disabled }]"
-                            :disabled="!arrowSlotProps.disabled"
-                            @click="arrowSlotProps.onClick()"
-                            aria-label="下一張"
-                        >
-                            <span class="event_arrow_icon"></span>
-                        </button>
-                    </template>
-                    <div class="event_slide">
-                        <div class="event_img_box flex items-center justify-center overflow-hidden">
-                            <a href="https://events.businesstoday.com.tw/2023/HRforum/" @dragstart.prevent>
-                                <img src="../assets/image/event_img_2023.png" alt="2023 人資長論壇活動回顧" class="max-w-full h-auto object-contain" draggable="false" @dragstart.prevent>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="event_slide">
-                        <div class="event_img_box flex items-center justify-center overflow-hidden">
-                            <a href="https://events.businesstoday.com.tw/2024/HRforum/" @dragstart.prevent>
-                                <img src="../assets/image/event_img_2024.png" alt="2024 人資長論壇活動回顧" class="max-w-full h-auto object-contain" draggable="false" @dragstart.prevent>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="event_slide">
-                        <div class="event_img_box flex items-center justify-center overflow-hidden">
-                            <a href="https://events.businesstoday.com.tw/2025/HRforum/" @dragstart.prevent>
-                                <img src="../assets/image/event_img_2025.png" alt="2025 人資長論壇活動回顧" class="max-w-full h-auto object-contain" draggable="false" @dragstart.prevent>
-                            </a>
-                        </div>
-                    </div>
-                </VSlickCarousel>
-            </div>
-        </div>
         <div class="logo_wrap flex flex-col gap-18 w-full mx-auto px-8 sm:gap-20 xl:px-0">
             <div
                 v-for="(group, groupIndex) in brandGroups"

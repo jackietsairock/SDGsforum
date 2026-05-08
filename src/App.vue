@@ -32,27 +32,24 @@ applySeo(seo)
     <section id="intro" class="relative w-full z-10" aria-label="活動前言">
       <Intro :infoData="infoData.content[0]" />
     </section>
-    <section id="speaker" class="relative w-full z-10" aria-label="講者陣容">
-      <Speaker :speakers="speakers.data" :infoData="infoData.content[1]"/>
-      <div class="speaker_bg speaker_set_bg"></div>
-    </section>
     <section id="agenda" class="relative w-full z-20 overflow-hidden" aria-label="活動議程">
-      <Agenda :infoData="infoData.content[2]" />
+      <Agenda :infoData="infoData.content[1]" />
       <div class="speaker_bg"></div>
     </section>
-    <section id="gift" class="relative w-full z-40 overflow-hidden" aria-label="抽獎活動">
-      <Gift :infoData="infoData.content[3]" />
+    <section id="speaker" class="relative w-full z-10" aria-label="講者陣容">
+      <Speaker :speakers="speakers.data" :infoData="infoData.content[2]"/>
+      <div class="speaker_bg speaker_set_bg"></div>
     </section>
     <section id="signUp" class="relative w-full z-20 overflow-hidden" aria-label="立即報名">
-      <SignUp :infoData="infoData.content[4]" />
+      <SignUp :infoData="infoData.content[3]" />
       <div class="speaker_bg signUp_bg"></div>
     </section>
     <Faq v-if="siteConfig.showVisibleFaqSection" :faqs="seo.faqs" />
     <section id="traffic" class="relative w-full z-40 overflow-hidden" aria-label="交通資訊">
-      <Traffic :infoData="infoData.content[5]" />
+      <Traffic :infoData="infoData.content[4]" />
     </section>
     <section id="event" class="relative w-full z-40 overflow-hidden" aria-label="歷屆回顧與合作單位">
-      <Event :infoData="infoData.content[6]" />
+      <Event :infoData="infoData.content[5]" />
       <div class="speaker_bg event_bg"></div>
     </section>
   </main>
