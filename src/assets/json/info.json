@@ -2,22 +2,22 @@
     "menu": [
         {
             "tag":false,
-            "tagName":"活動前言",
+            "tagName":"論壇前言",
             "tagUrl":"#intro",
             "tagClassName":"intro"
         },{
             "tag":false,
-            "tagName":"活動議程",
+            "tagName":"論壇資訊",
             "tagUrl":"#agenda",
             "tagClassName":"agenda"
         },{
             "tag":false,
-            "tagName":"講者陣容",
+            "tagName":"講者簡介",
             "tagUrl":"#speaker",
             "tagClassName":"speaker"
         },{
             "tag":false,
-            "tagName":"立即報名",
+            "tagName":"論壇報名",
             "tagUrl":"#signUp",
             "tagClassName":"signUp"
         },{
@@ -30,19 +30,19 @@
     "content":[
         {
             "tag":"intro",
-            "title":"面對高齡化與缺工雙重壓力<div class='mb-5 sm:mb-2 lg:mb-0'></div>企業如何打造更具韌性的人才競爭力",
-            "titleColor":"#30c4a2",
+            "title":"論壇前言",
+            "titleColor":"#000",
             "titleEn":"introduction",
             "titleEnColor":"#20776e",
             "text":[
-                "邁入第四屆的人資長論壇，每年巡迴一座城市，匯聚企業領袖與人資決策者的關鍵洞見，逐步成為台灣企業對話人才治理與組織轉型的重要平台。面對 AI 技術浪潮與產業變局，企業唯有以更前瞻的人資策略，才能在不確定的時代中強化組織韌性，重塑人才競爭力。",
-                "2026 年，論壇來到新竹——台灣科技創新的核心城市。本屆聚焦 AI 助力、財務自立與健康福利 三大面向，從效率提升到員工安心，從科技應用到人本關懷，邀請企業共同思考：如何打造更具韌性的人才戰略，開啟永續職場的新篇章。"
+                "「南臺灣創新崛起：驅動智慧城市與永續發展，引領產業升級」",
+                "深化南臺灣的科技創新與產業升級，持續推動智慧城市建設、產業創新與永續發展，<br class='hidden lg:block'>吸引全球科技人才與資本，促進南方經濟的持續繁榮與發展。"
             ]
         },
         {
             "id":1,
             "title":"人才永續<br class='block lg:hidden'>×<br class='block lg:hidden'>AI應用",
-            "titleColor":"#0a3031",
+            "titleColor":"#000",
             "titleEn":"亮點議題",
             "titleEnColor":"#20776e",
             "agendaInfo":[
@@ -233,14 +233,14 @@
             ]
         },
         {
-            "title":"貴賓及講者",
-            "titleColor":"#30c4a2",
+            "title":"講者簡介",
+            "titleColor":"#000",
             "titleEn":"speaker",
             "titleEnColor":"#20776e"
         },
         {
-            "title":"免費報名參加",
-            "titleColor":"#30c4a2",
+            "title":"論壇報名",
+            "titleColor":"#000",
             "titleEn":"sign up",
             "titleEnColor":"#20776e",
             "event_info":[
@@ -392,15 +392,14 @@
         },
         {
             "title":"交通資訊",
-            "titleColor":"#30c4a2",
+            "titleColor":"#000",
             "titleEn":"traffic",
             "titleEnColor":"#20776e",
             "trafficInfo":{
                 "map":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.2569319236704!2d120.99920231235083!3d24.78665414811242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34683610583465fb%3A0xbf171a1e00f95cfe!2zMzAw5paw56u55biC5p2x5Y2A5aSn5a246LevMTAwMeiZn-mbu-WtkOizh-ioiuS4reW_g-S6pOmAmuWkp-WtuA!5e0!3m2!1szh-TW!2stw!4v1770879254978!5m2!1szh-TW!2stw",
                 "info":[
                     {
-                        "title":"陽明交通大學",
-                        "subTitle":"光復校區 國際會議廳",
+                        "title":"交通資訊",
                         "location":"新竹市大學路1001號<br class='block lg:hidden'><p class='text-lg pl-2'>(電子與資訊研究中心)</p>",
                         "locationUrl":{
                             "title":"校內地圖及校方完整交通資訊",

@@ -37,6 +37,7 @@
             <img class="bigtext" :style="{ display: windowWidth >= 1024 ? 'block' : 'none'}" src="../assets/image/bigtext.png" alt="2026永續城市交流論壇主視覺標題">
             <img class="phonetext" :style="{ display: windowWidth < 1024 ? 'block' : 'none'}" src="../assets/image/phonetext.png" alt="2026永續城市交流論壇主視覺標題">
         </div>
+        <img src="../assets/image/scroll.png" alt="scroll_down" class="scroll_down">
     </div>
 </template>
 
@@ -100,6 +101,32 @@
         left: 0;
         top: 5%;
         margin: 0 auto;
+    }
+
+    .scroll_down{
+        position: absolute;
+        display: block;
+        z-index: 2;
+        width: 40px;
+        left: 0;
+        right: 0;
+        bottom: 20px;
+        margin: auto;
+        animation: scrollDownAnim 1.5s ease-in-out infinite;
+    }
+    @keyframes scrollDownAnim {
+        0% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        50% {
+            transform: translateY(10px);
+            opacity: 0.5;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
 
     @media screen and (max-width:1366px) {

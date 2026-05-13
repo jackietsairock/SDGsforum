@@ -28,7 +28,6 @@ const getDetails = (item) => {
                 <div class="traffic_info_wrap">
                     <div class="traffic_heading">
                         <h3 class="traffic_title">{{ trafficVenue.title }}</h3>
-                        <p v-if="trafficVenue.subTitle" class="traffic_subtitle">{{ trafficVenue.subTitle }}</p>
                     </div>
 
                     <p class="traffic_location text-2xl sm:text-4xl" v-html="trafficVenue.location"></p>
