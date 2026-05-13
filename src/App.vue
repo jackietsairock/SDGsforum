@@ -17,8 +17,8 @@ import speakers from './assets/json/speaker.json'
 import { createSeoPayload, siteConfig } from './seo/siteSeo'
 import { applySeo } from './seo/applySeo'
 
-const seo = createSeoPayload({ infoData, speakers })
-applySeo(seo)
+const seo = createSeoPayload({ infoData, speakers });
+applySeo(seo);
 
 </script>
 
@@ -30,6 +30,9 @@ applySeo(seo)
     </section>
     <section id="intro" class="relative w-full z-10" aria-label="活動前言">
       <Intro :infoData="infoData.content[0]" />
+    </section>
+    <section>
+      <img src="./assets/image/waves-green.png" alt="綠色波浪裝飾" class="w-full">
     </section>
     <section id="agenda" class="relative w-full z-20 overflow-hidden" aria-label="活動議程">
       <Agenda :infoData="infoData.content[1]" />
