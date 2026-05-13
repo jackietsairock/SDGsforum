@@ -15,10 +15,10 @@
             <div class="agenda_table flex flex-col bg-white">
                 <div v-for="(item ,idx) in infoData.agendaInfo" :key="idx" class="agenda_table_item flex flex-col lg:flex-row">
                     <div class="time_box w-full lg:w-[14%]">
-                        <p class="text-md lg:text-xl" :style="{color: idx === 0 ? '#ffffff' : '#474747'}">{{item.time}}</p>
+                        <p class="text-md lg:text-xl" :style="{color: idx === 0 ? '#474747' : '#474747'}">{{item.time}}</p>
                     </div>
                     <div class="title_box w-full lg:w-[55%]">
-                        <p class="text-md font-bold lg:text-xl" :style="{color: idx === 0 ? '#ffffff' : '#474747'}" v-html="item.topic"></p>
+                        <p class="text-md font-bold lg:text-xl" :style="{color: idx === 0 ? '#474747' : '#474747'}" v-html="item.topic"></p>
                     </div>
                     <div class="speaker_area flex flex-col w-full gap-3 lg:w-[45%]">
                         <div v-for="(item ,idx) in item.speaker" :key="idx" class="speaker_box flex flex-row text-md w-full lg:text-xl">
@@ -46,10 +46,6 @@
         background-color: #f4f4f4;
     }
 
-    .agenda_table_item:nth-child(1){
-        background-color: #2ac9a3;
-    }
-
     .agenda_table_item > div{
         padding: 1.5rem 1.5rem;
         border-right: 1px solid #fff;
@@ -60,9 +56,6 @@
 
 
     @media screen and (max-width: 1024px) {
-        .agenda_table_item:nth-child(1){
-            display: none;
-        }
          .agenda_table_item > div{
             padding: 0.5rem 1.5rem;
             border-right: 0px solid #fff;

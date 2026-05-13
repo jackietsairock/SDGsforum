@@ -47,17 +47,6 @@
             "titleEnColor":"#20776e",
             "agendaInfo":[
                 {
-                    "time":"時間",
-                    "topic":"演講主題",
-                    "speaker":[
-                        {
-                            "speakerName":"講者",
-                            "speakerTitle":""
-                        }
-                    ]
-                    
-                },
-                {
                     "time":"09:00-09:30",
                     "topic":"上午場報到",
                     "speaker":[
