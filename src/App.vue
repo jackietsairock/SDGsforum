@@ -34,17 +34,17 @@ applySeo(seo);
     <section>
       <img src="./assets/image/waves-green.png" alt="綠色波浪裝飾" class="w-full">
     </section>
-    <section id="agenda" class="relative w-full z-20 overflow-hidden" aria-label="活動議程">
+    <section id="agenda" class="relative w-full z-20 overflow-hidden" aria-label="活動資訊">
       <Agenda :infoData="infoData.content[1]" />
-      <div class="speaker_bg"></div>
+      <div class="dot_bg"></div>
     </section>
     <section id="speaker" class="relative w-full z-10" aria-label="講者陣容">
       <Speaker :speakers="speakers.data" :infoData="infoData.content[2]"/>
-      <div class="speaker_bg speaker_set_bg"></div>
+      <div class="dot_bg"></div>
     </section>
     <section id="signUp" class="relative w-full z-20 overflow-hidden" aria-label="立即報名">
       <SignUp :infoData="infoData.content[3]" />
-      <div class="speaker_bg signUp_bg"></div>
+      <div class="dot_bg"></div>
     </section>
     <Faq v-if="siteConfig.showVisibleFaqSection" :faqs="seo.faqs" />
     <section id="traffic" class="relative w-full z-40 overflow-hidden" aria-label="交通資訊">
@@ -52,7 +52,7 @@ applySeo(seo);
     </section>
     <section id="event" class="relative w-full z-40 overflow-hidden" aria-label="歷屆回顧與合作單位">
       <Event :infoData="infoData.content[5]" />
-      <div class="speaker_bg event_bg"></div>
+      <div class="dot_bg"></div>
     </section>
   </main>
   <Footer :footerInfo="infoData.footer" />
@@ -85,29 +85,24 @@ applySeo(seo);
    background-color: #fff;
 }
 
-.speaker_bg{
+.dot_bg{
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 450px;
-  background: url('./assets/image/bg-3.jpg') center center no-repeat;
+  height: 100%;
+  background: url('./assets/image/dots-w.png') center center no-repeat;
   background-size: cover;
   z-index: -1;
 }
 
-.speaker_bg.signUp_bg{
-  height: 650px;
-}
 
 #agenda{
-  background: url('./assets/image/bg-1.jpg') fixed center center no-repeat;
-  background-size: cover;
+  background: linear-gradient(to top, #00b79c 0%, #65e0bf 100%);
 }
 
 #signUp{
-  background: url('./assets/image/bg-1.jpg') fixed center center no-repeat;
-  background-size: cover;
+  background-color: #f1f1ef;
 }
 
 #gift{
@@ -120,12 +115,9 @@ applySeo(seo);
 
 
 @media screen and (max-width: 1024px) {
-    .speaker_bg.speaker_set_bg{
-      height: 350px;
-    }
-
-    .speaker_bg.event_bg{
-      height: 350px;
-    }
+  .dot_bg{
+    background: url('./assets/image/dots-b.png') center center no-repeat;
+    background-size: cover;
+  }
 }
 </style>
