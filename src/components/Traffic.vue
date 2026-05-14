@@ -27,20 +27,11 @@ const getDetails = (item) => {
             <div class="traffic_layout">
                 <div class="traffic_info_wrap">
                     <div class="traffic_heading">
-                        <h3 class="traffic_title">{{ trafficVenue.title }}</h3>
+                        <h3 class="traffic_title">
+                            {{ trafficVenue.title }}
+                            <img class="traffic_title_bg" src="../assets/image/title-text.png" alt="標題圖片">    
+                        </h3>
                     </div>
-
-                    <p class="traffic_location text-2xl sm:text-4xl" v-html="trafficVenue.location"></p>
-
-                    <a
-                        v-if="trafficVenue.locationUrl?.title"
-                        :href="trafficVenue.locationUrl?.url || '#'"
-                        class="traffic_link text-xl sm:text-2xl"
-                        :target="isHttpLink(trafficVenue.locationUrl?.url) ? '_blank' : undefined"
-                        :rel="isHttpLink(trafficVenue.locationUrl?.url) ? 'noopener noreferrer' : undefined"
-                    >
-                        {{ trafficVenue.locationUrl?.title }}
-                    </a>
 
                     <div class="traffic_detail_group">
                         <div
@@ -114,12 +105,26 @@ const getDetails = (item) => {
 }
 
 .traffic_title {
+    position: relative;
+    display: block;
     margin: 0;
-    color: #167f74;
+    color: #000;
     font-size: 58px;
     line-height: 1.14;
     letter-spacing: 0.08em;
     font-weight: 700;
+}
+
+.traffic_title_bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: url('../assets/image/title-text.png') center center no-repeat;
+    background-size: contain;
+    width: fit-content;
+    transform: scale(1.2);
+    z-index: -1;
 }
 
 .traffic_subtitle {
