@@ -45,9 +45,22 @@
             "titleColor":"#000",
             "titleEn":"亮點議題",
             "titleEnColor":"#20776e",
+            "note":"主辦單位保留變更議程之權利，實際議程以副後確認版本為準。",
+            "event_info":[
+                {
+                    "label":"時間",
+                    "title":"2025年9月25日(四)",
+                    "detail":"14:00 ~ 16:25 (13:30開放報到)"
+                },
+                {
+                    "label":"地點",
+                    "title":"長榮文苑酒店 1F苑廳",
+                    "detail":"(嘉義縣太保市故宮大道777號)"
+                }
+            ],
             "agendaInfo":[
                 {
-                    "time":"09:00-09:30",
+                    "time":"13:30-14:00",
                     "topic":"上午場報到",
                     "speaker":[
                         {
@@ -232,18 +245,6 @@
             "titleColor":"#000",
             "titleEn":"sign up",
             "titleEnColor":"#20776e",
-            "event_info":[
-                {
-                    "label":"活動時間",
-                    "title":"2026/4/29 <span class='text-base'>(三)</span>",
-                    "detail":"09:30 ~ 16:20 (09:00開放報到)"
-                },
-                {
-                    "label":"活動地點",
-                    "title":"陽明交大 光復校區 國際會議廳",
-                    "detail":"(新竹市大學路1001號 電子與資訊研究中心)"
-                }
-            ],
             "signUp_info":[
                 {
                     "label":"參與對象",

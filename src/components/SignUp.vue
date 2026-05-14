@@ -195,19 +195,6 @@ function isOtherSelected(key) {
         <Title :infoData="props.infoData" />
         <div class="signUp_box max-w-[1366px] pl-10 pr-10 pb-10 mx-auto">
             <!--<p class="text-center text-white font-bold text-5xl sm:text-9xl" style="letter-spacing: 3px;">SIGN UP</p>-->
-            <div class="event_info_box flex flex-col gap-4 my-10 w-fit mx-auto">
-                <div v-for="(item, idx) in props.infoData.event_info" :key="idx" class="event_info_item flex flex-col items-start gap-4 sm:items-center sm:flex-row sm:gap-8">
-                    <div class="event_info_label">
-                        <div class="label_box bg-[#28c8a2] w-fit px-5 py-2 rounded-4xl">
-                            <p class="text-lg text-[#303136] font-bold sm:text-2xl">{{ item.label }}</p>
-                        </div>
-                    </div>
-                    <div class="event_info_value flex flex-col gap-3 text-left mb-5 sm:mb-0">
-                        <p class="text-2xl text-[#2ac9a9] font-bold sm:text-4xl" v-html="item.title"></p>
-                        <p class="text-sm text-[#2e362b] sm:text-base">{{item.detail}}</p>
-                    </div>
-                </div>
-            </div>
             <form class="flex flex-col gap-6 w-full bg-white rounded-4xl p-10" @submit.prevent="checkVal">
                 <div class="sign_up_info_box flex flex-col gap-8 my-10 mx-auto text-center text-[#4e4e5a]">
                     <div v-for="(item, idx) in props.infoData.signUp_info" :key="idx" class="sign_up_info_item flex flex-col items-center gap-4 text-justify sm:text-center">
