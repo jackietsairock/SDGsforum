@@ -27,10 +27,10 @@ onUnmounted(() => {
   <button
     v-if="show"
     @click="goToSignUp"
-    class="fixed bottom-25 right-2 z-52 hover:opacity-80 sm:right-5"
+    class="fixed bottom-30 right-2 z-52 hover:opacity-80 sm:right-5"
     aria-label="到報名頁面"
   >
-    <img class="w-[55px] sm:w-[70px]" src="../assets/image/sign_up_fiexd_btn.png" alt="sign_up_fiexd_btn">
+    <img class="w-[55px] sm:w-[70px]" src="../assets/image/signup.png" alt="sign_up_fiexd_btn">
   </button>
 </template>
 
