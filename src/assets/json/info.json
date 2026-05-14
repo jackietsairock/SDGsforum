@@ -61,7 +61,7 @@
             "agendaInfo":[
                 {
                     "time":"13:30-14:00",
-                    "topic":"上午場報到",
+                    "topic":"貴賓/來賓報到",
                     "speaker":[
                         {
                             "speakerName":"",
@@ -70,7 +70,7 @@
                     ]
                 },
                 {
-                    "time":"09:30-09:40",
+                    "time":"14:00-14:05",
                     "topic":"主辦單位致詞",
                     "speaker":[
                         {
@@ -79,152 +79,74 @@
                         }
                     ]
                 },{
-                    "time":"09:40-09:55",
+                    "time":"19:08-19:16",
                     "topic":"貴賓致詞",
                     "speaker":[
                         {
                             "speakerName":"",
-                            "speakerTitle":"勞動部 代表(邀請中)"
+                            "speakerTitle":"摩根資產管理代表"
                         }
                     ]
                 },{
-                    "time":"09:55-10:00",
+                    "time":"19:16-19:20",
                     "topic":"貴賓合影",
                     "speaker":[
                         {
+                            "speakerName":"林修銘",
+                            "speakerTitle":"臺灣證券交易所董事長"
+                        }
+                    ]
+                },{
+                    "time":"19:20-19:40",
+                    "topic":"【專題演講一】<br>川普經濟新局與2026總體趨勢",
+                    "speaker":[
+                        {
+                            "speakerName":"許長泰",
+                            "speakerTitle":"摩根資產管理亞太區首席市場策略師"
+                        }
+                    ]
+                },{
+                    "time":"19:40-20:00",
+                    "topic":"【專題演講二】<br>AI科技產業發展新契機",
+                    "speaker":[
+                        {
+                            "speakerName":"林宏文",
+                            "speakerTitle":"今周刊顧問"
+                        }
+                    ]
+                },{
+                    "time":"20:00-20:40",
+                    "topic":"【富足今周起Live】<br>投資AI時代的全球關鍵布局",
+                    "speaker":[
+                        {
                             "speakerName":"",
-                            "speakerTitle":""
-                        }
-                    ]
-                },{
-                    "time":"10:00-10:30",
-                    "topic":"肺腺癌早篩：省成本、高回報的企業健康投資",
-                    "speaker":[
+                            "speakerTitle":"主持人："
+                        },
                         {
-                            "speakerName":"陳晉興",
-                            "speakerTitle":"臺大外科主任"
-                        }
-                    ]
-                },{
-                    "time":"10:30-11:00",
-                    "topic":"對抗流感：守住科技業工作力",
-                    "speaker":[
-                        {
-                            "speakerName":"李秉穎",
-                            "speakerTitle":"台灣疫苗推動協會理事長"
-                        }
-                    ]
-                },{
-                    "time":"11:00-11:10",
-                    "topic":"中場休息",
-                    "speaker":[
-                        {
-                            "speakerName":"",
-                            "speakerTitle":""
-                        }
-                    ]
-                },{
-                    "time":"11:10-11:40",
-                    "topic":"從生育力保存到支持：打造企業最強的人才後盾",
-                    "speaker":[
-                        {
-                            "speakerName":"謝志遠",
-                            "speakerTitle":"愛生育生物科 技研發暨營運副總經理"
-                        }
-                    ]
-                },{
-                    "time":"11:40-12:10",
-                    "topic":"人才戰開打：從福利制度重塑企業競爭優勢",
-                    "speaker":[
-                        {
-                            "speakerName":"鍾文雄",
-                            "speakerTitle":"104科技資深副總暨人才永續長"
-                        }
-                    ]
-                },{
-                    "time":"12:10-13:15",
-                    "topic":"中午休息",
-                    "speaker":[
+                            "speakerName":"王志郁",
+                            "speakerTitle":"富足今周起主持人"
+                        },
                         {
                             "speakerName":"",
                             "speakerTitle":""
-                        }
-                    ]
-                },{
-                    "time":"13:15-13:25",
-                    "topic":"貴賓致詞",
-                    "speaker":[
+                        },
                         {
                             "speakerName":"",
-                            "speakerTitle":"新竹市市長"
+                            "speakerTitle":"與談人："
+                        },{
+                            "speakerName":"薄琪琳",
+                            "speakerTitle":"摩根資產管理產品策略部副總經理"
+                        },{
+                            "speakerName":"葉鴻儒",
+                            "speakerTitle":"摩根資產管理投資管理事業部執行董事"
+                        },{
+                            "speakerName":"林宏文",
+                            "speakerTitle":"今周刊顧問"
                         }
                     ]
                 },{
-                    "time":"13:25-13:30",
-                    "topic":"貴賓合影",
-                    "speaker":[
-                        {
-                            "speakerName":"",
-                            "speakerTitle":""
-                        }
-                    ]
-                },{
-                    "time":"13:30-14:00",
-                    "topic":"AI 時代下培育關鍵人才、穩定組織動能的實務經驗與觀察",
-                    "speaker":[
-                        {
-                            "speakerName":"劉邦亨",
-                            "speakerTitle":"光寶科 人資長"
-                        }
-                    ]
-                },{
-                    "time":"14:00-14:30",
-                    "topic":"ESG時代的人才健康戰略：AI與物理治療如何改變企業健康管理",
-                    "speaker":[
-                        {
-                            "speakerName":"林致傑",
-                            "speakerTitle":"梅科科技／生生優動 策略長"
-                        }
-                    ]
-                },{
-                    "time":"14:30-14:40",
-                    "topic":"中場休息",
-                    "speaker":[
-                        {
-                            "speakerName":"",
-                            "speakerTitle":""
-                        }
-                    ]
-                },{
-                    "time":"14:40-15:10",
-                    "topic":"創造員工退休財務韌性與企業永續雙贏：企業如何用信託、保險 打造長期留才策略",
-                    "speaker":[
-                        {
-                            "speakerName":"王儷玲",
-                            "speakerTitle":"臺灣永續金融與企業影響力協會 理事長"
-                        }
-                    ]
-                },{
-                    "time":"15:10-15:40",
-                    "topic":"從薪資到資產：ETF 時代的退休理財新思維",
-                    "speaker":[
-                        {
-                            "speakerName":"呂其倫",
-                            "speakerTitle":"富邦投信 總經理"
-                        }
-                    ]
-                },{
-                    "time":"15:40-16:10",
-                    "topic":"AI時代下的人性變革",
-                    "speaker":[
-                        {
-                            "speakerName":"陳傳宏",
-                            "speakerTitle":"卡內基訓練 執行長"
-                        }
-                    ]
-                },{
-                    "time":"16:10-16:20",
-                    "topic":"抽獎 / 圓滿賦歸",
+                    "time":"20:40",
+                    "topic":"圓滿賦歸",
                     "speaker":[
                         {
                             "speakerName":"",
