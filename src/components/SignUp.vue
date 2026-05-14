@@ -196,7 +196,7 @@ function isOtherSelected(key) {
         <div class="signUp_box max-w-[1366px] pl-10 pr-10 pb-10 mx-auto">
             <!--<p class="text-center text-white font-bold text-5xl sm:text-9xl" style="letter-spacing: 3px;">SIGN UP</p>-->
             <form class="flex flex-col gap-6 w-full bg-white rounded-4xl p-10" @submit.prevent="checkVal">
-                <div class="sign_up_info_box flex flex-col gap-8 my-10 mx-auto text-center text-[#4e4e5a]">
+                <!-- <div class="sign_up_info_box flex flex-col gap-8 my-10 mx-auto text-center text-[#4e4e5a]">
                     <div v-for="(item, idx) in props.infoData.signUp_info" :key="idx" class="sign_up_info_item flex flex-col items-center gap-4 text-justify sm:text-center">
                         <div class="label_box bg-[#f5c82d] w-fit px-6 py-2 rounded-4xl">
                             <p class="text-base text-[#4e4e5a] font-bold sm:text-lg">{{ item.label }}</p>
@@ -204,7 +204,7 @@ function isOtherSelected(key) {
                         <p class="text-base leading-relaxed sm:text-lg" v-html="item.detail"></p>
                     </div>
                     <div class="border-t border-dashed border-gray-300 pt-2"></div>
-                </div>
+                </div> -->
                 <div v-for="(item, idx) in visibleLabels" :key="idx" class="flex flex-col w-full sm:flex-row items-center gap-2">
                     <label class="w-full text-lg font-bold shrink-0 sm:w-24" style="color:#2f3158;"><span class="text-red-700">*</span>{{ item.tagName }}</label>
 
@@ -260,13 +260,13 @@ function isOtherSelected(key) {
                     <input v-model="form.Agree" type="checkbox" id="agree" class="" />
                     <label for="agree" class="text-lg ml-1" style="color:#464646;">我已閱讀<a href="#agree-terms" class="personal_information_terms_text text-red-700" @click.stop.prevent="scrollToTerms">個資條款</a>且同意送出資料</label>
                 </div>
-                <button type="submit" class="w-fit px-15 bg-[#f5c82d] rounded-4xl mx-auto mt-4 py-2 transition hover:cursor-pointer">
-                    <p class="text-lg tracking-[.15em] text-[#4e4e5a] font-bold">送出報名</p>
+                <button type="submit" class="w-fit mx-auto mt-4 hover:cursor-pointer">
+                    <img class="h-[55px]" src="../assets/image/signup2.png" alt="立即報名圖示">
                 </button>
-                <div class="sign_up_info_box w-full flex flex-col gap-8 my-10 mx-auto text-justify text-[#4e4e5a] sm:text-center">
+                <!-- <div class="sign_up_info_box w-full flex flex-col gap-8 my-10 mx-auto text-justify text-[#4e4e5a] sm:text-center">
                     <div class="border-t border-dashed border-gray-300 pt-2 pb-2"></div>
                     <p class="text-base text-[#676767] sm:text-lg" v-html="props.infoData.notice"></p>
-                </div>
+                </div> -->
                 <!-- <div class="text-[#2f3158] text-center font-bold text-2xl border-2 border-dashed border-[#2f3158] rounded-2xl p-10">
                     <h2>報名額滿，感謝支持!</h2>
                 </div> -->

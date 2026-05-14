@@ -49,10 +49,16 @@ applySeo(seo);
     <Faq v-if="siteConfig.showVisibleFaqSection" :faqs="seo.faqs" />
     <section id="traffic" class="relative w-full z-40 overflow-hidden" aria-label="交通資訊">
       <Traffic :infoData="infoData.content[4]" />
+      <div class="dot_bg traffic"></div>
+    </section>
+    <section>
+      <img src="./assets/image/waves-b.png" alt="藍色波浪裝飾" class="w-full">
     </section>
     <section id="event" class="relative w-full z-40 overflow-hidden" aria-label="歷屆回顧與合作單位">
       <Event :infoData="infoData.content[5]" />
-      <div class="dot_bg"></div>
+    </section>
+    <section>
+      <img src="./assets/image/waves-gray.png" alt="灰色波浪裝飾" class="w-full">
     </section>
   </main>
   <Footer :footerInfo="infoData.footer" />
@@ -82,7 +88,7 @@ applySeo(seo);
 
 
 #speaker{
-   background-color: #fff;
+   background-color: #f1f1f1;
 }
 
 .dot_bg{
@@ -95,14 +101,19 @@ applySeo(seo);
   background-size: cover;
   z-index: -1;
 }
-
+.dot_bg.traffic{
+  top: none;
+  bottom: 0;
+  height: 150%;
+  transform: rotate(180deg);
+}
 
 #agenda{
   background: linear-gradient(to top, #00b79c 0%, #65e0bf 100%);
 }
 
 #signUp{
-  background-color: #f1f1ef;
+  background: linear-gradient(to top, #2894e5 0%, #3bbcf4 100%);
 }
 
 #gift{
@@ -110,7 +121,7 @@ applySeo(seo);
 }
 
 #traffic{
-  background-color: #f1f1ef;
+  background: linear-gradient(to top, #2894e5 0%, #2894e5 100%);
 }
 
 
@@ -118,6 +129,15 @@ applySeo(seo);
   .dot_bg{
     background: url('./assets/image/dots-b.png') center center no-repeat;
     background-size: cover;
+  }
+
+  .dot_bg.traffic{
+    background: url('./assets/image/dots-b.png') center center no-repeat;
+    background-size: cover;
+    top: none;
+    bottom: 0;
+    transform: rotate(0);
+    height: 200%;
   }
 }
 </style>
