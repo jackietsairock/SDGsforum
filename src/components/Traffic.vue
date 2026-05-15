@@ -46,8 +46,8 @@ const getDetails = (item) => {
                                     v-for="(line, lineIndex) in getDetails(item)"
                                     :key="lineIndex"
                                     class="traffic_list_item text-base sm:text-xl"
+                                    v-html="line"
                                 >
-                                    {{ line }}
                                 </li>
                             </ul>
 
@@ -56,8 +56,8 @@ const getDetails = (item) => {
                                     v-for="(line, lineIndex) in getDetails(item)"
                                     :key="lineIndex"
                                     class="traffic_text text-base sm:text-xl"
+                                     v-html="line"
                                 >
-                                    {{ line }}
                                 </p>
                             </div>
                         </div>
@@ -180,9 +180,8 @@ const getDetails = (item) => {
 .traffic_badge {
     display: inline-block;
     width: fit-content;
-    border-radius: 9999px;
-    background-color: #a8d82f;
-    color: #167f74;
+    background-color: #000;
+    color: #fff;
     font-size: 22px;
     line-height: 1;
     font-weight: 700;
@@ -205,7 +204,7 @@ const getDetails = (item) => {
 .traffic_list_item,
 .traffic_text {
     margin: 0;
-    color: #666;
+    color: #000;
     line-height: 1.7;
     letter-spacing: 0.04em;
 }
