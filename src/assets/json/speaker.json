@@ -3,7 +3,8 @@
         {
             "type": "講師陣容",
             "img": "speaker1.png",
-            "name": " 陳晉興",
+            "name": "陳晉興",
+            "name_en": "Chen Jin-Hsing",
             "title": "臺大醫院外科部<br>主任暨特聘教授",
             "info": [
                 {
@@ -34,6 +35,7 @@
             "type": "講師陣容",
             "img": "speaker2.png",
             "name": "王儷玲",
+            "name_en": "Wang Li-Ling",
             "title": "臺灣永續金融與<br>企業影響力協會<br>理事長",
             "info": [
                 {
@@ -62,6 +64,7 @@
             "type": "講師陣容",
             "img": "speaker3.png",
             "name": "李秉穎",
+            "name_en": "Li Bing-Ying",
             "title": "台灣疫苗推動協會<br>理事長",
             "info": [
                 {
@@ -88,6 +91,7 @@
             "type": "講師陣容",
             "img": "speaker7.png",
             "name": "劉邦亨",
+            "name_en": "Liu Bang-Heng",
             "title": "光寶科技<br>人資長",
             "info": [
                 {
@@ -109,6 +113,7 @@
             "type": "講師陣容",
             "img": "speaker4.png",
             "name": "謝志遠",
+            "name_en": "Hsieh Chih-Yuan",
             "title": "愛生育生物科技<br>研發暨營運<br>副總經理",
             "info": [
                 {
@@ -130,6 +135,7 @@
             "type": "講師陣容",
             "img": "speaker5.png",
             "name": "林致傑",
+            "name_en": "Lin Chih-Chieh",
             "title": "梅科科技/生生優動<br>策略長",
             "info": [
                 {
