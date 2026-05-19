@@ -2,9 +2,10 @@
     "data":[
         {
             "type": "講師陣容",
-            "img": "speaker1.png",
+            "img": "speaker-1.png",
             "name": "陳晉興",
             "name_en": "Chen Jin-Hsing",
+            "color":"#4baafa",
             "title": "臺大醫院外科部<br>主任暨特聘教授",
             "info": [
                 {
@@ -33,9 +34,10 @@
             ]
         },{
             "type": "講師陣容",
-            "img": "speaker2.png",
+            "img": "speaker-2.png",
             "name": "王儷玲",
             "name_en": "Wang Li-Ling",
+            "color": "#64e2a5",
             "title": "臺灣永續金融與<br>企業影響力協會<br>理事長",
             "info": [
                 {
@@ -62,9 +64,10 @@
         },
         {
             "type": "講師陣容",
-            "img": "speaker3.png",
+            "img": "speaker-3.png",
             "name": "李秉穎",
             "name_en": "Li Bing-Ying",
+            "color":"#4baafa",
             "title": "台灣疫苗推動協會<br>理事長",
             "info": [
                 {
@@ -89,9 +92,10 @@
         },
         {
             "type": "講師陣容",
-            "img": "speaker7.png",
+            "img": "speaker-4.png",
             "name": "劉邦亨",
             "name_en": "Liu Bang-Heng",
+            "color": "#64e2a5",
             "title": "光寶科技<br>人資長",
             "info": [
                 {
@@ -111,9 +115,10 @@
         },
         {
             "type": "講師陣容",
-            "img": "speaker4.png",
+            "img": "speaker-1.png",
             "name": "謝志遠",
             "name_en": "Hsieh Chih-Yuan",
+            "color":"#4baafa",
             "title": "愛生育生物科技<br>研發暨營運<br>副總經理",
             "info": [
                 {
@@ -133,9 +138,59 @@
         },
         {
             "type": "講師陣容",
-            "img": "speaker5.png",
+            "img": "speaker-2.png",
             "name": "林致傑",
             "name_en": "Lin Chih-Chieh",
+            "color": "#64e2a5",
+            "title": "梅科科技/生生優動<br>策略長",
+            "info": [
+                {
+                    "title": "現職",
+                    "detail": [
+                        "梅科科技 策略長",
+                        "生生優動 策略長"
+                    ]
+                },
+                {
+                    "title": "經歷",
+                    "detail": [
+                        "台北數位企業發展中心百大顧問團 成員",
+                        "工業技術研究院Martech行銷經理人培訓班 講師",
+                        "世新大學資訊傳播學系 兼任講師",
+                        "Super 8 雲發互動科技 產品長、營運副總經理",
+                        "SONY集團子公司產品行銷部 主管"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "講師陣容",
+            "img": "speaker-1.png",
+            "name": "謝志遠",
+            "name_en": "Hsieh Chih-Yuan",
+            "color":"#4baafa",
+            "title": "愛生育生物科技<br>研發暨營運<br>副總經理",
+            "info": [
+                {
+                    "title": "現職",
+                    "detail": [
+                        "愛生育生物科技研發 副總經理",
+                        "愛生育生物科技營運 副總經理"
+                    ]
+                },
+                {
+                    "title": "經歷",
+                    "detail": [
+                        "送子鳥生殖中心醫研部顧問"
+                    ]
+                }
+            ]
+        }, {
+            "type": "講師陣容",
+            "img": "speaker-2.png",
+            "name": "林致傑",
+            "name_en": "Lin Chih-Chieh",
+            "color": "#64e2a5",
             "title": "梅科科技/生生優動<br>策略長",
             "info": [
                 {

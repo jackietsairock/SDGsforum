@@ -163,24 +163,27 @@
     <!--<p class="text-black text-base text-center mb-6">*順序依議程表排列</p>-->
     <div v-for="(group, idx)  in speakerGroups" :key="group.type" :class="['speaker_group',{'mb-15': idx === 0}]">
       <!--<p class="text-4xl text-center ms:text-6xl" :style="['font-weight: 500;',{color: idx === 0 ? 'rgb(93, 246, 254)' : 'rgb(63, 154, 209)'}]">- {{ group.type }} -</p>-->
-      <div class="speaker_box max-w-[1366px] p-0 mx-auto flex flex-row flex-wrap items-start justify-center gap-[25px] sm:p-10 sm:gap-[55px] sm:flex-row sm:items-start">
-        <div v-for="(item, idx) in group.items" :key="`${group.type}-${idx}`" class="speaker_item flex flex-col bg-white border-b-5 border-[#0acbac] items-center shadow-2xl py-5 px-1 w-[33%] sm:px-5 lg:w-[26%]"
+      <div class="speaker_box max-w-[1366px] p-0 mx-auto flex flex-row flex-wrap items-start justify-center gap-[25px] sm:p-10 sm:gap-[35px] sm:flex-row sm:items-start">
+        <div v-for="(item, idx) in group.items" :key="`${group.type}-${idx}`" class="speaker_item text-left flex flex-col items-center py-5 px-1 w-[33%] sm:px-5 lg:w-[18%]"
           role="button"
           tabindex="0"
           @click="openModal(item)"
           @keyup.enter="openModal(item)"
         >
-          <div class="speaker_img mb-3 rounded-full overflow-hidden w-[100px] h-[100px] sm:w-[150px] sm:h-[150px]">
+          <div class="speaker_img relative mb-3 overflow-hidden">
             <img :src="getImgUrl(item.img)" :alt="item.name" />
+            <div class="absolute z-10 bottom-2 left-2 right-0 bg-white w-fit px-4 py-2">
+              <h3 class="speaker_name text-xl font-bold mb-1 sm:text-2xl tracking-[0.2em]" :style="{ color: item.color }">{{ item.name }}</h3>
+              <h3 class="speaker_name_en text-xs font-bold sm:text-sm" :style="{ color: item.color }">{{ item.name_en }}</h3>
+            </div>
           </div>
-          <div class="speaker_text text-center min-h-21 sm:min-h-31">
-            <h3 class="text-xl font-bold mb-2 sm:text-2xl">{{ item.name }}</h3>
-            <p class="text-xs text-white sm:text-sm md:text-base lg:text-lg " v-html="item.title"></p>
+          <div class="speaker_text w-full">
+            <p class="text-xs sm:text-sm md:text-base lg:text-lg " v-html="item.title"></p>
           </div>
           <div
-            class="speaker_button px-1 py-1 mt-4 mx-auto rounded-xl sm:px-5 hover:cursor-pointer hover:opacity-90"
+            class="speaker_button w-full text-left mt-4 hover:cursor-pointer hover:opacity-90"
           >
-            <p class="text-xs text-[#0acbac] sm:text-sm">個人簡介 +</p>
+            <p class="text-xs blcok bg-black text-white w-fit px-1 py-1 rounded-sm sm:text-sm sm:px-5">個人簡介</p>
           </div>
         </div>
       </div>
@@ -192,9 +195,10 @@
       <div
         v-if="isModalOpen && activeSpeaker"
         class="modal_backdrop"
+        :style="{ backgroundColor: activeSpeaker.color ? `${activeSpeaker.color}50` : 'rgba(0, 0, 0, 0.2)' }"
         @click.self="closeModal"
       >
-        <div class="modal_panel border-b-5 border-[#0acbac]">
+        <div class="modal_panel">
           <button class="modal_close z-20" type="button" @click="closeModal" aria-label="關閉視窗">
             ×
           </button>
@@ -205,7 +209,7 @@
             </div>
             <div class="modal_info">
               <h3 class="modal_name">{{ activeSpeaker.name }}</h3>
-              <p class="modal_title" v-html="activeSpeaker.title"></p>
+              <p class="modal_title" :style="{borderBottom: `5px solid ${activeSpeaker.color}`}" v-html="activeSpeaker.title"></p>
 
               <div
                 v-for="(section, sectionIdx) in modalSections"
@@ -235,15 +239,6 @@
       transform: translateY(-4px);
       transition: transform 0.3s ease;
       cursor: pointer;
-      background-color: #0acbac;
-
-        .speaker_text h3{
-            color: #fff;
-          }
-
-          .speaker_text p{
-            color: #fff;
-          }
     }
 
     .speaker_text h3{
@@ -251,19 +246,12 @@
     }
 
     .speaker_text p{
-      color: #7b7b7b;
-    }
-
-    .speaker_button{
-      background-color: #fff;
-      border: 1px solid #0acbac;
-      border-radius: 50px;
+      color: #000;
     }
 
     .modal_backdrop{
       position: fixed;
       inset: 0;
-      background: rgba(9, 79, 58, 0.65);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -322,7 +310,6 @@
 
     .modal_image{
       flex-shrink: 0;
-      border-radius: 50%;
       overflow: hidden;
     }
 
@@ -349,7 +336,6 @@
       color: #7b7b7b;
       margin-bottom: 24px;
       padding-bottom: 24px;
-      border-bottom: 5px solid #0acbac;
     }
 
     .modal_section{
