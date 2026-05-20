@@ -180,22 +180,44 @@
             "notice":"主辦單位保有最終修改、變更、活動解釋及取消本活動之權利，若有相關異動將會公告於網站，恕不另行通知。<br><br>活動服務專線：02-2581-6196 分機234 王小姐",
             "label":[
                 {
-                    "tagName":"您的所屬企業",
+                    "tagName":"姓名",
+                    "inputName":"Name",
+                    "type": "input",
+                    "show": true,
+                    "required": true
+                },{
+                    "tagName":"手機",
+                    "inputName":"Cell_phone",
+                    "type": "input",
+                    "show": true,
+                    "required": true
+                },{
+                    "tagName":"Email",
+                    "inputName":"Email",
+                    "type": "input",
+                    "show": true,
+                    "required": true
+                },
+                {
+                    "tagName":"公司",
                     "inputName":"Company_name",
                     "type": "input",
-                    "show": true
+                    "show": true,
+                    "required": false
                 },{
-                    "tagName":"您的部門",
-                    "inputName":"Department",
+                    "tagName":"部門名稱",
+                    "inputName":"Department_name",
                     "type": "input",
-                    "show": true
+                    "show": true,
+                    "required": false
                 },{
-                    "tagName":"您的職稱",
+                    "tagName":"職稱",
                     "inputName":"Job_title",
                     "type": "checkbox",
                     "show": true,
+                    "required": false,
                     "label":[
-                       {
+                        {
                             "labelName":"董事長",
                             "value":"董事長"
                         },{
@@ -213,73 +235,40 @@
                         },{
                             "labelName":"人資HR及總務行政人員",
                             "value":"人資HR及總務行政人員"
-                        },{
-                            "labelName":"其他",
-                            "value":""
                         }
                     ]
-                },{
-                    "tagName":"所述產業",
-                    "inputName":"Industry",
+                },
+                {
+                    "tagName":"公司員工規模",
+                    "inputName":"Company_size",
                     "type": "select",
                     "show": true,
+                    "required": false,
                     "option":[
                         {
                             "optionName":"請選擇",
                             "value":""
                         },
                         {
-                            "optionName":"資訊科技(IT/軟體/AI)",
-                            "value":"資訊科技(IT/軟體/AI)"
+                            "optionName":"少於50人",
+                            "value":"少於50人"
                         },{
-                            "optionName":"半導體/電子",
-                            "value":"半導體/電子"
+                            "optionName":"50~100人",
+                            "value":"50~100人"
                         },{
-                            "optionName":"通訊/網路/IoT",
-                            "value":"通訊/網路/IoT"
+                            "optionName":"101~200人",
+                            "value":"101~200人"
                         },{
-                            "optionName":"製造業/智慧製造",
-                            "value":"製造業/智慧製造"
-                        },{
-                            "optionName":"批發及零售業",
-                            "value":"批發及零售業"
-                        },{
-                            "optionName":"金融科技",
-                            "value":"金融科技"
-                        },{
-                            "optionName":"醫療科技",
-                            "value":"醫療科技"
-                        },{
-                            "optionName":"新能源/能源",
-                            "value":"新能源/能源"
-                        },{
-                            "optionName":"電子商務",
-                            "value":"電子商務"
-                        },{
-                            "optionName":"其他",
-                            "value":"其他"
+                            "optionName":"200人以上",
+                            "value":"200人以上"
                         }
                     ]
                 },{
-                    "tagName":"姓名",
-                    "inputName":"Name",
-                    "type": "input",
-                    "show": true
-                },{
-                    "tagName":"手機",
-                    "inputName":"Mobile",
-                    "type": "input",
-                    "show": true
-                },{
-                    "tagName":"電子信箱",
-                    "inputName":"Email",
-                    "type": "input",
-                    "show": true
-                },{
                     "tagName":"報名場次",
-                    "inputName":"Sessions",
+                    "inputName":"Session",
                     "type": "checkbox",
-                    "show": false,
+                    "show": true,
+                    "required": true,
                     "label":[
                        {
                             "labelName":"全天參與",
@@ -299,7 +288,12 @@
             ],
             "personal_info":{
                 "title":"個人資料蒐集聲明",
-                "detail":"為落實個人資料之保護，依照個人資料保護法第8條規定進行蒐集前之告知：<br><br>一、個人資料蒐集之目的及用途：<br>目的在於進行活動辦理之相關行政作業，主辦單位及本活動合作夥伴單位將利用您所提供之Email及聯絡電話通知您活動之相關訊息。<br><br>二、蒐集之個人資料類別：<br>1. 中文姓名 2. 聯絡電話 3. 電子郵件信箱 4. 主辦單位因活動需求所需收集之資料，由主辦單位另訂之<br><br>三、個人資料利用之期間、地區、對象：<br>1. 期間：您同意參加活動之日起，至活動結束後一年為止。期間由主辦單位保存您的個人資料，以作為本人、主辦單位查詢、確認證明之用。<br>2. 地區：您的個人資料將用於活動主辦單位提供服務之地區<br>3. 對象：透過網路報名系統之使用者<br><br>請問您是否願以電子文件方式同意主辦單位蒐集、處理及利用您的個人資料：<br>同意，代表您已閱讀本次活動報名之個資告知事項，並願以電子文件方式同意主辦單位及本活動合作夥伴單位蒐集、處理及利用您的個人資料。"
+                "detail":"為落實個人資料之保護，依照個人資料保護法第8條規定進行蒐集前之告知：<br><br>一、個人資料蒐集之目的及用途：<br>目的在於進行活動辦理之相關行政作業，主辦單位及本活動合作夥伴單位將利用您所提供之Email及聯絡電話通知您活動之相關訊息。<br><br>二、蒐集之個人資料類別：<br>1. 中文姓名 2. 聯絡電話 3. 電子郵件信箱 4. 主辦單位因活動需求所需收集之資料，由主辦單位另訂之<br><br>三、個人資料利用之期間、地區、對象：<br>1. 期間：您同意參加活動之日起，至活動結束後一年為止。期間由主辦單位保存您的個人資料，以作為本人、主辦單位查詢、確認證明之用。<br>2. 地區：您的個人資料將用於活動主辦單位提供服務之地區<br>3. 對象：透過網路報名系統之使用者<br><br>請問您是否願以電子文件方式同意主辦單位蒐集、處理及利用您的個人資料：<br>同意，代表您已閱讀本次活動報名之個資告知事項，並願以電子文件方式同意主辦單位及本活動合作夥伴單位蒐集、處理及利用您的個人資料。",
+                "tagName":"同意個資蒐集",
+                "inputName":"Privacy_consent",
+                "type": "checkbox",
+                "show": true,
+                "required": true
             }
         },
         {
