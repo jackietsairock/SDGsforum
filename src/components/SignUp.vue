@@ -26,6 +26,7 @@ const emailRegex = /^([a-zA-Z0-9_.\-])+@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+
 const nameRegex = /^.{2,30}$/
 
 function createInitialFormState(infoData) {
+    // 依照 info.json 的欄位設定建立表單初始值。
     const nextForm = {}
 
     for (const field of infoData?.label ?? []) {
@@ -56,6 +57,7 @@ function createInitialFormState(infoData) {
 }
 
 function createInitialOtherInputs(infoData) {
+    // 建立「其他」欄位要使用的文字輸入初始值。
     const nextOtherInputs = {}
 
     for (const field of infoData?.label ?? []) {
@@ -80,6 +82,7 @@ watch(
 )
 
 function checkVal() {
+    // 送出前依照 info.json 的 required 與欄位格式逐一驗證。
     for (const field of visibleLabels.value) {
         const value = form.value[field.inputName]
 
@@ -109,6 +112,7 @@ function checkVal() {
 }
 
 function scrollToTerms() {
+    // 點擊「個資條款」時，捲動到個資聲明區塊。
     const el = termsAnchor.value
     if (!el) return
 
@@ -120,6 +124,7 @@ function scrollToTerms() {
 }
 
 function sign_up() {
+    // 將表單資料整理成 FormData，送到報名 API。
     const data = new FormData()
     const url = 'https://events.businesstoday.com.tw/backend/HRforum2026/sign_up?v=' + new Date().getTime()
 
@@ -149,7 +154,7 @@ function sign_up() {
             if (response.bIsSignUpSuccess === '0') {
                 alert(response.sError)
             } else {
-                alert('感謝報名，審核通過將於報名後5個工作天內，收到email及 簡訊通知報名成功，並於4/27~28 簡訊發送報到序號，敬請留意手機簡訊通知。')
+                alert('感謝您的支持，我們已收到您的報名資訊。本活動採審核制，我們將於活動前一周以簡訊發送【報名結果通知】，活動當日憑簡訊【報到序號】入場，敬請留意手機簡訊。')
                 location.href = './index.html'
             }
         })
@@ -159,24 +164,29 @@ function sign_up() {
 }
 
 function getOtherValue(key) {
+    // 取得指定欄位中「其他」文字輸入的內容。
     return String(otherInputs.value[key] || '').trim()
 }
 
 function isEmpty(value) {
+    // 判斷欄位值是否為空，支援一般文字與 checkbox 陣列。
     if (Array.isArray(value)) return value.length === 0
     return !String(value ?? '').trim()
 }
 
 function isRequiredField(field) {
+    // 判斷欄位是否在 info.json 設定為必填。
     return field.required === true
 }
 
 function getRequiredMessage(field) {
+    // 依欄位類型產生必填未填時的提示文字。
     const action = field.type === 'select' || field.type === 'checkbox' ? '選擇' : '輸入'
     return `請${action}${field.tagName}`
 }
 
 function getFormatMessage(field, value) {
+    // 檢查姓名、手機、Email 等欄位格式，錯誤時回傳提示文字。
     const text = String(value ?? '').trim()
     if (!text) return ''
 
@@ -196,6 +206,7 @@ function getFormatMessage(field, value) {
 }
 
 function getInputType(field) {
+    // 依欄位名稱轉成合適的 HTML input type。
     if (field.inputName === 'Email') return 'email'
     if (field.inputName === 'Cell_phone') return 'tel'
     if (field.type === 'number') return 'number'
@@ -203,10 +214,12 @@ function getInputType(field) {
 }
 
 function getMaxLength(field) {
+    // 回傳欄位可輸入的最大長度，目前手機限制為 10 碼。
     return field.inputName === 'Cell_phone' ? 10 : undefined
 }
 
 function isOtherSelected(key) {
+    // 判斷指定欄位是否有選到「其他」選項。
     const value = form.value[key]
 
     if (Array.isArray(value)) {
