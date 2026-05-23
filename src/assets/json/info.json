@@ -1,415 +1,441 @@
 {
-    "menu": [
-        {
-            "tag":false,
-            "tagName":"論壇前言",
-            "tagUrl":"#intro",
-            "tagClassName":"intro"
-        },{
-            "tag":false,
-            "tagName":"論壇資訊",
-            "tagUrl":"#agenda",
-            "tagClassName":"agenda"
-        },{
-            "tag":false,
-            "tagName":"講者簡介",
-            "tagUrl":"#speaker",
-            "tagClassName":"speaker"
-        },{
-            "tag":false,
-            "tagName":"論壇報名",
-            "tagUrl":"#signUp",
-            "tagClassName":"signUp"
-        },{
-            "tag":false,
-            "tagName":"交通資訊",
-            "tagUrl":"#traffic",
-            "tagClassName":"traffic"
-        }
-    ],
-    "content":[
-        {
-            "cmsType":"intro",
-            "tag":"intro",
-            "title":"論壇前言",
-            "titleColor":"#000",
-            "titleEn":"introduction",
-            "titleEnColor":"#20776e",
-            "text":[
-                "「南臺灣創新崛起：驅動智慧城市與永續發展，引領產業升級」",
-                "深化南臺灣的科技創新與產業升級，持續推動智慧城市建設、產業創新與永續發展，<br class='hidden lg:block'>吸引全球科技人才與資本，促進南方經濟的持續繁榮與發展。"
-            ]
-        },
-        {
-            "cmsType":"agenda",
-            "id":1,
-            "title":"論壇資訊",
-            "titleColor":"#000",
-            "titleEn":"亮點議題",
-            "titleEnColor":"#20776e",
-            "note":"主辦單位保留變更議程之權利，實際議程以副後確認版本為準。",
-            "event_info":[
-                {
-                    "label":"時間",
-                    "title":"2025年9月25日(四)",
-                    "detail":"14:00 ~ 16:25 (13:30開放報到)"
-                },
-                {
-                    "label":"地點",
-                    "title":"長榮文苑酒店 1F苑廳",
-                    "detail":"(嘉義縣太保市故宮大道777號)"
-                }
-            ],
-            "agendaInfo":[
-                {
-                    "time":"13:30-14:00",
-                    "topic":"貴賓/來賓報到",
-                    "speaker":[
-                        {
-                            "speakerName":"",
-                            "speakerTitle":""
-                        }
-                    ]
-                },
-                {
-                    "time":"14:00-14:05",
-                    "topic":"主辦單位致詞",
-                    "speaker":[
-                        {
-                            "speakerName":"梁永煌",
-                            "speakerTitle":"今周刊發行人"
-                        }
-                    ]
-                },{
-                    "time":"19:08-19:16",
-                    "topic":"貴賓致詞",
-                    "speaker":[
-                        {
-                            "speakerName":"",
-                            "speakerTitle":"摩根資產管理代表"
-                        }
-                    ]
-                },{
-                    "time":"19:16-19:20",
-                    "topic":"貴賓合影",
-                    "speaker":[
-                        {
-                            "speakerName":"林修銘",
-                            "speakerTitle":"臺灣證券交易所董事長"
-                        }
-                    ]
-                },{
-                    "time":"19:20-19:40",
-                    "topic":"【專題演講一】<br>川普經濟新局與2026總體趨勢",
-                    "speaker":[
-                        {
-                            "speakerName":"許長泰",
-                            "speakerTitle":"摩根資產管理亞太區首席市場策略師"
-                        }
-                    ]
-                },{
-                    "time":"19:40-20:00",
-                    "topic":"【專題演講二】<br>AI科技產業發展新契機",
-                    "speaker":[
-                        {
-                            "speakerName":"林宏文",
-                            "speakerTitle":"今周刊顧問"
-                        }
-                    ]
-                },{
-                    "time":"20:00-20:40",
-                    "topic":"【富足今周起Live】<br>投資AI時代的全球關鍵布局",
-                    "speaker":[
-                        {
-                            "speakerName":"",
-                            "speakerTitle":"主持人："
-                        },
-                        {
-                            "speakerName":"王志郁",
-                            "speakerTitle":"富足今周起主持人"
-                        },
-                        {
-                            "speakerName":"",
-                            "speakerTitle":""
-                        },
-                        {
-                            "speakerName":"",
-                            "speakerTitle":"與談人："
-                        },{
-                            "speakerName":"薄琪琳",
-                            "speakerTitle":"摩根資產管理產品策略部副總經理"
-                        },{
-                            "speakerName":"葉鴻儒",
-                            "speakerTitle":"摩根資產管理投資管理事業部執行董事"
-                        },{
-                            "speakerName":"林宏文",
-                            "speakerTitle":"今周刊顧問"
-                        }
-                    ]
-                },{
-                    "time":"20:40",
-                    "topic":"圓滿賦歸",
-                    "speaker":[
-                        {
-                            "speakerName":"",
-                            "speakerTitle":""
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "cmsType":"speaker",
-            "title":"講者簡介",
-            "titleColor":"#000",
-            "titleEn":"speaker",
-            "titleEnColor":"#20776e"
-        },
-        {
-            "cmsType":"signUp",
-            "title":"論壇報名",
-            "titleColor":"#000",
-            "titleEn":"sign up",
-            "titleEnColor":"#20776e",
-            "signUp_info":[
-                {
-                    "label":"參與對象",
-                    "detail":"歡迎人力資源管理主管及財務主管、管理部門人員，對此議題有興趣者，敬請把握機會，踴躍報名參加！"
-                },
-                {
-                    "label":"報名方式",
-                    "detail":"本活動為免費參加需預約報名，活動人數及座席有限，採審核制，請於下方報名欄位填寫送出，活動報名人數及座位席次有限，主辦單位保有最終審核權，審核通過將於報名後5個工作天內，收到email及 簡訊通知報名成功，並於活動前1-3天簡訊發送報到序號，當日憑簡訊序號入場。"
-                }
-            ],
-            "notice":"主辦單位保有最終修改、變更、活動解釋及取消本活動之權利，若有相關異動將會公告於網站，恕不另行通知。<br><br>活動服務專線：02-2581-6196 分機234 王小姐",
-            "label":[
-                {
-                    "tagName":"姓名",
-                    "inputName":"Name",
-                    "type": "input",
-                    "show": true,
-                    "required": true
-                },{
-                    "tagName":"手機",
-                    "inputName":"Cell_phone",
-                    "type": "input",
-                    "show": true,
-                    "required": true
-                },{
-                    "tagName":"Email",
-                    "inputName":"Email",
-                    "type": "input",
-                    "show": true,
-                    "required": true
-                },
-                {
-                    "tagName":"公司",
-                    "inputName":"Company_name",
-                    "type": "input",
-                    "show": true,
-                    "required": false
-                },{
-                    "tagName":"部門名稱",
-                    "inputName":"Department_name",
-                    "type": "input",
-                    "show": true,
-                    "required": false
-                },{
-                    "tagName":"職稱",
-                    "inputName":"Job_title",
-                    "type": "checkbox",
-                    "show": true,
-                    "required": false,
-                    "label":[
-                        {
-                            "labelName":"董事長",
-                            "value":"董事長"
-                        },{
-                            "labelName":"總經理",
-                            "value":"總經理"
-                        },{
-                            "labelName":"執行長",
-                            "value":"執行長"
-                        },{
-                            "labelName":"人資長",
-                            "value":"人資長"
-                        },{
-                            "labelName":"財務長",
-                            "value":"財務長"
-                        },{
-                            "labelName":"人資HR及總務行政人員",
-                            "value":"人資HR及總務行政人員"
-                        }
-                    ]
-                },
-                {
-                    "tagName":"公司員工規模",
-                    "inputName":"Company_size",
-                    "type": "select",
-                    "show": true,
-                    "required": false,
-                    "option":[
-                        {
-                            "optionName":"請選擇",
-                            "value":""
-                        },
-                        {
-                            "optionName":"少於50人",
-                            "value":"少於50人"
-                        },{
-                            "optionName":"50~100人",
-                            "value":"50~100人"
-                        },{
-                            "optionName":"101~200人",
-                            "value":"101~200人"
-                        },{
-                            "optionName":"200人以上",
-                            "value":"200人以上"
-                        }
-                    ]
-                },{
-                    "tagName":"報名場次",
-                    "inputName":"Session",
-                    "type": "checkbox",
-                    "show": true,
-                    "required": true,
-                    "label":[
-                       {
-                            "labelName":"全天參與",
-                            "value":"全天參與",
-                            "checked":true
-                        },{
-                            "labelName":"上午場 9:30-12:00",
-                            "value":"上午場 9:30-12:00",
-                            "checked":false
-                        },{
-                            "labelName":"下午場 13:30-16:50",
-                            "value":"下午場 13:30-16:50",
-                            "checked":false
-                        }
-                    ]
-                }
-            ],
-            "personal_info":{
-                "title":"個人資料蒐集聲明",
-                "detail":"為落實個人資料之保護，依照個人資料保護法第8條規定進行蒐集前之告知：<br><br>一、個人資料蒐集之目的及用途：<br>目的在於進行活動辦理之相關行政作業，主辦單位及本活動合作夥伴單位將利用您所提供之Email及聯絡電話通知您活動之相關訊息。<br><br>二、蒐集之個人資料類別：<br>1. 中文姓名 2. 聯絡電話 3. 電子郵件信箱 4. 主辦單位因活動需求所需收集之資料，由主辦單位另訂之<br><br>三、個人資料利用之期間、地區、對象：<br>1. 期間：您同意參加活動之日起，至活動結束後一年為止。期間由主辦單位保存您的個人資料，以作為本人、主辦單位查詢、確認證明之用。<br>2. 地區：您的個人資料將用於活動主辦單位提供服務之地區<br>3. 對象：透過網路報名系統之使用者<br><br>請問您是否願以電子文件方式同意主辦單位蒐集、處理及利用您的個人資料：<br>同意，代表您已閱讀本次活動報名之個資告知事項，並願以電子文件方式同意主辦單位及本活動合作夥伴單位蒐集、處理及利用您的個人資料。",
-                "tagName":"同意個資蒐集",
-                "inputName":"Privacy_consent",
-                "type": "checkbox",
-                "show": true,
-                "required": true
-            }
-        },
-        {
-            "cmsType":"traffic",
-            "title":"交通資訊",
-            "titleColor":"#000",
-            "titleEn":"traffic",
-            "titleEnColor":"#20776e",
-            "trafficInfo":{
-                "map":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.2569319236704!2d120.99920231235083!3d24.78665414811242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34683610583465fb%3A0xbf171a1e00f95cfe!2zMzAw5paw56u55biC5p2x5Y2A5aSn5a246LevMTAwMeiZn-mbu-WtkOizh-ioiuS4reW_g-S6pOmAmuWkp-WtuA!5e0!3m2!1szh-TW!2stw!4v1770879254978!5m2!1szh-TW!2stw",
-                "info":[
-                    {
-                        "title":"交通資訊",
-                        "location":"新竹市大學路1001號<br class='block lg:hidden'><p class='text-lg pl-2'>(電子與資訊研究中心)</p>",
-                        "locationUrl":{
-                            "title":"校內地圖及校方完整交通資訊",
-                            "url":"https://eic.nycu.edu.tw/?page_id=36"
-                        },
-                        "description":[
-                            {
-                                "label":"時間",
-                                "info":{
-                                    "type":"text",
-                                    "detail":[
-                                        "<span class='text-2xl font-bold text-white mr-2'>2025年9月25日(四)</span><br class='block lg:hidden'>14:00-16:25（13:30開放報到）"
-                                    ]
-                                }
-                            },
-                            {
-                                "label":"地點",
-                                "info":{
-                                    "type":"text",
-                                    "detail":[
-                                        "<span class='text-2xl font-bold text-white mr-2'>長榮文苑酒店 1F文苑廳</span><br class='block lg:hidden'>(嘉義縣太保市故宮大道777號)"
-                                    ]
-                                }
-                            },
-                            {
-                                "label":"大眾運輸",
-                                "info":{
-                                    "type":"list-dot",
-                                    "detail":[
-                                        "高鐵嘉義站2號出口，搭乘106、166、168、7235、台灣好行33至故宮南院站下車。",
-                                        "嘉義火車站 火車站後站出口：搭乘BRT 7211、7212至高鐵嘉義站，再於高鐵站2號出口轉乘公車。",
-                                        "火車站前站出口：搭乘106至故宮南院站下車。"
-                                    ]
-                                }
-                            },
-                            {
-                                "label":"自行開車",
-                                "info":{
-                                    "type":"text",
-                                    "detail":[
-                                        "南下（國道一號）前往西區的北港路159縣道，從國道一號的264-嘉義號出口下交流道，走高鐵大道台18線和故宮大道前往目的地太保市。",
-                                        "北上（國道一號）前往嘉義縣的學府路二段嘉45鄉道，從台82線的14號出口下交流道，繼續走嘉45鄉道前往目的地太保市。"
-                                    ]
-                                }
-                            }
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "cmsType":"event",
-            "title":"歷屆回顧",
-            "titleColor":"#30c4a2",
-            "titleEn":"retrospective",
-            "titleEnColor":"#20776e",
-            "brandGroups":[
-                {
-                    "title":"<spen class='pl-0 lg:pl-12'></spen>主辦單位",
-                    "items":[
-                        {
-                            "href":"https://www.businesstoday.com.tw/",
-                            "target":"_blank",
-                            "img":"btnet_logo.png",
-                            "imgClass":"b2",
-                            "alt":"今周刊"
-                        }
-                    ]
-                },
-                {
-                    "title":"<spen class='pl-0 lg:pl-12'></spen>合作夥伴",
-                    "items":[
-                        {
-                            "href":"https://www.tsfia.tw/",
-                            "target":"_blank",
-                            "img":"logo2-1.png",
-                            "imgClass":"b3-half",
-                            "alt":"台灣永續金融"
-                        }
-                    ]
-                },
-                {
-                    "title":"共同推動單位",
-                    "items":[
-                        {
-                            "href":"https://esg.businesstoday.com.tw/",
-                            "target":"_blank",
-                            "img":"ESG_logo.png",
-                            "imgClass":"b3",
-                            "alt":"ESG"
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
-    "footer":{
-        "text":"今周文化事業(股)公司 / 今周行銷(股)公司 / 今周出版(股)公司 版權所有 本網站圖文非經本社同意不得刊載",
-        "copyright":"Copyright © 2026 Business Today All rights reserved."
+  "menu": [
+    {
+      "tag": false,
+      "tagName": "論壇前言",
+      "tagUrl": "#intro",
+      "tagClassName": "intro"
+    },
+    {
+      "tag": false,
+      "tagName": "論壇資訊",
+      "tagUrl": "#agenda",
+      "tagClassName": "agenda"
+    },
+    {
+      "tag": false,
+      "tagName": "講者簡介",
+      "tagUrl": "#speaker",
+      "tagClassName": "speaker"
+    },
+    {
+      "tag": false,
+      "tagName": "論壇報名",
+      "tagUrl": "#signUp",
+      "tagClassName": "signUp"
+    },
+    {
+      "tag": false,
+      "tagName": "交通資訊",
+      "tagUrl": "#traffic",
+      "tagClassName": "traffic"
     }
-
+  ],
+  "content": [
+    {
+      "cmsType": "intro",
+      "tag": "intro",
+      "title": "論壇前言",
+      "titleColor": "#000",
+      "titleEn": "introduction",
+      "titleEnColor": "#20776e",
+      "text": [
+        "「南臺灣創新崛起：驅動智慧城市與永續發展，引領產業升級」1",
+        "深化南臺灣的科技創新與產業升級，持續推動智慧城市建設、產業創新與永續發展，<br class='hidden lg:block'>吸引全球科技人才與資本，促進南方經濟的持續繁榮與發展。"
+      ]
+    },
+    {
+      "cmsType": "agenda",
+      "id": 1,
+      "title": "論壇資訊",
+      "titleColor": "#000",
+      "titleEn": "亮點議題",
+      "titleEnColor": "#20776e",
+      "note": "主辦單位保留變更議程之權利，實際議程以副後確認版本為準。",
+      "event_info": [
+        {
+          "label": "時間",
+          "title": "2025年9月25日(四)",
+          "detail": "14:00 ~ 16:25 (13:30開放報到)"
+        },
+        {
+          "label": "地點",
+          "title": "長榮文苑酒店 1F苑廳",
+          "detail": "(嘉義縣太保市故宮大道777號)"
+        }
+      ],
+      "agendaInfo": [
+        {
+          "time": "13:30-14:00",
+          "topic": "貴賓/來賓報到",
+          "speaker": [
+            {}
+          ]
+        },
+        {
+          "time": "14:00-14:05",
+          "topic": "主辦單位致詞",
+          "speaker": [
+            {
+              "speakerTitle": "今周刊發行人",
+              "speakerName": "梁永煌"
+            }
+          ]
+        },
+        {
+          "time": "19:08-19:16",
+          "topic": "貴賓致詞",
+          "speaker": [
+            {
+              "speakerTitle": "摩根資產管理代表"
+            }
+          ]
+        },
+        {
+          "time": "19:16-19:20",
+          "topic": "貴賓合影",
+          "speaker": [
+            {
+              "speakerTitle": "臺灣證券交易所董事長",
+              "speakerName": "林修銘"
+            }
+          ]
+        },
+        {
+          "time": "19:20-19:40",
+          "topic": "【專題演講一】<br>川普經濟新局與2026總體趨勢",
+          "speaker": [
+            {
+              "speakerTitle": "摩根資產管理亞太區首席市場策略師",
+              "speakerName": "許長泰"
+            }
+          ]
+        },
+        {
+          "time": "19:40-20:00",
+          "topic": "【專題演講二】<br>AI科技產業發展新契機",
+          "speaker": [
+            {
+              "speakerTitle": "今周刊顧問",
+              "speakerName": "林宏文"
+            }
+          ]
+        },
+        {
+          "time": "20:00-20:40",
+          "topic": "【富足今周起Live】<br>投資AI時代的全球關鍵布局",
+          "speaker": [
+            {
+              "speakerTitle": "主持人："
+            },
+            {
+              "speakerTitle": "富足今周起主持人",
+              "speakerName": "王志郁"
+            },
+            {},
+            {
+              "speakerTitle": "與談人："
+            },
+            {
+              "speakerTitle": "摩根資產管理產品策略部副總經理",
+              "speakerName": "薄琪琳"
+            },
+            {
+              "speakerTitle": "摩根資產管理投資管理事業部執行董事",
+              "speakerName": "葉鴻儒"
+            },
+            {
+              "speakerTitle": "今周刊顧問",
+              "speakerName": "林宏文"
+            }
+          ]
+        },
+        {
+          "time": "20:40",
+          "topic": "圓滿賦歸",
+          "speaker": [
+            {}
+          ]
+        }
+      ]
+    },
+    {
+      "cmsType": "speaker",
+      "title": "講者簡介",
+      "titleColor": "#000",
+      "titleEn": "speaker",
+      "titleEnColor": "#20776e"
+    },
+    {
+      "cmsType": "signUp",
+      "title": "論壇報名",
+      "titleColor": "#000",
+      "titleEn": "sign up",
+      "titleEnColor": "#20776e",
+      "signUp_info": [
+        {
+          "label": "參與對象",
+          "detail": "歡迎人力資源管理主管及財務主管、管理部門人員，對此議題有興趣者，敬請把握機會，踴躍報名參加！"
+        },
+        {
+          "label": "報名方式",
+          "detail": "本活動為免費參加需預約報名，活動人數及座席有限，採審核制，請於下方報名欄位填寫送出，活動報名人數及座位席次有限，主辦單位保有最終審核權，審核通過將於報名後5個工作天內，收到email及 簡訊通知報名成功，並於活動前1-3天簡訊發送報到序號，當日憑簡訊序號入場。"
+        }
+      ],
+      "notice": "主辦單位保有最終修改、變更、活動解釋及取消本活動之權利，若有相關異動將會公告於網站，恕不另行通知。<br><br>活動服務專線：02-2581-6196 分機234 王小姐",
+      "label": [
+        {
+          "tagName": "姓名",
+          "inputName": "Name",
+          "type": "input",
+          "show": true,
+          "required": true
+        },
+        {
+          "tagName": "手機",
+          "inputName": "Cell_phone",
+          "type": "input",
+          "show": true,
+          "required": true
+        },
+        {
+          "tagName": "Email",
+          "inputName": "Email",
+          "type": "input",
+          "show": true,
+          "required": true
+        },
+        {
+          "tagName": "公司",
+          "inputName": "Company_name",
+          "type": "input",
+          "show": true,
+          "required": false
+        },
+        {
+          "tagName": "部門名稱",
+          "inputName": "Department_name",
+          "type": "input",
+          "show": true,
+          "required": false
+        },
+        {
+          "tagName": "職稱",
+          "inputName": "Job_title",
+          "type": "checkbox",
+          "show": true,
+          "required": false,
+          "label": [
+            {
+              "labelName": "董事長",
+              "value": "董事長",
+              "checked": false
+            },
+            {
+              "labelName": "總經理",
+              "value": "總經理",
+              "checked": false
+            },
+            {
+              "labelName": "執行長",
+              "value": "執行長",
+              "checked": false
+            },
+            {
+              "labelName": "人資長",
+              "value": "人資長",
+              "checked": false
+            },
+            {
+              "labelName": "財務長",
+              "value": "財務長",
+              "checked": false
+            },
+            {
+              "labelName": "人資HR及總務行政人員",
+              "value": "人資HR及總務行政人員",
+              "checked": false
+            }
+          ]
+        },
+        {
+          "tagName": "公司員工規模",
+          "inputName": "Company_size",
+          "type": "select",
+          "show": true,
+          "required": false,
+          "option": [
+            {
+              "optionName": "請選擇",
+              "checked": false
+            },
+            {
+              "optionName": "少於50人",
+              "value": "少於50人",
+              "checked": false
+            },
+            {
+              "optionName": "50~100人",
+              "value": "50~100人",
+              "checked": false
+            },
+            {
+              "optionName": "101~200人",
+              "value": "101~200人",
+              "checked": false
+            },
+            {
+              "optionName": "200人以上",
+              "value": "200人以上",
+              "checked": false
+            }
+          ]
+        },
+        {
+          "tagName": "報名場次",
+          "inputName": "Session",
+          "type": "checkbox",
+          "show": true,
+          "required": true,
+          "label": [
+            {
+              "labelName": "全天參與",
+              "value": "全天參與",
+              "checked": true
+            },
+            {
+              "labelName": "上午場 9:30-12:00",
+              "value": "上午場 9:30-12:00",
+              "checked": false
+            },
+            {
+              "labelName": "下午場 13:30-16:50",
+              "value": "下午場 13:30-16:50",
+              "checked": false
+            }
+          ]
+        }
+      ],
+      "personal_info": {
+        "title": "個人資料蒐集聲明",
+        "detail": "為落實個人資料之保護，依照個人資料保護法第8條規定進行蒐集前之告知：<br><br>一、個人資料蒐集之目的及用途：<br>目的在於進行活動辦理之相關行政作業，主辦單位及本活動合作夥伴單位將利用您所提供之Email及聯絡電話通知您活動之相關訊息。<br><br>二、蒐集之個人資料類別：<br>1. 中文姓名 2. 聯絡電話 3. 電子郵件信箱 4. 主辦單位因活動需求所需收集之資料，由主辦單位另訂之<br><br>三、個人資料利用之期間、地區、對象：<br>1. 期間：您同意參加活動之日起，至活動結束後一年為止。期間由主辦單位保存您的個人資料，以作為本人、主辦單位查詢、確認證明之用。<br>2. 地區：您的個人資料將用於活動主辦單位提供服務之地區<br>3. 對象：透過網路報名系統之使用者<br><br>請問您是否願以電子文件方式同意主辦單位蒐集、處理及利用您的個人資料：<br>同意，代表您已閱讀本次活動報名之個資告知事項，並願以電子文件方式同意主辦單位及本活動合作夥伴單位蒐集、處理及利用您的個人資料。",
+        "tagName": "同意個資蒐集",
+        "inputName": "Privacy_consent",
+        "type": "checkbox",
+        "show": true,
+        "required": true,
+        "checked": false
+      }
+    },
+    {
+      "cmsType": "traffic",
+      "title": "交通資訊",
+      "titleColor": "#000",
+      "titleEn": "traffic",
+      "titleEnColor": "#20776e",
+      "trafficInfo": {
+        "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.2569319236704!2d120.99920231235083!3d24.78665414811242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34683610583465fb%3A0xbf171a1e00f95cfe!2zMzAw5paw56u55biC5p2x5Y2A5aSn5a246LevMTAwMeiZn-mbu-WtkOizh-ioiuS4reW_g-S6pOmAmuWkp-WtuA!5e0!3m2!1szh-TW!2stw!4v1770879254978!5m2!1szh-TW!2stw",
+        "info": [
+          {
+            "title": "交通資訊",
+            "location": "新竹市大學路1001號<br class='block lg:hidden'><p class='text-lg pl-2'>(電子與資訊研究中心)</p>",
+            "locationUrl": {
+              "title": "校內地圖及校方完整交通資訊",
+              "url": "https://eic.nycu.edu.tw/?page_id=36"
+            },
+            "description": [
+              {
+                "label": "時間",
+                "info": {
+                  "type": "text",
+                  "detail": [
+                    "<span class='text-2xl font-bold text-white mr-2'>2025年9月25日(四)</span><br class='block lg:hidden'>14:00-16:25（13:30開放報到）"
+                  ]
+                }
+              },
+              {
+                "label": "地點",
+                "info": {
+                  "type": "text",
+                  "detail": [
+                    "<span class='text-2xl font-bold text-white mr-2'>長榮文苑酒店 1F文苑廳</span><br class='block lg:hidden'>(嘉義縣太保市故宮大道777號)"
+                  ]
+                }
+              },
+              {
+                "label": "大眾運輸",
+                "info": {
+                  "type": "list-dot",
+                  "detail": [
+                    "高鐵嘉義站2號出口，搭乘106、166、168、7235、台灣好行33至故宮南院站下車。",
+                    "嘉義火車站 火車站後站出口：搭乘BRT 7211、7212至高鐵嘉義站，再於高鐵站2號出口轉乘公車。",
+                    "火車站前站出口：搭乘106至故宮南院站下車。"
+                  ]
+                }
+              },
+              {
+                "label": "自行開車",
+                "info": {
+                  "type": "text",
+                  "detail": [
+                    "南下（國道一號）前往西區的北港路159縣道，從國道一號的264-嘉義號出口下交流道，走高鐵大道台18線和故宮大道前往目的地太保市。",
+                    "北上（國道一號）前往嘉義縣的學府路二段嘉45鄉道，從台82線的14號出口下交流道，繼續走嘉45鄉道前往目的地太保市。"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "cmsType": "event",
+      "title": "歷屆回顧",
+      "titleColor": "#30c4a2",
+      "titleEn": "retrospective",
+      "titleEnColor": "#20776e",
+      "brandGroups": [
+        {
+          "title": "<spen class='pl-0 lg:pl-12'></spen>主辦單位",
+          "items": [
+            {
+              "href": "https://www.businesstoday.com.tw/",
+              "target": "_blank",
+              "img": "btnet_logo.png",
+              "imgClass": "b2",
+              "alt": "今周刊"
+            }
+          ]
+        },
+        {
+          "title": "<spen class='pl-0 lg:pl-12'></spen>合作夥伴",
+          "items": [
+            {
+              "href": "https://www.tsfia.tw/",
+              "target": "_blank",
+              "img": "logo2-1.png",
+              "imgClass": "b3-half",
+              "alt": "台灣永續金融"
+            }
+          ]
+        },
+        {
+          "title": "共同推動單位",
+          "items": [
+            {
+              "href": "https://esg.businesstoday.com.tw/",
+              "target": "_blank",
+              "img": "ESG_logo.png",
+              "imgClass": "b3",
+              "alt": "ESG"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": "今周文化事業(股)公司 / 今周行銷(股)公司 / 今周出版(股)公司 版權所有 本網站圖文非經本社同意不得刊載",
+    "copyright": "Copyright © 2026 Business Today All rights reserved."
+  }
 }
