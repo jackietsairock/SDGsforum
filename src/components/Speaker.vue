@@ -13,8 +13,23 @@
   const isModalOpen = ref(false)
   const activeSpeaker = ref(null)
 
-  function getImgUrl(img) {
-    return new URL(`../assets/image/${img}`, import.meta.url).href
+  const isExternalUrl = (url = '') => /^(https?:)?\/\//.test(url) || url.startsWith('data:')
+
+  function getImgUrl(img = '') {
+    if (!img) {
+      return ''
+    }
+
+    if (isExternalUrl(img)) {
+      return img
+    }
+
+    const fileName = img.split('/').filter(Boolean).pop()
+    if (!fileName) {
+      return ''
+    }
+
+    return new URL(`../assets/image/${fileName}`, import.meta.url).href
   }
 
   const openModal = (speaker) => {

@@ -46,6 +46,7 @@ npm run preview
 
 ```text
 SDGsforum/
+├─ .pages.yml                 # Pages CMS no-code 後台設定
 ├─ src/
 │  ├─ assets/
 │  │  ├─ image/              # 網站圖片素材
@@ -62,7 +63,7 @@ SDGsforum/
 
 ## 內容維護方式
 
-主要內容以 JSON 管理，不需改 Vue 程式即可更新文案：
+主要內容以 JSON 管理，不需改 Vue 程式即可更新文案與前台 UI 內容：
 
 - `src/assets/json/info.json`
 - `src/assets/json/speaker.json`
@@ -71,6 +72,28 @@ SDGsforum/
 
 - `src/assets/json/info_example.json`
 - `src/assets/json/speaker_example.json`
+
+## No-code 後台編輯
+
+本專案已加入 Pages CMS 設定檔：
+
+- `.pages.yml`
+
+後台用途僅限編輯前台 UI 內容，例如 Header 選單、論壇前言、論壇資訊、議程、講者、報名區文字、交通資訊、合作單位與 Footer。報名資料仍由既有報名 API 處理，不會存進 GitHub。
+
+使用方式：
+
+1. 前往 `https://app.pagescms.org/`
+2. 使用 GitHub 登入
+3. 安裝 Pages CMS GitHub App 到 `jackietsairock/SDGsforum`
+4. 進入 repository 後即可編輯 `網站 UI 內容` 與 `講者內容`
+5. 儲存後 Pages CMS 會把 JSON 變更 commit 回 GitHub，再由原本部署流程重新打包網站
+
+注意：
+
+- 後台圖片會寫入 `src/assets/image/`。
+- 報名表欄位的 `inputName` 會影響送到後端 API 的欄位名稱，未同步調整後端時不要任意修改。
+- `content` 內的 `cmsType` 是後台與前台對應區塊用的固定值，請保留。
 
 ## 報名表單 API
 

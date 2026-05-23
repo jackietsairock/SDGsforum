@@ -20,6 +20,18 @@ import { applySeo } from './seo/applySeo'
 const seo = createSeoPayload({ infoData, speakers });
 applySeo(seo);
 
+const getContentByType = (cmsType, fallbackIndex) => {
+  const sections = Array.isArray(infoData.content) ? infoData.content : []
+  return sections.find((item) => item.cmsType === cmsType) ?? sections[fallbackIndex] ?? {}
+}
+
+const introInfo = getContentByType('intro', 0)
+const agendaInfo = getContentByType('agenda', 1)
+const speakerInfo = getContentByType('speaker', 2)
+const signUpInfo = getContentByType('signUp', 3)
+const trafficInfo = getContentByType('traffic', 4)
+const eventInfo = getContentByType('event', 5)
+
 </script>
 
 <template>
@@ -29,33 +41,33 @@ applySeo(seo);
       <Kv />
     </section>
     <section id="intro" class="relative w-full z-10" aria-label="活動前言">
-      <Intro :infoData="infoData.content[0]" />
+      <Intro :infoData="introInfo" />
     </section>
     <section>
       <img src="./assets/image/waves-green.png" alt="綠色波浪裝飾" class="w-full">
     </section>
     <section id="agenda" class="relative w-full z-20 overflow-hidden" aria-label="活動資訊">
-      <Agenda :infoData="infoData.content[1]" />
+      <Agenda :infoData="agendaInfo" />
       <div class="dot_bg"></div>
     </section>
     <section id="speaker" class="relative w-full z-10" aria-label="講者陣容">
-      <Speaker :speakers="speakers.data" :infoData="infoData.content[2]"/>
+      <Speaker :speakers="speakers.data" :infoData="speakerInfo"/>
       <div class="dot_bg"></div>
     </section>
     <section id="signUp" class="relative w-full z-20 overflow-hidden" aria-label="立即報名">
-      <SignUp :infoData="infoData.content[3]" />
+      <SignUp :infoData="signUpInfo" />
       <div class="dot_bg"></div>
     </section>
     <Faq v-if="siteConfig.showVisibleFaqSection" :faqs="seo.faqs" />
     <section id="traffic" class="relative w-full z-40 overflow-hidden" aria-label="交通資訊">
-      <Traffic :infoData="infoData.content[4]" />
+      <Traffic :infoData="trafficInfo" />
       <div class="dot_bg traffic"></div>
     </section>
     <section>
       <img src="./assets/image/waves-b.png" alt="藍色波浪裝飾" class="w-full">
     </section>
     <section id="event" class="relative w-full z-40 overflow-hidden" aria-label="歷屆回顧與合作單位">
-      <Event :infoData="infoData.content[5]" />
+      <Event :infoData="eventInfo" />
     </section>
     <section>
       <img src="./assets/image/waves-gray.png" alt="灰色波浪裝飾" class="w-full">

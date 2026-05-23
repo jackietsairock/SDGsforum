@@ -29,6 +29,7 @@
     ],
     "content":[
         {
+            "cmsType":"intro",
             "tag":"intro",
             "title":"論壇前言",
             "titleColor":"#000",
@@ -40,6 +41,7 @@
             ]
         },
         {
+            "cmsType":"agenda",
             "id":1,
             "title":"論壇資訊",
             "titleColor":"#000",
@@ -157,12 +159,14 @@
             ]
         },
         {
+            "cmsType":"speaker",
             "title":"講者簡介",
             "titleColor":"#000",
             "titleEn":"speaker",
             "titleEnColor":"#20776e"
         },
         {
+            "cmsType":"signUp",
             "title":"論壇報名",
             "titleColor":"#000",
             "titleEn":"sign up",
@@ -297,6 +301,7 @@
             }
         },
         {
+            "cmsType":"traffic",
             "title":"交通資訊",
             "titleColor":"#000",
             "titleEn":"traffic",
@@ -357,6 +362,7 @@
             }
         },
         {
+            "cmsType":"event",
             "title":"歷屆回顧",
             "titleColor":"#30c4a2",
             "titleEn":"retrospective",

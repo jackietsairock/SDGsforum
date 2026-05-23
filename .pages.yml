@@ -1,0 +1,466 @@
+media:
+  - name: images
+    label: Images
+    input: src/assets/image
+    output: /src/assets/image
+    categories: [image]
+    extensions: [png, jpg, jpeg, webp, gif, svg]
+    rename: safe
+
+content:
+  - name: site_content
+    label: 網站 UI 內容
+    type: file
+    path: src/assets/json/info.json
+    format: json
+    fields:
+      - name: menu
+        label: Header 選單
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{tagName}"
+        fields:
+          - name: tag
+            label: 是否顯示特殊標記
+            type: boolean
+          - name: tagName
+            label: 選單文字
+            type: string
+          - name: tagUrl
+            label: 連結
+            type: string
+          - name: tagClassName
+            label: 樣式代號
+            type: string
+
+      - name: content
+        label: 頁面區塊
+        type: block
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        blockKey: cmsType
+        blocks:
+          - name: intro
+            fields:
+              - name: tag
+                label: 區塊錨點
+                type: string
+              - name: title
+                label: 標題
+                type: string
+              - name: titleColor
+                label: 標題顏色
+                type: string
+              - name: titleEn
+                label: 英文標題
+                type: string
+              - name: titleEnColor
+                label: 英文標題顏色
+                type: string
+              - name: text
+                label: 前言文案
+                type: text
+                list: true
+                description: 可保留既有 HTML，例如 <br>。
+
+          - name: agenda
+            fields:
+              - name: id
+                label: 議程樣式 ID
+                type: number
+              - name: title
+                label: 標題
+                type: string
+              - name: titleColor
+                label: 標題顏色
+                type: string
+              - name: titleEn
+                label: 英文標題
+                type: string
+              - name: titleEnColor
+                label: 英文標題顏色
+                type: string
+              - name: note
+                label: 議程備註
+                type: text
+              - name: event_info
+                label: 活動資訊
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{label}: {title}"
+                fields:
+                  - name: label
+                    label: 標籤
+                    type: string
+                  - name: title
+                    label: 主文字
+                    type: text
+                  - name: detail
+                    label: 補充文字
+                    type: text
+              - name: agendaInfo
+                label: 議程表
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{time} {topic}"
+                fields:
+                  - name: time
+                    label: 時間
+                    type: string
+                  - name: topic
+                    label: 主題
+                    type: text
+                    description: 可保留既有 HTML，例如 <br>。
+                  - name: speaker
+                    label: 講者
+                    type: object
+                    list:
+                      collapsible:
+                        collapsed: true
+                        summary: "{speakerTitle} {speakerName}"
+                    fields:
+                      - name: speakerTitle
+                        label: 職稱/角色
+                        type: text
+                      - name: speakerName
+                        label: 姓名
+                        type: string
+
+          - name: speaker
+            fields:
+              - name: title
+                label: 標題
+                type: string
+              - name: titleColor
+                label: 標題顏色
+                type: string
+              - name: titleEn
+                label: 英文標題
+                type: string
+              - name: titleEnColor
+                label: 英文標題顏色
+                type: string
+
+          - name: signUp
+            fields:
+              - name: title
+                label: 標題
+                type: string
+              - name: titleColor
+                label: 標題顏色
+                type: string
+              - name: titleEn
+                label: 英文標題
+                type: string
+              - name: titleEnColor
+                label: 英文標題顏色
+                type: string
+              - name: signUp_info
+                label: 報名說明
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{label}"
+                fields:
+                  - name: label
+                    label: 標籤
+                    type: string
+                  - name: detail
+                    label: 說明
+                    type: text
+                    description: 可保留既有 HTML。
+              - name: notice
+                label: 注意事項
+                type: text
+                description: 可保留既有 HTML。
+              - name: label
+                label: 報名表欄位
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{tagName}"
+                fields:
+                  - name: tagName
+                    label: 欄位名稱
+                    type: string
+                  - name: inputName
+                    label: API 欄位名稱
+                    type: string
+                    description: 這會影響送出資料欄位，除非後端同步調整，否則不要任意修改。
+                  - name: type
+                    label: 欄位類型
+                    type: select
+                    options:
+                      values: [input, select, checkbox, number]
+                  - name: show
+                    label: 顯示欄位
+                    type: boolean
+                  - name: required
+                    label: 必填
+                    type: boolean
+                  - name: label
+                    label: Checkbox 選項
+                    type: object
+                    list:
+                      collapsible:
+                        collapsed: true
+                        summary: "{labelName}"
+                    fields:
+                      - name: labelName
+                        label: 顯示文字
+                        type: string
+                      - name: value
+                        label: 送出值
+                        type: string
+                      - name: checked
+                        label: 預設勾選
+                        type: boolean
+                  - name: option
+                    label: Select 選項
+                    type: object
+                    list:
+                      collapsible:
+                        collapsed: true
+                        summary: "{optionName}"
+                    fields:
+                      - name: optionName
+                        label: 顯示文字
+                        type: string
+                      - name: value
+                        label: 送出值
+                        type: string
+                      - name: checked
+                        label: 預設選取
+                        type: boolean
+              - name: personal_info
+                label: 個資聲明
+                type: object
+                fields:
+                  - name: title
+                    label: 標題
+                    type: string
+                  - name: detail
+                    label: 內容
+                    type: text
+                    description: 可保留既有 HTML。
+                  - name: tagName
+                    label: 勾選文字
+                    type: string
+                  - name: inputName
+                    label: API 欄位名稱
+                    type: string
+                  - name: type
+                    label: 欄位類型
+                    type: string
+                  - name: show
+                    label: 顯示
+                    type: boolean
+                  - name: required
+                    label: 必填
+                    type: boolean
+                  - name: checked
+                    label: 預設勾選
+                    type: boolean
+
+          - name: traffic
+            fields:
+              - name: title
+                label: 標題
+                type: string
+              - name: titleColor
+                label: 標題顏色
+                type: string
+              - name: titleEn
+                label: 英文標題
+                type: string
+              - name: titleEnColor
+                label: 英文標題顏色
+                type: string
+              - name: trafficInfo
+                label: 交通資訊
+                type: object
+                fields:
+                  - name: map
+                    label: Google Map iframe URL
+                    type: text
+                  - name: info
+                    label: 地點與交通說明
+                    type: object
+                    list:
+                      collapsible:
+                        collapsed: true
+                        summary: "{title}"
+                    fields:
+                      - name: title
+                        label: 地點標題
+                        type: string
+                      - name: subTitle
+                        label: 地點副標
+                        type: string
+                      - name: location
+                        label: 地址/位置
+                        type: text
+                        description: 可保留既有 HTML。
+                      - name: locationUrl
+                        label: 地點連結
+                        type: object
+                        fields:
+                          - name: title
+                            label: 連結文字
+                            type: string
+                          - name: url
+                            label: URL
+                            type: string
+                      - name: description
+                        label: 交通項目
+                        type: object
+                        list:
+                          collapsible:
+                            collapsed: true
+                            summary: "{label}"
+                        fields:
+                          - name: label
+                            label: 標籤
+                            type: string
+                          - name: info
+                            label: 內容
+                            type: object
+                            fields:
+                              - name: type
+                                label: 顯示方式
+                                type: select
+                                options:
+                                  values: [text, list-dot]
+                              - name: detail
+                                label: 文字
+                                type: text
+                                list: true
+                                description: 可保留既有 HTML。
+
+          - name: event
+            fields:
+              - name: title
+                label: 標題
+                type: string
+              - name: titleColor
+                label: 標題顏色
+                type: string
+              - name: titleEn
+                label: 英文標題
+                type: string
+              - name: titleEnColor
+                label: 英文標題顏色
+                type: string
+              - name: brandGroups
+                label: 合作單位群組
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{title}"
+                fields:
+                  - name: title
+                    label: 群組標題
+                    type: text
+                    description: 可保留既有 HTML。
+                  - name: items
+                    label: Logo 項目
+                    type: object
+                    list:
+                      collapsible:
+                        collapsed: true
+                        summary: "{alt}"
+                    fields:
+                      - name: href
+                        label: 連結
+                        type: string
+                      - name: target
+                        label: 開啟方式
+                        type: select
+                        options:
+                          values: [_blank, _self]
+                      - name: img
+                        label: Logo 圖片
+                        type: image
+                        options:
+                          media: images
+                      - name: imgClass
+                        label: Logo 尺寸樣式
+                        type: select
+                        options:
+                          values: [b0, b1-half, b1, b2-half, b2, b3-half, b3, b4-half, b4, b5-half, b5, b6-half, b6]
+                      - name: alt
+                        label: 替代文字
+                        type: string
+
+      - name: footer
+        label: Footer
+        type: object
+        fields:
+          - name: text
+            label: 版權文字
+            type: text
+          - name: copyright
+            label: Copyright
+            type: string
+
+  - name: speakers
+    label: 講者內容
+    type: file
+    path: src/assets/json/speaker.json
+    format: json
+    fields:
+      - name: data
+        label: 講者清單
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        fields:
+          - name: type
+            label: 分類
+            type: string
+          - name: img
+            label: 講者照片
+            type: image
+            options:
+              media: images
+          - name: name
+            label: 姓名
+            type: string
+          - name: name_en
+            label: 英文姓名
+            type: string
+          - name: color
+            label: 主色
+            type: string
+          - name: title
+            label: 頭銜
+            type: text
+            description: 可保留既有 HTML，例如 <br>。
+          - name: info
+            label: 簡介區塊
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            fields:
+              - name: title
+                label: 區塊標題
+                type: string
+              - name: detail
+                label: 內容
+                type: text
+                list: true

@@ -96,12 +96,12 @@ function parseEventSchedule(signUpContent = {}) {
 }
 
 function getTrafficVenue(infoData) {
-  const trafficContent = getContentBy(infoData, (item) => item.titleEn === 'traffic')
+  const trafficContent = getContentBy(infoData, (item) => item.cmsType === 'traffic' || item.titleEn === 'traffic')
   return trafficContent?.trafficInfo?.info?.[0] ?? {}
 }
 
 function getAgendaTopics(infoData) {
-  const agendaContent = getContentBy(infoData, (item) => Array.isArray(item.agendaInfo))
+  const agendaContent = getContentBy(infoData, (item) => item.cmsType === 'agenda' || Array.isArray(item.agendaInfo))
   return (agendaContent?.agendaInfo ?? [])
     .map((item) => stripHtml(item?.topic))
     .filter((topic) => topic && topic !== '演講主題')
@@ -164,7 +164,7 @@ function normalizeSpeakers(speakers) {
 }
 
 export function createSeoPayload({ infoData, speakers }) {
-  const signUpContent = getContentBy(infoData, (item) => item.titleEn === 'sign up')
+  const signUpContent = getContentBy(infoData, (item) => item.cmsType === 'signUp' || item.titleEn === 'sign up')
   const trafficVenue = getTrafficVenue(infoData)
   const agendaTopics = getAgendaTopics(infoData)
   const schedule = parseEventSchedule(signUpContent)
