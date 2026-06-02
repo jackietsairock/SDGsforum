@@ -255,6 +255,10 @@
               "labelName": "人資HR及總務行政人員",
               "value": "人資HR及總務行政人員",
               "checked": false
+            },
+            {
+              "labelName": "其他",
+              "checked": false
             }
           ]
         },
