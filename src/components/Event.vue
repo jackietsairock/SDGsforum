@@ -182,56 +182,60 @@ const eventSliderSettings = {
         -webkit-user-drag: none;
     }
 
-    .b0{ 
-        height: 75px;
+    .logo-size-0{ 
+        height: 15px;
         margin: 10px;
     }
-    .b1-half{ 
-        height: 67.5px;
+    .logo-size-0-half{ 
+        height: 20px;
         margin: 10px;
     }
-    .b1{ 
-        height: 65px;
-        margin: 10px;
-    }
-    .b2-half{ 
-        height: 57.5px;
-        margin: 10px;
-    }
-    .b2{ 
-        height: 55px;
-        margin: 10px;
-    }
-    .b3-half{ 
-        height: 50px;
-        margin: 10px;
-    }
-    .b3{ 
-        height: 45px;
-        margin: 10px;
-    }
-    .b4-half{ 
-        height: 40px;
-        margin: 10px;
-    }
-    .b4{ 
-        height: 35px;
-        margin: 10px;
-    }
-    .b5-half{ 
-        height: 30px;
-        margin: 10px;
-    }
-    .b5{ 
+    .logo-size-1{ 
         height: 25px;
         margin: 10px;
     }
-    .b6-half{ 
-        height: 22.5px;
+    .logo-size-1-half{ 
+        height: 30px;
         margin: 10px;
     }
-    .b6{ 
-        height: 20px;
+    .logo-size-2{ 
+        height: 35px;
+        margin: 10px;
+    }
+    .logo-size-2-half{ 
+        height: 40px;
+        margin: 10px;
+    }
+    .logo-size-3{ 
+        height: 45px;
+        margin: 10px;
+    }
+    .logo-size-3-half{ 
+        height: 50px;
+        margin: 10px;
+    }
+    .logo-size-4{ 
+        height: 55px;
+        margin: 10px;
+    }
+    .logo-size-4-half{ 
+        height: 60px;
+        margin: 10px;
+    }
+    .logo-size-5{ 
+        height: 65px;
+        margin: 10px;
+    }
+    .logo-size-5-half{ 
+        height: 70px;
+        margin: 10px;
+    }
+    .logo-size-6{ 
+        height: 75px;
+        margin: 10px;
+    }
+    .logo-size-6-half{ 
+        height: 80px;
         margin: 10px;
     }
 
@@ -261,56 +265,60 @@ const eventSliderSettings = {
                 border-right-width: 3px;
                 border-bottom-width: 3px;
             }
-            .b0{ 
-                height: 60px;
+            .logo-size-0{ 
+                height: 20px;
                 margin: 5px;
             }
-            .b1-half{ 
-                height: 52.5px;
-                margin: 5px;
-            }
-            .b1{ 
-                height: 50px;
-                margin: 5px;
-            }
-            .b2-half{ 
-                height: 42.5px;
-                margin: 5px;
-            }
-            .b2{ 
-                height: 40px;
-                margin: 5px;
-            }
-            .b3-half{ 
-                height: 37.5px;
-                margin: 5px;
-            }
-            .b3{ 
-                height: 35px;
-                margin: 5px;
-            }
-            .b4-half{ 
-                height: 32.5px;
-                margin: 5px;
-            }
-            .b4{ 
-                height: 30px;
-                margin: 5px;
-            }
-            .b5-half{ 
-                height: 27.5px;
-                margin: 5px;
-            }
-            .b5{ 
-                height: 25px;
-                margin: 5px;
-            }
-            .b6-half{ 
+            .logo-size-0-half{ 
                 height: 22.5px;
                 margin: 5px;
             }
-            .b6{ 
-                height: 20px;
+            .logo-size-1{ 
+                height: 25px;
+                margin: 5px;
+            }
+            .logo-size-1-half{ 
+                height: 27.5px;
+                margin: 5px;
+            }
+            .logo-size-2{ 
+                height: 30px;
+                margin: 5px;
+            }
+            .logo-size-2-half{ 
+                height: 32.5px;
+                margin: 5px;
+            }
+            .logo-size-3{ 
+                height: 35px;
+                margin: 5px;
+            }
+            .logo-size-3-half{ 
+                height: 37.5px;
+                margin: 5px;
+            }
+            .logo-size-4{ 
+                height: 40px;
+                margin: 5px;
+            }
+            .logo-size-4-half{ 
+                height: 42.5px;
+                margin: 5px;
+            }
+            .logo-size-5{ 
+                height: 50px;
+                margin: 5px;
+            }
+            .logo-size-5-half{ 
+                height: 52.5px;
+                margin: 5px;
+            }
+            .logo-size-6{ 
+                height: 60px;
+                margin: 5px;
+            }
+            .logo-size-6-half{ 
+                height: 62.5px;
                 margin: 5px;
             }
     }

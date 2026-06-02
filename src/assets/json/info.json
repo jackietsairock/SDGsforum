@@ -406,7 +406,7 @@
               "href": "https://www.businesstoday.com.tw/",
               "target": "_blank",
               "img": "btnet_logo.png",
-              "imgClass": "b2",
+              "imgClass": "logo-size-2",
               "alt": "今周刊"
             }
           ]
@@ -418,7 +418,7 @@
               "href": "https://www.tsfia.tw/",
               "target": "_blank",
               "img": "logo2-1.png",
-              "imgClass": "b3-half",
+              "imgClass": "logo-size-3-half",
               "alt": "台灣永續金融"
             }
           ]
@@ -430,7 +430,7 @@
               "href": "https://esg.businesstoday.com.tw/",
               "target": "_blank",
               "img": "ESG_logo.png",
-              "imgClass": "b3",
+              "imgClass": "logo-size-3",
               "alt": "ESG"
             }
           ]
