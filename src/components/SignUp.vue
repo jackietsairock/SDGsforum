@@ -151,7 +151,7 @@ function scrollToTerms() {
 function sign_up() {
     // 將表單資料整理成 FormData，送到報名 API。
     const data = new FormData()
-    const url = 'https://events-kenny.businesstoday.com.tw/backend/SDGsforum2026/sign_up?v=' + new Date().getTime()
+    const url = 'https://events.businesstoday.com.tw/backend/SDGsforum2026/sign_up?v=' + new Date().getTime()
     // const url = 'https://events.businesstoday.com.tw/backend/HRforum2026/sign_up?v=' + new Date().getTime()
 
     for (const key in form.value) {
