@@ -162,15 +162,8 @@
           "required": true
         },
         {
-          "tagName": "公司",
+          "tagName": "任職公司(單位)",
           "inputName": "Company_name",
-          "type": "input",
-          "show": true,
-          "required": false
-        },
-        {
-          "tagName": "部門名稱",
-          "inputName": "Department_name",
           "type": "input",
           "show": true,
           "required": false
@@ -214,63 +207,6 @@
             },
             {
               "labelName": "其他",
-              "checked": false
-            }
-          ]
-        },
-        {
-          "tagName": "公司員工規模",
-          "inputName": "Company_size",
-          "type": "select",
-          "show": true,
-          "required": false,
-          "option": [
-            {
-              "optionName": "請選擇",
-              "checked": false
-            },
-            {
-              "optionName": "少於50人",
-              "value": "少於50人",
-              "checked": false
-            },
-            {
-              "optionName": "50~100人",
-              "value": "50~100人",
-              "checked": false
-            },
-            {
-              "optionName": "101~200人",
-              "value": "101~200人",
-              "checked": false
-            },
-            {
-              "optionName": "200人以上",
-              "value": "200人以上",
-              "checked": false
-            }
-          ]
-        },
-        {
-          "tagName": "報名場次",
-          "inputName": "Session",
-          "type": "checkbox",
-          "show": true,
-          "required": true,
-          "label": [
-            {
-              "labelName": "全天參與",
-              "value": "全天參與",
-              "checked": true
-            },
-            {
-              "labelName": "上午場 9:30-12:00",
-              "value": "上午場 9:30-12:00",
-              "checked": false
-            },
-            {
-              "labelName": "下午場 13:30-16:50",
-              "value": "下午場 13:30-16:50",
               "checked": false
             }
           ]
