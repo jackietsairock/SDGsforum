@@ -179,7 +179,7 @@ function sign_up() {
     })
         .then((res) => res.json())
         .then((response) => {
-            console.log('sign_up response:', response)
+            // console.log('sign_up response:', response)
             if (response.bIsSuccess === 0) {
                 alert(response.sError)
             } else {
