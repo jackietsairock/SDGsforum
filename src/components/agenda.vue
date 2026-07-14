@@ -63,7 +63,7 @@
                     </tbody>
                 </table>
             </div>
-            <p class="agenda_note text-center text-sm text-[#2e362b] mt-4">{{ infoData.note }}</p>
+            <p class="agenda_note2 text-center text-sm text-[#2e362b] mt-4">{{ infoData.note }}</p>
         </div>
     </div>
 </template>

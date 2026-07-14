@@ -151,7 +151,7 @@ function scrollToTerms() {
 function sign_up() {
     // 將表單資料整理成 FormData，送到報名 API。
     const data = new FormData()
-    const url = 'http://events-kenny.businesstoday.com.tw/backend/SDGsforum2026/sign_up?v=' + new Date().getTime()
+    const url = 'https://events-kenny.businesstoday.com.tw/backend/SDGsforum2026/sign_up?v=' + new Date().getTime()
     // const url = 'https://events.businesstoday.com.tw/backend/HRforum2026/sign_up?v=' + new Date().getTime()
 
     for (const key in form.value) {
@@ -179,7 +179,8 @@ function sign_up() {
     })
         .then((res) => res.json())
         .then((response) => {
-            if (response.bIsSignUpSuccess === '0') {
+            console.log('sign_up response:', response)
+            if (response.bIsSuccess === 0) {
                 alert(response.sError)
             } else {
                 alert('感謝您的支持，我們已收到您的報名資訊。本活動採審核制，我們將於活動前一周以簡訊發送【報名結果通知】，活動當日憑簡訊【報到序號】入場，敬請留意手機簡訊。')
