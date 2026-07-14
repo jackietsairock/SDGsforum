@@ -26,7 +26,7 @@
                 </div>
             </div>
             <p class="agenda_note2 text-center font-bold text-xl text-[#2e362b] mt-0 mb-10">{{ infoData.note2 }}</p>
-            <div class="agenda_table_wrap">
+            <div class="agenda_table_wrap rounded-4xl">
                 <table class="agenda_table">
                     <caption class="sr-only">2026 SDGs永續城市交流論壇議程</caption>
                     <colgroup>
@@ -76,7 +76,6 @@
     .agenda_table_wrap{
         width: 100%;
         overflow: hidden;
-        border-radius: 0.75rem;
         background-color: #fff;
         box-shadow: 0 4px 12px rgba(31, 73, 68, 0.14);
     }
