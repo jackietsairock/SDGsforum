@@ -25,6 +25,7 @@
                     </div>
                 </div>
             </div>
+            <p class="agenda_note2 text-center text-lg text-[#2e362b] mt-0 mb-10">{{ infoData.note2 }}</p>
             <div class="agenda_table flex flex-col bg-white p-3 rounded-lg">
                 <div v-for="(item ,idx) in infoData.agendaInfo" :key="idx" class="agenda_table_item flex flex-col lg:flex-row">
                     <div class="time_box w-full lg:w-[14%]">

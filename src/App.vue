@@ -50,10 +50,12 @@ const eventInfo = getContentByType('event', 5)
       <Agenda :infoData="agendaInfo" />
       <div class="dot_bg"></div>
     </section>
+    <!--
     <section id="speaker" class="relative w-full z-10" aria-label="講者陣容">
       <Speaker :speakers="speakers.data" :infoData="speakerInfo"/>
       <div class="dot_bg"></div>
     </section>
+    -->
     <section id="signUp" class="relative w-full z-20 overflow-hidden" aria-label="立即報名">
       <SignUp :infoData="signUpInfo" />
       <div class="dot_bg"></div>

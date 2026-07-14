@@ -41,7 +41,7 @@
 
     .intro_text__headline{
         position: relative;
-        width: min(100%, 1080px);
+        width: min(100%, 620px);
         margin: 0;
         padding: clamp(0.7rem, 1.35vw, 1rem) clamp(1rem, 3.5vw, 2.75rem);
         color: #2fa7e3;
@@ -73,12 +73,6 @@
 
     .intro_text__body :deep(br){
         display: block;
-    }
-
-    @media screen and (max-width: 1200px) {
-        .intro_text__body :deep(br){
-            display: none;
-        }
     }
 
     @media screen and (max-width: 768px) {
