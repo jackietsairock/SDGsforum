@@ -166,50 +166,14 @@
           "inputName": "Company_name",
           "type": "input",
           "show": true,
-          "required": false
+          "required": true
         },
         {
           "tagName": "職稱",
           "inputName": "Job_title",
-          "type": "checkbox",
+          "type": "input",
           "show": true,
-          "required": false,
-          "label": [
-            {
-              "labelName": "董事長",
-              "value": "董事長",
-              "checked": false
-            },
-            {
-              "labelName": "總經理",
-              "value": "總經理",
-              "checked": false
-            },
-            {
-              "labelName": "執行長",
-              "value": "執行長",
-              "checked": false
-            },
-            {
-              "labelName": "人資長",
-              "value": "人資長",
-              "checked": false
-            },
-            {
-              "labelName": "財務長",
-              "value": "財務長",
-              "checked": false
-            },
-            {
-              "labelName": "人資HR及總務行政人員",
-              "value": "人資HR及總務行政人員",
-              "checked": false
-            },
-            {
-              "labelName": "其他",
-              "checked": false
-            }
-          ]
+          "required": true
         },
         {
           "tagName": "是否需申請公務人員學習時數",
@@ -313,23 +277,18 @@
           "title": "<spen class='pl-0 lg:pl-12'></spen>主辦單位",
           "items": [
             {
+              "href": "https://www.ntpc.gov.tw/ch/index.jsp",
+              "target": "_blank",
+              "img": "logo2-1.png",
+              "imgClass": "logo-size-4-half",
+              "alt": "新北市政府"
+            },
+            {
               "href": "https://www.businesstoday.com.tw/",
               "target": "_blank",
               "img": "btnet_logo.png",
               "imgClass": "logo-size-3",
               "alt": "今周刊"
-            }
-          ]
-        },
-        {
-          "title": "<spen class='pl-0 lg:pl-12'></spen>合作夥伴",
-          "items": [
-            {
-              "href": "https://www.tsfia.tw/",
-              "target": "_blank",
-              "img": "logo2-1.png",
-              "imgClass": "logo-size-4-half",
-              "alt": "新北市政府"
             }
           ]
         }

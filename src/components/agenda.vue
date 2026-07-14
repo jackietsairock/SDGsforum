@@ -21,11 +21,11 @@
                     </div>
                     <div class="event_info_value flex flex-col gap-3 text-left mb-5 items-baseline sm:mb-0 sm:flex-row sm:gap-8">
                         <p class="text-2xl text-[#fff] font-bold sm:text-4xl" v-html="item.title"></p>
-                        <p class="text-sm text-[#2e362b] sm:text-base">{{item.detail}}</p>
+                        <p class="text-lg text-[#2e362b] font-bold sm:text-xl">{{item.detail}}</p>
                     </div>
                 </div>
             </div>
-            <p class="agenda_note2 text-center text-sm text-[#2e362b] mt-0 mb-10">{{ infoData.note2 }}</p>
+            <p class="agenda_note2 text-center font-bold text-xl text-[#2e362b] mt-0 mb-10">{{ infoData.note2 }}</p>
             <div class="agenda_table_wrap">
                 <table class="agenda_table">
                     <caption class="sr-only">2026 SDGs永續城市交流論壇議程</caption>
@@ -63,7 +63,7 @@
                     </tbody>
                 </table>
             </div>
-            <p class="agenda_note2 text-center text-sm text-[#2e362b] mt-4">{{ infoData.note }}</p>
+            <p class="agenda_note2 text-center font-bold text-xl text-[#2e362b] mt-4">{{ infoData.note }}</p>
         </div>
     </div>
 </template>
