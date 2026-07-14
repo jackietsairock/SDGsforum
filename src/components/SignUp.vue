@@ -8,13 +8,15 @@ const props = defineProps({
 })
 
 const OTHER_SENTINEL = '__OTHER__'
+const LEARNING_HOURS_FIELD = 'Is_civil_servant_learning_hours_required'
+const ID_NUMBER_FIELD = 'Id_number'
 
 const form = ref({})
 const otherInputs = ref({})
 const termsAnchor = ref(null)
 
 const visibleLabels = computed(() =>
-    (props.infoData?.label ?? []).filter((item) => item.show !== false)
+    (props.infoData?.label ?? []).filter(isFieldVisible)
 )
 const personalInfo = computed(() => props.infoData?.personal_info ?? {})
 const hasPersonalInfo = computed(() => Boolean(props.infoData?.personal_info))
@@ -24,6 +26,14 @@ const agreeInputName = computed(() => personalInfo.value.inputName || 'Agree')
 const mobileRegex = /^09\d{8}$/
 const emailRegex = /^([a-zA-Z0-9_.\-])+@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
 const nameRegex = /^.{2,30}$/
+const idNumberRegex = /^[A-Z][12]\d{8}$/
+
+function isFieldVisible(field) {
+    if (field.show === false) return false
+    if (!field.showWhen) return true
+
+    return form.value[field.showWhen.inputName] === field.showWhen.equals
+}
 
 function createInitialFormState(infoData) {
     // 依照 info.json 的欄位設定建立表單初始值。
@@ -36,6 +46,12 @@ function createInitialFormState(infoData) {
             nextForm[field.inputName] = (field.label ?? [])
                 .filter((option) => option.checked)
                 .map((option) => (option.labelName === '其他' ? OTHER_SENTINEL : option.value))
+            continue
+        }
+
+        if (field.type === 'radio') {
+            const defaultOption = (field.label ?? []).find((option) => option.checked)
+            nextForm[field.inputName] = field.value ?? defaultOption?.value ?? ''
             continue
         }
 
@@ -79,6 +95,15 @@ watch(
         otherInputs.value = createInitialOtherInputs(nextInfoData)
     },
     { immediate: true }
+)
+
+watch(
+    () => form.value[LEARNING_HOURS_FIELD],
+    (value) => {
+        if (value !== '是') {
+            form.value[ID_NUMBER_FIELD] = ''
+        }
+    }
 )
 
 function checkVal() {
@@ -134,6 +159,8 @@ function sign_up() {
 
         if (key === agreeInputName.value) {
             data.append(key, value ? '是' : '否')
+        } else if (key === ID_NUMBER_FIELD) {
+            data.append(key, String(value ?? '').trim().toUpperCase())
         } else if (Array.isArray(value)) {
             const normalized = value
                 .map((item) => (item === OTHER_SENTINEL ? getOtherValue(key) : item))
@@ -182,7 +209,7 @@ function isRequiredField(field) {
 
 function getRequiredMessage(field) {
     // 依欄位類型產生必填未填時的提示文字。
-    const action = field.type === 'select' || field.type === 'checkbox' ? '選擇' : '輸入'
+    const action = ['select', 'checkbox', 'radio'].includes(field.type) ? '選擇' : '輸入'
     return `請${action}${field.tagName}`
 }
 
@@ -203,7 +230,29 @@ function getFormatMessage(field, value) {
         return '請填寫正確Email'
     }
 
+    if (field.inputName === ID_NUMBER_FIELD && !isValidIdNumber(text)) {
+        return '請填寫正確的身分證字號'
+    }
+
     return ''
+}
+
+function isValidIdNumber(value) {
+    const normalized = String(value ?? '').trim().toUpperCase()
+    if (!idNumberRegex.test(normalized)) return false
+
+    const letterCodes = {
+        A: 10, B: 11, C: 12, D: 13, E: 14, F: 15, G: 16, H: 17, I: 34,
+        J: 18, K: 19, L: 20, M: 21, N: 22, O: 35, P: 23, Q: 24, R: 25,
+        S: 26, T: 27, U: 28, V: 29, W: 32, X: 30, Y: 31, Z: 33
+    }
+    const letterCode = letterCodes[normalized[0]]
+    const digits = normalized.slice(1).split('').map(Number)
+    const weights = [8, 7, 6, 5, 4, 3, 2, 1, 1]
+    const sum = Math.floor(letterCode / 10) + (letterCode % 10) * 9
+        + digits.reduce((total, digit, index) => total + digit * weights[index], 0)
+
+    return sum % 10 === 0
 }
 
 function getInputType(field) {
@@ -216,7 +265,7 @@ function getInputType(field) {
 
 function getMaxLength(field) {
     // 回傳欄位可輸入的最大長度，目前手機限制為 10 碼。
-    return field.inputName === 'Cell_phone' ? 10 : undefined
+    return ['Cell_phone', ID_NUMBER_FIELD].includes(field.inputName) ? 10 : undefined
 }
 
 function isOtherSelected(key) {
@@ -247,10 +296,10 @@ function isOtherSelected(key) {
                     <div class="border-t border-dashed border-gray-300 pt-2"></div>
                 </div> -->
                 <div v-for="(item, idx) in visibleLabels" :key="idx" class="flex flex-col w-full sm:flex-row items-center gap-2">
-                    <label class="w-full text-lg font-bold shrink-0 sm:w-24" style="color:#2f3158;"><span v-if="isRequiredField(item)" class="text-red-700">*</span>{{ item.tagName }}</label>
+                    <label class="w-full text-lg font-bold shrink-0 sm:w-64" style="color:#2f3158;"><span v-if="isRequiredField(item)" class="text-red-700">*</span>{{ item.tagName }}</label>
 
                     <input
-                        v-if="item.type !== 'select' && item.type !== 'checkbox'"
+                        v-if="!['select', 'checkbox', 'radio'].includes(item.type)"
                         v-model="form[item.inputName]"
                         :name="item.inputName"
                         :type="getInputType(item)"
@@ -276,6 +325,18 @@ function isOtherSelected(key) {
                                 class="ml-1 text-black w-40 border-b border-gray-400 bg-transparent text-sm focus:outline-none"
                                 :placeholder="`請輸入${item.tagName}`"
                             />
+                        </label>
+                    </div>
+                    <div v-else-if="item.type === 'radio'" class="w-full flex-1 flex flex-wrap gap-6">
+                        <label v-for="(opt, oidx) in item.label" :key="oidx" class="flex items-center gap-2 text-sm sm:text-base">
+                            <input
+                                v-model="form[item.inputName]"
+                                type="radio"
+                                :name="item.inputName"
+                                :value="opt.value"
+                                class="h-4 w-4"
+                            />
+                            <span class="text-black">{{ opt.labelName }}</span>
                         </label>
                     </div>
                     <div v-else class="w-full flex-1 flex flex-col gap-2">
