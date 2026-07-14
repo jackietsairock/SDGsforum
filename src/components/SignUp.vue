@@ -363,7 +363,7 @@ function isOtherSelected(key) {
                     </label>
                 </div>
                 <button type="submit" class="w-fit mx-auto mt-4 hover:cursor-pointer">
-                    <img class="h-[55px]" src="../assets/image/signup2.png" alt="立即報名圖示">
+                    <img class="w-full h-auto sm:w-auto sm:h-[55px]" src="../assets/image/signup2.png" alt="立即報名圖示">
                 </button>
                 <!-- <div class="sign_up_info_box w-full flex flex-col gap-8 my-10 mx-auto text-justify text-[#4e4e5a] sm:text-center">
                     <div class="border-t border-dashed border-gray-300 pt-2 pb-2"></div>

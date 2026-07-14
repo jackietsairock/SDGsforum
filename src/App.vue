@@ -88,7 +88,7 @@ const eventInfo = getContentByType('event', 5)
 }
 
 #intro{
-    padding: 90px 55px;
+    padding: 90px 10px;
 }
 
 
