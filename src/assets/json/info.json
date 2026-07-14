@@ -316,7 +316,7 @@
               "href": "https://www.businesstoday.com.tw/",
               "target": "_blank",
               "img": "btnet_logo.png",
-              "imgClass": "logo-size-2",
+              "imgClass": "logo-size-3",
               "alt": "今周刊"
             }
           ]
@@ -328,20 +328,8 @@
               "href": "https://www.tsfia.tw/",
               "target": "_blank",
               "img": "logo2-1.png",
-              "imgClass": "logo-size-3-half",
-              "alt": "台灣永續金融"
-            }
-          ]
-        },
-        {
-          "title": "共同推動單位",
-          "items": [
-            {
-              "href": "https://esg.businesstoday.com.tw/",
-              "target": "_blank",
-              "img": "ESG_logo.png",
-              "imgClass": "logo-size-3",
-              "alt": "ESG"
+              "imgClass": "logo-size-4-half",
+              "alt": "新北市政府"
             }
           ]
         }
