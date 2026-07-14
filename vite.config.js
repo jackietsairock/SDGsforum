@@ -13,7 +13,6 @@ import {
 
 const rootDir = path.dirname(fileURLToPath(import.meta.url));
 const infoJsonPath = path.resolve(rootDir, "src/assets/json/info.json");
-const speakerJsonPath = path.resolve(rootDir, "src/assets/json/speaker.json");
 const seoConfigPath = path.resolve(rootDir, "src/seo/siteSeo.js");
 
 function loadJson(filePath) {
@@ -22,15 +21,13 @@ function loadJson(filePath) {
 
 function getSeoPayload() {
   return createSeoPayload({
-    infoData: loadJson(infoJsonPath),
-    speakers: loadJson(speakerJsonPath)
+    infoData: loadJson(infoJsonPath)
   });
 }
 
 function getSeoLastmod() {
   const latestMtime = Math.max(
     fs.statSync(infoJsonPath).mtimeMs,
-    fs.statSync(speakerJsonPath).mtimeMs,
     fs.statSync(seoConfigPath).mtimeMs
   );
 

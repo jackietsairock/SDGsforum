@@ -26,7 +26,7 @@ export const siteConfig = {
   canonicalUrl: 'https://events.businesstoday.com.tw/2026/SDGsforum/',
   themeColor: '#0f7f83',
   ogImageName: 'fb-share.jpg',
-  ogImageAlt: '2026人資長論壇活動主視覺',
+  ogImageAlt: '2026 SDGs永續城市交流論壇活動主視覺',
   organizationName: '今周刊 Business Today',
   organizationUrl: 'https://www.businesstoday.com.tw/',
   organizationLogo: 'https://events.businesstoday.com.tw/2026/SDGsforum/favicon.png',
@@ -78,23 +78,23 @@ export function stripHtml(value = '') {
     .trim()
 }
 
-function parseEventSchedule(signUpContent = {}) {
-  const eventInfo = Array.isArray(signUpContent.event_info) ? signUpContent.event_info : []
-  const dateItem = eventInfo.find((item) => item.label === '活動時間') ?? {}
+function parseEventSchedule(eventContent = {}) {
+  const eventInfo = Array.isArray(eventContent.event_info) ? eventContent.event_info : []
+  const dateItem = eventInfo.find((item) => ['活動時間', '日期'].includes(item.label)) ?? {}
   const dateText = stripHtml(dateItem.title)
   const timeText = stripHtml(dateItem.detail)
 
-  const dateMatch = dateText.match(/(\d{4})\/(\d{1,2})\/(\d{1,2})/)
-  const timeMatch = timeText.match(/(\d{1,2}:\d{2})\s*~\s*(\d{1,2}:\d{2})/)
+  const dateMatch = dateText.match(/(\d{4})(?:\/|年)(\d{1,2})(?:\/|月)(\d{1,2})/)
+  const timeMatch = timeText.match(/(\d{1,2}:\d{2})\s*(?:~|-|–|—)\s*(\d{1,2}:\d{2})/)
   const dateParts = dateMatch
     ? { year: dateMatch[1], month: dateMatch[2], day: dateMatch[3] }
-    : { year: '2026', month: '4', day: '29' }
+    : { year: '2026', month: '8', day: '4' }
 
   return {
     dateText,
     timeText,
-    startDate: toIsoDate(dateParts, timeMatch?.[1] ?? '09:30'),
-    endDate: toIsoDate(dateParts, timeMatch?.[2] ?? '16:50')
+    startDate: toIsoDate(dateParts, timeMatch?.[1] ?? '13:30'),
+    endDate: toIsoDate(dateParts, timeMatch?.[2] ?? '16:30')
   }
 }
 
@@ -103,19 +103,29 @@ function getTrafficVenue(infoData) {
   return trafficContent?.trafficInfo?.info?.[0] ?? {}
 }
 
-function getAgendaTopics(infoData) {
-  const agendaContent = getContentBy(infoData, (item) => item.cmsType === 'agenda' || Array.isArray(item.agendaInfo))
-  return (agendaContent?.agendaInfo ?? [])
-    .map((item) => stripHtml(item?.topic))
-    .filter((topic) => topic && topic !== '演講主題')
+function getEventVenue(eventContent, trafficVenue) {
+  const eventInfo = Array.isArray(eventContent?.event_info) ? eventContent.event_info : []
+  const locationItem = eventInfo.find((item) => ['活動地點', '地點'].includes(item.label)) ?? {}
+  const locationName = stripHtml(locationItem.title) || stripHtml(trafficVenue.title)
+  const locationAddress = stripHtml(locationItem.detail || trafficVenue.location)
+    .replace(/^[（(]|[）)]$/g, '')
+
+  return { locationName, locationAddress }
 }
 
-function buildFaqs({ signUpContent, schedule, trafficVenue, agendaTopics }) {
+const eventTopics = [
+  '智慧治理',
+  '城市韌性',
+  '永續發展',
+  '地方治理',
+  '公共政策',
+  '跨域合作',
+  '城市創新'
+]
+
+function buildFaqs({ signUpContent, schedule, venue, trafficVenue }) {
   const signUpInfo = Array.isArray(signUpContent?.signUp_info) ? signUpContent.signUp_info : []
-  const audienceText = stripHtml(signUpInfo[0]?.detail)
   const registrationText = stripHtml(signUpInfo[1]?.detail)
-  const locationName = [trafficVenue.title, trafficVenue.subTitle].filter(Boolean).join(' ')
-  const locationText = stripHtml(trafficVenue.location)
   const transportSummary = (trafficVenue.description ?? [])
     .map((item) => {
       const detail = Array.isArray(item?.info?.detail) ? item.info.detail.join(' ') : item?.info?.detail
@@ -124,20 +134,27 @@ function buildFaqs({ signUpContent, schedule, trafficVenue, agendaTopics }) {
     })
     .filter(Boolean)
     .join(' ')
-  const agendaSummary = agendaTopics.slice(0, 4).join('、')
 
   return [
     {
-      question: '2026 人資長論壇在談什麼？',
-      answer: `本屆論壇聚焦 AI 助力、財務自立與健康福利三大面向，討論企業如何在高齡化與缺工壓力下打造更具韌性的人才競爭力。${agendaSummary ? ` 亮點議題包含 ${agendaSummary}。` : ''}`
+      question: '2026 SDGs永續城市交流論壇在談什麼？',
+      answer: '論壇以「幸福城市．永續治理」為核心，邀集中央部會、地方首長及各縣市治理團隊，透過首長圓桌對談與創新治理案例分享，促進城市間的經驗交流與跨域合作。'
     },
     {
       question: '活動時間與地點在哪裡？',
-      answer: `論壇將於 ${schedule.dateText || '2026/4/29'} 舉行，活動時間為 ${schedule.timeText || '09:30 ~ 16:50'}。地點在 ${locationName}${locationText ? `，地址為 ${locationText}。` : '。'}`
+      answer: `論壇將於 ${schedule.dateText || '2026 年 8 月 4 日（二）'} 舉行，活動時間為 ${schedule.timeText || '13:30 ~ 16:30（13:00 開放報到）'}。地點在 ${venue.locationName || '新光人壽新板金融大樓 17F 會議廳'}${venue.locationAddress ? `，地址為 ${venue.locationAddress}。` : '。'}`
     },
     {
-      question: '誰適合參加 2026 人資長論壇？',
-      answer: audienceText || '歡迎人力資源管理主管、財務主管、管理部門人員，以及對人才永續、AI 應用與企業健康福利議題有興趣的參與者報名。'
+      question: '論壇聚焦哪些城市治理議題？',
+      answer: `核心議題包括 ${eventTopics.join('、')}，期望透過政策經驗與實務案例交流，共同打造更具韌性、更永續且更幸福的城市。`
+    },
+    {
+      question: '誰適合參加永續城市交流論壇？',
+      answer: '歡迎中央與地方政府團隊、縣市首長與局處代表、公務人員，以及關心 SDGs、永續發展、公共政策與城市創新的實務工作者報名參加。'
+    },
+    {
+      question: '參加論壇可以申請公務人員終身學習時數嗎？',
+      answer: '可以。公務人員全程參與本論壇可申請終身學習時數，實際認證方式與時數以主辦單位現場公告為準。'
     },
     {
       question: '活動費用與報名方式是什麼？',
@@ -149,38 +166,24 @@ function buildFaqs({ signUpContent, schedule, trafficVenue, agendaTopics }) {
     },
     {
       question: '前往會場有哪些交通方式？',
-      answer: transportSummary || '可搭乘高鐵、客運與市區公車前往陽明交通大學光復校區，校內停車區分散，建議提早抵達。'
+      answer: transportSummary || '可搭乘捷運、臺鐵或高鐵至板橋站，步行約 3 至 5 分鐘即可抵達新光人壽新板金融大樓。'
     }
   ]
 }
 
-function normalizeSpeakers(speakers) {
-  const speakerList = Array.isArray(speakers?.data) ? speakers.data : Array.isArray(speakers) ? speakers : []
-
-  return speakerList
-    .map((speaker) => ({
-      '@type': 'Person',
-      name: stripHtml(speaker?.name),
-      jobTitle: stripHtml(speaker?.title)
-    }))
-    .filter((speaker) => speaker.name)
-}
-
-export function createSeoPayload({ infoData, speakers }) {
+export function createSeoPayload({ infoData }) {
+  const eventContent = getContentBy(infoData, (item) => item.cmsType === 'agenda' || Array.isArray(item.event_info))
   const signUpContent = getContentBy(infoData, (item) => item.cmsType === 'signUp' || item.titleEn === 'sign up')
   const trafficVenue = getTrafficVenue(infoData)
-  const agendaTopics = getAgendaTopics(infoData)
-  const schedule = parseEventSchedule(signUpContent)
-  const faqs = buildFaqs({ signUpContent, schedule, trafficVenue, agendaTopics })
-  const speakerEntities = normalizeSpeakers(speakers)
+  const schedule = parseEventSchedule(eventContent)
+  const venue = getEventVenue(eventContent, trafficVenue)
+  const faqs = buildFaqs({ signUpContent, schedule, venue, trafficVenue })
   const ogImageUrl = new URL(siteConfig.ogImageName, siteConfig.canonicalUrl).toString()
   const organizationId = `${siteConfig.canonicalUrl}#organization`
   const websiteId = `${siteConfig.canonicalUrl}#website`
   const webpageId = `${siteConfig.canonicalUrl}#webpage`
   const eventId = `${siteConfig.canonicalUrl}#event`
   const faqId = `${siteConfig.canonicalUrl}#faq`
-  const locationName = [trafficVenue.title, trafficVenue.subTitle].filter(Boolean).join(' ')
-  const locationAddress = stripHtml(trafficVenue.location)
 
   return {
     title: siteConfig.title,
@@ -235,7 +238,7 @@ export function createSeoPayload({ infoData, speakers }) {
           '@type': 'ImageObject',
           url: ogImageUrl
         },
-        about: agendaTopics,
+        about: eventTopics,
         mainEntity: {
           '@id': eventId
         }
@@ -253,22 +256,27 @@ export function createSeoPayload({ infoData, speakers }) {
         inLanguage: siteConfig.language,
         startDate: schedule.startDate,
         endDate: schedule.endDate,
-        about: agendaTopics,
+        about: eventTopics,
         location: {
           '@type': 'Place',
-          name: locationName || '陽明交通大學 國際會議廳',
-          sameAs: trafficVenue.locationUrl?.url,
+          name: venue.locationName || '新光人壽新板金融大樓 17F 會議廳',
+          ...(trafficVenue.locationUrl?.url ? { sameAs: trafficVenue.locationUrl.url } : {}),
           address: {
             '@type': 'PostalAddress',
-            streetAddress: locationAddress,
-            addressLocality: '新竹市',
+            streetAddress: venue.locationAddress,
+            addressLocality: '新北市',
             addressCountry: 'TW'
           }
         },
-        organizer: {
-          '@id': organizationId
-        },
-        performer: speakerEntities,
+        organizer: [
+          {
+            '@id': organizationId
+          },
+          {
+            '@type': 'GovernmentOrganization',
+            name: '新北市'
+          }
+        ],
         offers: {
           '@type': 'Offer',
           url: `${siteConfig.canonicalUrl}#signUp`,
@@ -290,19 +298,6 @@ export function createSeoPayload({ infoData, speakers }) {
                 '@type': 'Answer',
                 text: item.answer
               }
-            }))
-          }
-        : null,
-      speakerEntities.length
-        ? {
-            '@context': 'https://schema.org',
-            '@type': 'ItemList',
-            '@id': `${siteConfig.canonicalUrl}#speakers`,
-            name: '2026人資長論壇講者陣容',
-            itemListElement: speakerEntities.map((speaker, index) => ({
-              '@type': 'ListItem',
-              position: index + 1,
-              item: speaker
             }))
           }
         : null

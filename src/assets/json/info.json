@@ -14,12 +14,6 @@
     },
     {
       "tag": false,
-      "tagName": "講者簡介",
-      "tagUrl": "#speaker",
-      "tagClassName": "speaker"
-    },
-    {
-      "tag": false,
       "tagName": "論壇報名",
       "tagUrl": "#signUp",
       "tagClassName": "signUp"
@@ -69,94 +63,42 @@
         {
           "time": "13:30-14:00",
           "topic": "貴賓/來賓報到",
-          "speaker": [
-            {}
-          ]
+          "speaker": []
         },
         {
           "time": "14:00-14:05",
           "topic": "主辦單位致詞",
-          "speaker": [
-            {
-              "speakerTitle": "今周刊發行人",
-              "speakerName": "梁永煌"
-            }
-          ]
+          "speaker": []
         },
         {
           "time": "19:08-19:16",
           "topic": "貴賓致詞",
-          "speaker": [
-            {
-              "speakerTitle": "摩根資產管理代表"
-            }
-          ]
+          "speaker": []
         },
         {
           "time": "19:16-19:20",
           "topic": "貴賓合影",
-          "speaker": [
-            {
-              "speakerTitle": "臺灣證券交易所董事長",
-              "speakerName": "林修銘"
-            }
-          ]
+          "speaker": []
         },
         {
           "time": "19:20-19:40",
           "topic": "【專題演講一】<br>川普經濟新局與2026總體趨勢",
-          "speaker": [
-            {
-              "speakerTitle": "摩根資產管理亞太區首席市場策略師",
-              "speakerName": "許長泰"
-            }
-          ]
+          "speaker": []
         },
         {
           "time": "19:40-20:00",
           "topic": "【專題演講二】<br>AI科技產業發展新契機",
-          "speaker": [
-            {
-              "speakerTitle": "今周刊顧問",
-              "speakerName": "林宏文"
-            }
-          ]
+          "speaker": []
         },
         {
           "time": "20:00-20:40",
           "topic": "【富足今周起Live】<br>投資AI時代的全球關鍵布局",
-          "speaker": [
-            {
-              "speakerTitle": "主持人："
-            },
-            {
-              "speakerTitle": "富足今周起主持人",
-              "speakerName": "王志郁"
-            },
-            {},
-            {
-              "speakerTitle": "與談人："
-            },
-            {
-              "speakerTitle": "摩根資產管理產品策略部副總經理",
-              "speakerName": "薄琪琳"
-            },
-            {
-              "speakerTitle": "摩根資產管理投資管理事業部執行董事",
-              "speakerName": "葉鴻儒"
-            },
-            {
-              "speakerTitle": "今周刊顧問",
-              "speakerName": "林宏文"
-            }
-          ]
+          "speaker": []
         },
         {
           "time": "20:40",
           "topic": "圓滿賦歸",
-          "speaker": [
-            {}
-          ]
+          "speaker": []
         }
       ]
     },

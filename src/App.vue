@@ -3,7 +3,6 @@ import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import Kv from './components/Kv.vue'
 import Intro from './components/Intro.vue'
-import Speaker from './components/Speaker.vue'
 import Agenda from './components/Agenda.vue'
 import SignUp from './components/SignUp.vue'
 import Traffic from './components/Traffic.vue'
@@ -13,11 +12,10 @@ import SignUpFiexd from './components/SignUpFiexd.vue'
 import Faq from './components/Faq.vue'
 
 import infoData from './assets/json/info.json'
-import speakers from './assets/json/speaker.json'
 import { createSeoPayload, siteConfig } from './seo/siteSeo'
 import { applySeo } from './seo/applySeo'
 
-const seo = createSeoPayload({ infoData, speakers });
+const seo = createSeoPayload({ infoData });
 applySeo(seo);
 
 const getContentByType = (cmsType, fallbackIndex) => {
@@ -27,7 +25,6 @@ const getContentByType = (cmsType, fallbackIndex) => {
 
 const introInfo = getContentByType('intro', 0)
 const agendaInfo = getContentByType('agenda', 1)
-const speakerInfo = getContentByType('speaker', 2)
 const signUpInfo = getContentByType('signUp', 3)
 const trafficInfo = getContentByType('traffic', 4)
 const eventInfo = getContentByType('event', 5)
@@ -37,7 +34,7 @@ const eventInfo = getContentByType('event', 5)
 <template>
   <Header :menu="infoData.menu" />
   <main id="main-content">
-    <section id="kv" class="relative w-full z-20 overflow-hidden" aria-label="2026人資長論壇主視覺">
+    <section id="kv" class="relative w-full z-20 overflow-hidden" aria-label="2026 SDGs永續城市交流論壇主視覺">
       <Kv />
     </section>
     <section id="intro" class="relative w-full z-10" aria-label="活動前言">
@@ -50,12 +47,6 @@ const eventInfo = getContentByType('event', 5)
       <Agenda :infoData="agendaInfo" />
       <div class="dot_bg"></div>
     </section>
-    <!--
-    <section id="speaker" class="relative w-full z-10" aria-label="講者陣容">
-      <Speaker :speakers="speakers.data" :infoData="speakerInfo"/>
-      <div class="dot_bg"></div>
-    </section>
-    -->
     <section id="signUp" class="relative w-full z-20 overflow-hidden" aria-label="立即報名">
       <SignUp :infoData="signUpInfo" />
       <div class="dot_bg"></div>

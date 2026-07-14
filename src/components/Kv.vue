@@ -31,7 +31,7 @@
 <template>
     <div :class="['kv_area bg-[#f9f9f9]', { 'pc': windowWidth >= 1024 }, { 'mb': windowWidth < 1024}]">
         <p class="sr-only">
-            2026人資長論壇主題為 AI新世代人才永續新篇章，活動將於 2026 年 4 月 29 日在陽明交通大學國際會議廳舉行。
+            2026 SDGs永續城市交流論壇以幸福城市、永續治理為主題，活動將於 2026 年 8 月 4 日在新光人壽新板金融大樓 17 樓會議廳舉行。
         </p>
         <div class="kv_box" :style="{ width: setDivResize.width + 'px', height: setDivResize.height + 'px' }" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000">
             <img class="bigtext" :style="{ display: windowWidth >= 1024 ? 'block' : 'none'}" src="../assets/image/bigtext.png" alt="2026永續城市交流論壇主視覺標題">
