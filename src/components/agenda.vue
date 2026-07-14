@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-            <p class="agenda_note2 text-center text-lg text-[#2e362b] mt-0 mb-10">{{ infoData.note2 }}</p>
+            <p class="agenda_note2 text-center text-sm text-[#2e362b] mt-0 mb-10">{{ infoData.note2 }}</p>
             <div class="agenda_table_wrap">
                 <table class="agenda_table">
                     <caption class="sr-only">2026 SDGs永續城市交流論壇議程</caption>
