@@ -46,11 +46,11 @@
                             </tr>
                             <template v-else-if="item.type === 'multi-time'">
                                 <tr v-for="(time, timeIndex) in item.times" :key="`${idx}-${time}`">
-                                    <th class="agenda_time" scope="row">{{ time }}</th>
+                                    <th class="agenda_time boder-right" scope="row">{{ time }}</th>
                                     <td
                                         v-if="timeIndex === 0"
                                         :rowspan="item.times.length"
-                                        class="agenda_topic"
+                                        class="agenda_topic boder-right"
                                         v-html="item.topic"
                                     ></td>
                                 </tr>
@@ -69,6 +69,10 @@
 </template>
 
 <style scoped lang="scss">
+    .boder-right{
+        border-right: 1px solid #bfc9c6;
+    }
+
     .agenda_table_wrap{
         width: 100%;
         overflow: hidden;
@@ -96,7 +100,7 @@
     .agenda_table th,
     .agenda_table td{
         padding: 1rem 1.5rem;
-        border: 1px solid #59615f;
+        border-bottom: 1px solid #bfc9c6;
         font-size: 1rem;
         line-height: 1.7;
         text-align: left;
@@ -104,9 +108,13 @@
         overflow-wrap: anywhere;
     }
 
+    .agenda_session_row th{
+        border: 0;
+    }
+
     .agenda_table thead th{
-        background-color: #d1d1d1;
-        color: #111;
+        background-color: #1f5842;
+        color: #fff;
         font-size: 1.125rem;
         font-weight: 800;
         text-align: center;
