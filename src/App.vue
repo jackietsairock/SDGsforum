@@ -9,10 +9,9 @@ import Traffic from './components/Traffic.vue'
 import Event from './components/Event.vue'
 import Gototop from './components/Gototop.vue'
 import SignUpFiexd from './components/SignUpFiexd.vue'
-import Faq from './components/Faq.vue'
 
 import infoData from './assets/json/info.json'
-import { createSeoPayload, siteConfig } from './seo/siteSeo'
+import { createSeoPayload } from './seo/siteSeo'
 import { applySeo } from './seo/applySeo'
 
 const seo = createSeoPayload({ infoData });
@@ -55,7 +54,6 @@ const eventInfo = getContentByType('event', 5)
       <img src="./assets/image/circles_big.png" alt="散狀物件-右" class="object-right object-right2">
       <div class="dot_bg"></div>
     </section>
-    <Faq v-if="siteConfig.showVisibleFaqSection" :faqs="seo.faqs" />
     <section id="traffic" class="relative w-full z-20 overflow-hidden" aria-label="交通資訊">
       <Traffic :infoData="trafficInfo" />
       <div class="dot_bg traffic"></div>

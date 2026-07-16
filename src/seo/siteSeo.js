@@ -30,8 +30,6 @@ export const siteConfig = {
   organizationName: '今周刊 Business Today',
   organizationUrl: 'https://www.businesstoday.com.tw/',
   organizationLogo: 'https://events.businesstoday.com.tw/2026/SDGsforum/favicon.png',
-  showVisibleFaqSection: false,
-  enableFaqSchema: false,
   sameAs: [
     'https://www.businesstoday.com.tw/',
     'https://esg.businesstoday.com.tw/',
@@ -93,8 +91,8 @@ function parseEventSchedule(eventContent = {}) {
   return {
     dateText,
     timeText,
-    startDate: toIsoDate(dateParts, timeMatch?.[1] ?? '13:30'),
-    endDate: toIsoDate(dateParts, timeMatch?.[2] ?? '16:30')
+    startDate: toIsoDate(dateParts, timeMatch?.[1] ?? '13:15'),
+    endDate: toIsoDate(dateParts, timeMatch?.[2] ?? '16:15')
   }
 }
 
@@ -123,67 +121,16 @@ const eventTopics = [
   '城市創新'
 ]
 
-function buildFaqs({ signUpContent, schedule, venue, trafficVenue }) {
-  const signUpInfo = Array.isArray(signUpContent?.signUp_info) ? signUpContent.signUp_info : []
-  const registrationText = stripHtml(signUpInfo[1]?.detail)
-  const transportSummary = (trafficVenue.description ?? [])
-    .map((item) => {
-      const detail = Array.isArray(item?.info?.detail) ? item.info.detail.join(' ') : item?.info?.detail
-      const text = stripHtml(detail)
-      return item?.label && text ? `${item.label}：${text}` : ''
-    })
-    .filter(Boolean)
-    .join(' ')
-
-  return [
-    {
-      question: '2026 SDGs永續城市交流論壇在談什麼？',
-      answer: '論壇以「幸福城市．永續治理」為核心，邀集中央部會、地方首長及各縣市治理團隊，透過首長圓桌對談與創新治理案例分享，促進城市間的經驗交流與跨域合作。'
-    },
-    {
-      question: '活動時間與地點在哪裡？',
-      answer: `論壇將於 ${schedule.dateText || '2026 年 8 月 4 日（二）'} 舉行，活動時間為 ${schedule.timeText || '13:30 ~ 16:30（13:00 開放報到）'}。地點在 ${venue.locationName || '新光人壽新板金融大樓 17F 會議廳'}${venue.locationAddress ? `，地址為 ${venue.locationAddress}。` : '。'}`
-    },
-    {
-      question: '論壇聚焦哪些城市治理議題？',
-      answer: `核心議題包括 ${eventTopics.join('、')}，期望透過政策經驗與實務案例交流，共同打造更具韌性、更永續且更幸福的城市。`
-    },
-    {
-      question: '誰適合參加永續城市交流論壇？',
-      answer: '歡迎中央與地方政府團隊、縣市首長與局處代表、公務人員，以及關心 SDGs、永續發展、公共政策與城市創新的實務工作者報名參加。'
-    },
-    {
-      question: '參加論壇可以申請公務人員終身學習時數嗎？',
-      answer: '可以。公務人員全程參與本論壇可申請終身學習時數，實際認證方式與時數以主辦單位現場公告為準。'
-    },
-    {
-      question: '活動費用與報名方式是什麼？',
-      answer: `本活動免費參加，需事先線上報名並採審核制。${registrationText || '活動人數及座位有限，主辦單位保有最終審核權。'}`
-    },
-    {
-      question: '怎麼知道自己是否報名成功？',
-      answer: '審核通過後，報名者會在報名後 5 個工作天內收到 email 與簡訊通知，活動前 1 至 3 天也會再收到報到序號簡訊。'
-    },
-    {
-      question: '前往會場有哪些交通方式？',
-      answer: transportSummary || '可搭乘捷運、臺鐵或高鐵至板橋站，步行約 3 至 5 分鐘即可抵達新光人壽新板金融大樓。'
-    }
-  ]
-}
-
 export function createSeoPayload({ infoData }) {
   const eventContent = getContentBy(infoData, (item) => item.cmsType === 'agenda' || Array.isArray(item.event_info))
-  const signUpContent = getContentBy(infoData, (item) => item.cmsType === 'signUp' || item.titleEn === 'sign up')
   const trafficVenue = getTrafficVenue(infoData)
   const schedule = parseEventSchedule(eventContent)
   const venue = getEventVenue(eventContent, trafficVenue)
-  const faqs = buildFaqs({ signUpContent, schedule, venue, trafficVenue })
   const ogImageUrl = new URL(siteConfig.ogImageName, siteConfig.canonicalUrl).toString()
   const organizationId = `${siteConfig.canonicalUrl}#organization`
   const websiteId = `${siteConfig.canonicalUrl}#website`
   const webpageId = `${siteConfig.canonicalUrl}#webpage`
   const eventId = `${siteConfig.canonicalUrl}#event`
-  const faqId = `${siteConfig.canonicalUrl}#faq`
 
   return {
     title: siteConfig.title,
@@ -197,7 +144,6 @@ export function createSeoPayload({ infoData }) {
     language: siteConfig.language,
     themeColor: siteConfig.themeColor,
     author: siteConfig.organizationName,
-    faqs,
     structuredData: [
       {
         '@context': 'https://schema.org',
@@ -284,24 +230,8 @@ export function createSeoPayload({ infoData }) {
           priceCurrency: 'TWD',
           availability: 'https://schema.org/InStock'
         }
-      },
-      siteConfig.enableFaqSchema
-        ? {
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            '@id': faqId,
-            url: `${siteConfig.canonicalUrl}#faq`,
-            mainEntity: faqs.map((item) => ({
-              '@type': 'Question',
-              name: item.question,
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: item.answer
-              }
-            }))
-          }
-        : null
-    ].filter(Boolean)
+      }
+    ]
   }
 }
 
