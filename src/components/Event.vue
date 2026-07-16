@@ -88,6 +88,10 @@ const eventSliderSettings = {
 </template>
 
 <style scoped>
+    .content_wrap{
+        width: fit-content;
+    }
+
     .logo_item:hover{
         cursor: pointer;
     }

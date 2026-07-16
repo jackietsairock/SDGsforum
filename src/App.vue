@@ -162,6 +162,11 @@ const eventInfo = getContentByType('event', 5)
   background: linear-gradient(to top, #2894e5 0%, #2894e5 100%);
 }
 
+@media screen and (max-width: 1366px) {
+  .object-right2{
+    display: none;
+  }
+}
 
 @media screen and (max-width: 1024px) {
   .dot_bg{
