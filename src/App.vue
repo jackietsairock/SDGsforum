@@ -132,8 +132,8 @@ const eventInfo = getContentByType('event', 5)
 
 .object-right{
   position: absolute;
-  right: -10rem;
-  width: 30%;
+  right: -21%;
+  width: 38%;
   height: auto;
   z-index: -1;
 }
