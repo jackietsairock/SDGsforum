@@ -357,7 +357,7 @@ function isOtherSelected(key) {
                     <div v-if="showPersonalInfo" class="agree_box">
                         <input v-model="form[agreeInputName]" type="checkbox" id="agree" :name="agreeInputName" class="" />
                         <label for="agree" class="text-lg ml-1" style="color:#464646;">
-                            我同意下列條款
+                            <span class="text-red-700">*</span>我同意下列條款
                         </label>
                     </div>
                     <p v-if="personalInfo.title" class="text-sm font-bold">{{ personalInfo.title }}</p>
