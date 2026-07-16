@@ -91,6 +91,10 @@ const eventInfo = getContentByType('event', 5)
   filter: drop-shadow(0 0 2em #42b883aa);
 }
 
+#main-content {
+  overflow-x: clip;
+}
+
 #intro{
     padding: 90px 10px;
 }
@@ -108,7 +112,7 @@ const eventInfo = getContentByType('event', 5)
   height: 100%;
   background: url('./assets/image/dots-w.png') center center no-repeat;
   background-size: cover;
-  z-index: -2;
+  z-index: -3;
 }
 .dot_bg.traffic{
   top: none;
@@ -119,9 +123,9 @@ const eventInfo = getContentByType('event', 5)
 
 .object-left{
   position: absolute;
-  top: 0;
+  top: 5rem;
   left: -10rem;
-  width: 25%;
+  width: 20%;
   height: auto;
   z-index: -1;
 }
@@ -137,7 +141,7 @@ const eventInfo = getContentByType('event', 5)
   bottom: 1rem;
 }
 .object-right2{
-  bottom: -25rem;
+  bottom: -14rem;
 }
 
 
@@ -146,6 +150,7 @@ const eventInfo = getContentByType('event', 5)
 }
 
 #signUp{
+  overflow: visible;
   background: linear-gradient(to top, #2894e5 0%, #3bbcf4 100%);
 }
 
@@ -171,6 +176,14 @@ const eventInfo = getContentByType('event', 5)
     bottom: 0;
     transform: rotate(0);
     height: 200%;
+  }
+
+  .object-left{
+    display: none;
+  }
+
+  .object-right{
+    display: none;
   }
 }
 </style>
