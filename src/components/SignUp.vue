@@ -354,14 +354,14 @@ function isOtherSelected(key) {
                     </div>
                 </div>
                 <div v-if="showPersonalInfo && (personalInfo.title || personalInfo.detail)" id="agree-terms" ref="termsAnchor" class="flex flex-col gap-2 mt-2 p-5" style="background-color: #e6e6e6; color:#464646;">
-                    <p v-if="personalInfo.title" class="text-base font-bold">{{ personalInfo.title }}</p>
+                    <div v-if="showPersonalInfo" class="agree_box">
+                        <input v-model="form[agreeInputName]" type="checkbox" id="agree" :name="agreeInputName" class="" />
+                        <label for="agree" class="text-lg ml-1" style="color:#464646;">
+                            我同意下列條款
+                        </label>
+                    </div>
+                    <p v-if="personalInfo.title" class="text-sm font-bold">{{ personalInfo.title }}</p>
                     <p v-if="personalInfo.detail" class="text-sm leading-snug text-justify" v-html="personalInfo.detail"></p>
-                </div>
-                <div v-if="showPersonalInfo" class="agree_box mx-auto">
-                    <input v-model="form[agreeInputName]" type="checkbox" id="agree" :name="agreeInputName" class="" />
-                    <label for="agree" class="text-lg ml-1" style="color:#464646;">
-                        我已閱讀<a href="#agree-terms" class="personal_information_terms_text text-red-700" @click.stop.prevent="scrollToTerms">個資條款</a>且同意送出資料
-                    </label>
                 </div>
                 <button type="submit" class="w-fit mx-auto mt-4 hover:cursor-pointer">
                     <img class="w-full h-auto sm:w-auto sm:h-[55px]" src="../assets/image/signup2.png" alt="立即報名圖示">
