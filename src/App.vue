@@ -45,14 +45,18 @@ const eventInfo = getContentByType('event', 5)
     </section>
     <section id="agenda" class="relative w-full z-20 overflow-hidden" aria-label="活動資訊">
       <Agenda :infoData="agendaInfo" />
+      <img src="./assets/image/circles_small.png" alt="散狀物件-左" class="object-left">
+      <img src="./assets/image/circles_big.png" alt="散狀物件-右" class="object-right object-right1">
       <div class="dot_bg"></div>
     </section>
-    <section id="signUp" class="relative w-full z-20 overflow-hidden" aria-label="立即報名">
+    <section id="signUp" class="relative w-full z-21 overflow-x-hidden" aria-label="立即報名">
       <SignUp :infoData="signUpInfo" />
+      <img src="./assets/image/circles_small.png" alt="散狀物件-左" class="object-left">
+      <img src="./assets/image/circles_big.png" alt="散狀物件-右" class="object-right object-right2">
       <div class="dot_bg"></div>
     </section>
     <Faq v-if="siteConfig.showVisibleFaqSection" :faqs="seo.faqs" />
-    <section id="traffic" class="relative w-full z-40 overflow-hidden" aria-label="交通資訊">
+    <section id="traffic" class="relative w-full z-20 overflow-hidden" aria-label="交通資訊">
       <Traffic :infoData="trafficInfo" />
       <div class="dot_bg traffic"></div>
     </section>
@@ -104,7 +108,7 @@ const eventInfo = getContentByType('event', 5)
   height: 100%;
   background: url('./assets/image/dots-w.png') center center no-repeat;
   background-size: cover;
-  z-index: -1;
+  z-index: -2;
 }
 .dot_bg.traffic{
   top: none;
@@ -112,6 +116,30 @@ const eventInfo = getContentByType('event', 5)
   height: 150%;
   transform: rotate(180deg);
 }
+
+.object-left{
+  position: absolute;
+  top: 0;
+  left: -10rem;
+  width: 25%;
+  height: auto;
+  z-index: -1;
+}
+
+.object-right{
+  position: absolute;
+  right: -10rem;
+  width: 30%;
+  height: auto;
+  z-index: -1;
+}
+.object-right1{
+  bottom: 1rem;
+}
+.object-right2{
+  bottom: -25rem;
+}
+
 
 #agenda{
   background: linear-gradient(to top, #00b79c 0%, #65e0bf 100%);
