@@ -92,7 +92,7 @@ function parseEventSchedule(eventContent = {}) {
     dateText,
     timeText,
     startDate: toIsoDate(dateParts, timeMatch?.[1] ?? '13:15'),
-    endDate: toIsoDate(dateParts, timeMatch?.[2] ?? '16:15')
+    endDate: toIsoDate(dateParts, timeMatch?.[2] ?? '16:05')
   }
 }
 
