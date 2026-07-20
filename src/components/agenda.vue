@@ -135,6 +135,7 @@
     }
 
     .agenda_speaker :deep(.speaker-name){
+        display: inline-block;
         padding: 0.08em 0.28em;
         border-radius: 0.2em;
         background-color: #bdebdc;
@@ -142,6 +143,7 @@
         font-weight: 800;
         box-decoration-break: clone;
         -webkit-box-decoration-break: clone;
+        margin-bottom: 5px;
     }
 
     .agenda_speaker :deep(.invitation-status){
@@ -193,30 +195,58 @@
             font-size: 0.95rem;
         }
 
-        .agenda_time_column{
-            width: 27%;
+        .agenda_table_wrap{
+            background-color: transparent;
+            box-shadow: none;
         }
 
-        .agenda_topic_column{
-            width: 34%;
+        .agenda_table,
+        .agenda_table tbody,
+        .agenda_table tr{
+            display: block;
+            width: 100%;
         }
 
-        .agenda_speaker_column{
-            width: 39%;
+        .agenda_table{
+            background-color: transparent;
+        }
+
+        .agenda_table colgroup,
+        .agenda_table thead{
+            display: none;
+        }
+
+        .agenda_table tbody tr:not(.agenda_session_row){
+            overflow: hidden;
+            border: 0.5px solid #bfc9c6;
+            background-color: #fff;
+            box-shadow: 0 3px 8px rgba(31, 73, 68, 0.12);
         }
 
         .agenda_table th,
         .agenda_table td{
-            padding: 0.75rem 0.65rem;
+            display: block;
+            width: 100%;
+            padding: 0.75rem 0.9rem;
             font-size: 0.875rem;
             line-height: 1.6;
+            text-align: left;
+            border-bottom: 0;
         }
 
-        .agenda_table thead th{
-            font-size: 0.95rem;
+        .agenda_table tbody tr:not(.agenda_session_row) > :last-child{
+            border-bottom: 0;
+        }
+
+        .agenda_time{
+            background-color: #edf8f4;
+            text-align: left !important;
+            white-space: normal;
         }
 
         .agenda_session_row th{
+            display: block;
+            width: 100%;
             padding: 0.8rem 0.75rem;
             font-size: 0.9rem;
             line-height: 1.55;
@@ -224,26 +254,10 @@
     }
 
     @media screen and (max-width: 380px) {
-        .agenda_time_column{
-            width: 28%;
-        }
-
-        .agenda_topic_column{
-            width: 33%;
-        }
-
-        .agenda_speaker_column{
-            width: 39%;
-        }
-
         .agenda_table th,
         .agenda_table td{
-            padding: 0.65rem 0.45rem;
-            font-size: 0.78rem;
-        }
-
-        .agenda_time{
-            letter-spacing: -0.03em;
+            padding: 0.7rem 0.8rem;
+            font-size: 0.82rem;
         }
     }
 </style>
