@@ -134,6 +134,16 @@
         font-weight: 500;
     }
 
+    .agenda_speaker :deep(.speaker-name){
+        padding: 0.08em 0.28em;
+        border-radius: 0.2em;
+        background-color: #bdebdc;
+        color: #17483e;
+        font-weight: 800;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+    }
+
     .agenda_speaker :deep(.invitation-status){
         display: block;
         font-size: 0.875em;
