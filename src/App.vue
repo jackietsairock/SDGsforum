@@ -20,12 +20,12 @@ applySeo(seo);
 const getContentByType = (cmsType, fallbackIndex) => {
   const sections = Array.isArray(infoData.content) ? infoData.content : []
   return sections.find((item) => item.cmsType === cmsType) ?? sections[fallbackIndex] ?? {}
-}
+};
 
-const introInfo = getContentByType('intro', 0)
-const agendaInfo = getContentByType('agenda', 1)
-const signUpInfo = getContentByType('signUp', 3)
-const trafficInfo = getContentByType('traffic', 4)
+const introInfo = getContentByType('intro', 0);
+const agendaInfo = getContentByType('agenda', 1);
+const signUpInfo = getContentByType('signUp', 3);
+const trafficInfo = getContentByType('traffic', 4);
 const eventInfo = getContentByType('event', 5)
 
 </script>
