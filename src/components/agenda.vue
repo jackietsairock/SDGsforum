@@ -32,32 +32,32 @@
                     <colgroup>
                         <col class="agenda_time_column">
                         <col class="agenda_topic_column">
-                        <col class="agenda_speaker_column">
                     </colgroup>
                     <thead>
                         <tr>
                             <th scope="col">時間</th>
                             <th scope="col">議題</th>
-                            <th scope="col">講者</th>
                         </tr>
                     </thead>
                     <tbody>
                         <template v-for="(item, idx) in infoData.agendaInfo" :key="idx">
                             <tr v-if="item.type === 'session'" class="agenda_session_row">
-                                <th colspan="3" scope="colgroup" v-html="item.topic"></th>
+                                <th colspan="2" scope="colgroup" v-html="item.topic"></th>
                             </tr>
+                            <template v-else-if="item.type === 'multi-time'">
+                                <tr v-for="(time, timeIndex) in item.times" :key="`${idx}-${time}`">
+                                    <th class="agenda_time boder-right" scope="row">{{ time }}</th>
+                                    <td
+                                        v-if="timeIndex === 0"
+                                        :rowspan="item.times.length"
+                                        class="agenda_topic boder-right"
+                                        v-html="item.topic"
+                                    ></td>
+                                </tr>
+                            </template>
                             <tr v-else>
                                 <th class="agenda_time" scope="row">{{ item.time }}</th>
-                                <td
-                                    class="agenda_topic"
-                                    :colspan="item.speaker?.length ? 1 : 2"
-                                    v-html="item.topic"
-                                ></td>
-                                <td
-                                    v-if="item.speaker?.length"
-                                    class="agenda_speaker"
-                                    v-html="item.speaker"
-                                ></td>
+                                <td class="agenda_topic" v-html="item.topic"></td>
                             </tr>
                         </template>
                     </tbody>
@@ -69,6 +69,10 @@
 </template>
 
 <style scoped lang="scss">
+    .boder-right{
+        border-right: 1px solid #bfc9c6;
+    }
+
     .agenda_table_wrap{
         width: 100%;
         overflow: hidden;
@@ -85,15 +89,11 @@
     }
 
     .agenda_time_column{
-        width: 18%;
+        width: 23%;
     }
 
     .agenda_topic_column{
-        width: 34%;
-    }
-
-    .agenda_speaker_column{
-        width: 48%;
+        width: 77%;
     }
 
     .agenda_table th,
@@ -128,28 +128,6 @@
 
     .agenda_topic{
         font-weight: 700;
-    }
-
-    .agenda_speaker{
-        font-weight: 500;
-    }
-
-    .agenda_speaker :deep(.speaker-name){
-        display: inline-block;
-        padding: 0.08em 0.28em;
-        border-radius: 0.2em;
-        background-color: #bdebdc;
-        color: #17483e;
-        font-weight: 800;
-        box-decoration-break: clone;
-        -webkit-box-decoration-break: clone;
-        margin-bottom: 5px;
-    }
-
-    .agenda_speaker :deep(.invitation-status){
-        display: block;
-        font-size: 0.875em;
-        text-align: right;
     }
 
     .agenda_topic :deep(br){
@@ -195,58 +173,26 @@
             font-size: 0.95rem;
         }
 
-        .agenda_table_wrap{
-            background-color: transparent;
-            box-shadow: none;
+        .agenda_time_column{
+            width: 31%;
         }
 
-        .agenda_table,
-        .agenda_table tbody,
-        .agenda_table tr{
-            display: block;
-            width: 100%;
-        }
-
-        .agenda_table{
-            background-color: transparent;
-        }
-
-        .agenda_table colgroup,
-        .agenda_table thead{
-            display: none;
-        }
-
-        .agenda_table tbody tr:not(.agenda_session_row){
-            overflow: hidden;
-            border: 0.5px solid #bfc9c6;
-            background-color: #fff;
-            box-shadow: 0 3px 8px rgba(31, 73, 68, 0.12);
+        .agenda_topic_column{
+            width: 69%;
         }
 
         .agenda_table th,
         .agenda_table td{
-            display: block;
-            width: 100%;
-            padding: 0.75rem 0.9rem;
+            padding: 0.75rem 0.65rem;
             font-size: 0.875rem;
             line-height: 1.6;
-            text-align: left;
-            border-bottom: 0;
         }
 
-        .agenda_table tbody tr:not(.agenda_session_row) > :last-child{
-            border-bottom: 0;
-        }
-
-        .agenda_time{
-            background-color: #edf8f4;
-            text-align: left !important;
-            white-space: normal;
+        .agenda_table thead th{
+            font-size: 0.95rem;
         }
 
         .agenda_session_row th{
-            display: block;
-            width: 100%;
             padding: 0.8rem 0.75rem;
             font-size: 0.9rem;
             line-height: 1.55;
@@ -254,10 +200,22 @@
     }
 
     @media screen and (max-width: 380px) {
+        .agenda_time_column{
+            width: 34%;
+        }
+
+        .agenda_topic_column{
+            width: 66%;
+        }
+
         .agenda_table th,
         .agenda_table td{
-            padding: 0.7rem 0.8rem;
-            font-size: 0.82rem;
+            padding: 0.65rem 0.45rem;
+            font-size: 0.78rem;
+        }
+
+        .agenda_time{
+            letter-spacing: -0.03em;
         }
     }
 </style>

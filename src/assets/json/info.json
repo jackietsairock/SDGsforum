@@ -73,7 +73,7 @@
         {
           "time": "13:20-13:30",
           "topic": "中央部會長官致詞",
-          "speaker": "環境部 部長 <span class=\"speaker-name\">彭啓明</span>（邀約中）"
+          "speaker": []
         },
         {
           "type": "session",
@@ -81,8 +81,8 @@
         },
         {
           "time": "13:30-14:30",
-          "topic": "<strong>永續城市首長圓桌論壇</strong><br>（形式：主持人開場 5 分鐘＋每位短講 5 分鐘＋25 分鐘對談＋主持人結語 5 分鐘）",
-          "speaker": "主持人：<br>今周刊發行人 <span class=\"speaker-name\">梁永煌</span><br><br>與談人：<br>新北市市長 <span class=\"speaker-name\">侯友宜</span><br>台北市市長 <span class=\"speaker-name\">蔣萬安</span>（邀約中）<br>桃園市市長 <span class=\"speaker-name\">張善政</span><br>基隆市市長 <span class=\"speaker-name\">謝國樑</span><br>嘉義市市長 <span class=\"speaker-name\">黃敏惠</span>（邀約中）"
+          "topic": "永續城市首長圓桌論壇",
+          "speaker": []
         },
         {
           "time": "14:30-14:45",
