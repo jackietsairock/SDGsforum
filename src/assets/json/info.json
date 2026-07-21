@@ -94,24 +94,15 @@
           "topic": "場次二【三力共榮：以社會、經濟、環境打造有溫度的未來城市】"
         },
         {
-          "time": "14:45-15:05",
-          "topic": "新北校園通 APP 引領全國<br>開創智慧校園新樣貌",
-          "speaker": "新北市政府教育局局長 <span class=\"speaker-name\">張明文</span>"
-        },
-        {
-          "time": "15:05-15:25",
-          "topic": "屏東公務員如何用一套服務<br>改變失智確診結構",
-          "speaker": "屏東縣政府長照處處長 <span class=\"speaker-name\">陳桂敏</span>"
-        },
-        {
-          "time": "15:25-15:45",
-          "topic": "受訓即就業：翻轉人生，暢行桃園",
-          "speaker": "桃園市政府交通局局長 <span class=\"speaker-name\">張新福</span>（邀約中）"
-        },
-        {
-          "time": "15:45-16:05",
-          "topic": "從酸菜廢棄物到農漁循環經濟，營造永續環境",
-          "speaker": "雲林縣政府計畫處處長 <span class=\"speaker-name\">李明岳</span>"
+          "type": "multi-time",
+          "times": [
+            "14:45-15:05",
+            "15:05-15:25",
+            "15:25-15:45",
+            "15:45-16:05"
+          ],
+          "topic": "縣市成功案例分享",
+          "speaker": []
         }
       ]
     },

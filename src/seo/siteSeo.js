@@ -30,6 +30,10 @@ export const siteConfig = {
   organizationName: '今周刊 Business Today',
   organizationUrl: 'https://www.businesstoday.com.tw/',
   organizationLogo: 'https://events.businesstoday.com.tw/2026/SDGsforum/favicon.png',
+  coOrganizerName: '新北市政府',
+  coOrganizerUrl: 'https://www.ntpc.gov.tw/',
+  performerGroupName: '中央部會、地方首長及各縣市治理團隊',
+  registrationStartDate: '2026-07-14T00:00:00+08:00',
   sameAs: [
     'https://www.businesstoday.com.tw/',
     'https://esg.businesstoday.com.tw/',
@@ -220,15 +224,21 @@ export function createSeoPayload({ infoData }) {
           },
           {
             '@type': 'GovernmentOrganization',
-            name: '新北市'
+            name: siteConfig.coOrganizerName,
+            url: siteConfig.coOrganizerUrl
           }
         ],
+        performer: {
+          '@type': 'PerformingGroup',
+          name: siteConfig.performerGroupName
+        },
         offers: {
           '@type': 'Offer',
           url: `${siteConfig.canonicalUrl}#signUp`,
           price: '0',
           priceCurrency: 'TWD',
-          availability: 'https://schema.org/InStock'
+          availability: 'https://schema.org/InStock',
+          validFrom: siteConfig.registrationStartDate
         }
       }
     ]
