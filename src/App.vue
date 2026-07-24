@@ -9,12 +9,14 @@ import Traffic from './components/Traffic.vue'
 import Event from './components/Event.vue'
 import Gototop from './components/Gototop.vue'
 import SignUpFiexd from './components/SignUpFiexd.vue'
+import Speaker from './components/Speaker.vue'
 
 import infoData from './assets/json/info.json'
+import speakers from './assets/json/speaker.json'
 import { createSeoPayload } from './seo/siteSeo'
 import { applySeo } from './seo/applySeo'
 
-const seo = createSeoPayload({ infoData });
+const seo = createSeoPayload({ infoData, speakers });
 applySeo(seo);
 
 const getContentByType = (cmsType, fallbackIndex) => {
@@ -24,6 +26,7 @@ const getContentByType = (cmsType, fallbackIndex) => {
 
 const introInfo = getContentByType('intro', 0);
 const agendaInfo = getContentByType('agenda', 1);
+const speakerInfo = getContentByType('speaker', 2)
 const signUpInfo = getContentByType('signUp', 3);
 const trafficInfo = getContentByType('traffic', 4);
 const eventInfo = getContentByType('event', 5)
@@ -39,7 +42,9 @@ const eventInfo = getContentByType('event', 5)
     <section id="intro" class="relative w-full z-10" aria-label="活動前言">
       <Intro :infoData="introInfo" />
     </section>
-    <section>
+    <section id="speaker" class="relative w-full z-10" aria-label="講者陣容">
+      <Speaker :speakers="speakers.data" :infoData="speakerInfo"/>
+      <div class="dot_bg"></div>
       <img src="./assets/image/waves-green.png" alt="綠色波浪裝飾" class="w-full">
     </section>
     <section id="agenda" class="relative w-full z-20 overflow-hidden" aria-label="活動資訊">
