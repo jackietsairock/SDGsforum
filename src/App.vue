@@ -42,15 +42,17 @@ const eventInfo = getContentByType('event', 5)
     <section id="intro" class="relative w-full z-10" aria-label="活動前言">
       <Intro :infoData="introInfo" />
     </section>
-    <section id="speaker" class="relative w-full z-10" aria-label="講者陣容">
-      <Speaker :speakers="speakers.data" :infoData="speakerInfo"/>
-      <div class="dot_bg"></div>
+    <section>
       <img src="./assets/image/waves-green.png" alt="綠色波浪裝飾" class="w-full">
     </section>
     <section id="agenda" class="relative w-full z-20 overflow-hidden" aria-label="活動資訊">
       <Agenda :infoData="agendaInfo" />
       <img src="./assets/image/circles_small.png" alt="散狀物件-左" class="object-left">
       <img src="./assets/image/circles_big.png" alt="散狀物件-右" class="object-right object-right1">
+      <div class="dot_bg"></div>
+    </section>
+     <section id="speaker" class="relative w-full z-10" aria-label="講者陣容">
+      <Speaker :speakers="speakers.data" :infoData="speakerInfo"/>
       <div class="dot_bg"></div>
     </section>
     <section id="signUp" class="relative w-full z-21 overflow-x-hidden" aria-label="立即報名">
