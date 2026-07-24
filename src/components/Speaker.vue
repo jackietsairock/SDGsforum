@@ -178,7 +178,7 @@
     <!--<p class="text-black text-base text-center mb-6">*順序依議程表排列</p>-->
     <div v-for="(group, idx)  in speakerGroups" :key="group.type" :class="['speaker_group',{'mb-15': idx === 0}]">
       <!--<p class="text-4xl text-center ms:text-6xl" :style="['font-weight: 500;',{color: idx === 0 ? 'rgb(93, 246, 254)' : 'rgb(63, 154, 209)'}]">- {{ group.type }} -</p>-->
-      <div class="speaker_box max-w-[1366px] p-0 mx-auto flex flex-row flex-wrap items-start justify-center gap-[25px] sm:p-10 sm:gap-[35px] sm:flex-row sm:items-start">
+      <div class="speaker_box max-w-[1366px] p-0 mx-auto flex flex-row flex-wrap items-start justify-center gap-[25px] sm:p-10 sm:gap-[25px] sm:flex-row sm:items-start">
         <div v-for="(item, idx) in group.items" :key="`${group.type}-${idx}`" class="speaker_item text-left flex flex-col items-center py-5 px-1 w-[33%] sm:px-5 lg:w-[18%]"
           role="button"
           tabindex="0"
