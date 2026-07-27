@@ -106,7 +106,7 @@
         {
           "time": "15:25-15:45",
           "topic": "受訓即就業：翻轉人生，暢行桃園",
-          "speaker": "・台北市副市長 <span class=\"speaker-name\">張溫德</span><br>・將於近期公布"
+          "speaker": "・台北市副市長 <span class=\"speaker-name\">張溫德</span><br>・桃園市政府交通局局長 <span class=\"speaker-name\">張新福</span>"
         },
         {
           "time": "15:45-16:05",
@@ -284,18 +284,37 @@
           "title": "<spen class='pl-0 lg:pl-12'></spen>主辦單位",
           "items": [
             {
-              "href": "https://www.ntpc.gov.tw/ch/index.jsp",
+              "href": "javascript:;",
               "target": "_blank",
               "img": "logo2-1.png",
               "imgClass": "logo-size-4-half",
               "alt": "新北市政府"
             },
             {
-              "href": "https://www.businesstoday.com.tw/",
+              "href": "javascript:;",
               "target": "_blank",
-              "img": "btnet_logo.png",
-              "imgClass": "logo-size-3",
+              "img": "30th_logo.png",
+              "imgClass": "logo-size-2",
               "alt": "今周刊"
+            }
+          ]
+        },
+        {
+          "title": "<spen class='pl-0 lg:pl-12'></spen>夥伴單位",
+          "items": [
+            {
+              "href": "javascript:;",
+              "target": "_blank",
+              "img": "logo2-2.png",
+              "imgClass": "logo-size-3-half",
+              "alt": "桃園市政府"
+            },
+            {
+              "href": "javascript:;",
+              "target": "_blank",
+              "img": "logo2-3.png",
+              "imgClass": "logo-size-3",
+              "alt": "基隆市政府"
             }
           ]
         }

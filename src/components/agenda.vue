@@ -138,8 +138,8 @@
         display: inline-block;
         padding: 0.08em 0.28em;
         border-radius: 0.2em;
-        background-color: #bdebdc;
-        color: #17483e;
+        background-color: #d3d3d3;
+        color: #1c1c1c;
         font-weight: 800;
         box-decoration-break: clone;
         -webkit-box-decoration-break: clone;
