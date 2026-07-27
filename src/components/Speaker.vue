@@ -178,7 +178,7 @@
     <Title :infoData="infoData" />
     <!--<p class="text-black text-base text-center mb-6">*順序依議程表排列</p>-->
     <div v-for="(group, idx)  in speakerGroups" :key="group.type" :class="['speaker_group',{'mb-15': idx === 0}]">
-      <p class="text-4xl text-center ms:text-6xl" :style="['font-weight: 500;',{color: idx === 0 ? '#1c1c1c' : '#1c1c1c'}]">- {{ group.type }} -</p>
+      <p class="text-4xl block px-6 py-2 rounded-full bg-white shadow-2xl w-fit mx-auto text-center ms:text-6xl" :style="['font-weight: 500;',{color: idx === 0 ? '#168ee2' : '#168ee2'}]">{{ group.type }}</p>
       <div class="speaker_box max-w-[1366px] p-0 mx-auto flex flex-row flex-wrap items-start justify-center gap-[25px] sm:p-10 sm:gap-[25px] sm:flex-row sm:items-start">
         <div v-for="(item, idx) in group.items" :key="`${group.type}-${idx}`" class="speaker_item text-left flex flex-col items-center py-5 px-1 w-[33%] sm:px-5 lg:w-[18%]"
           :class="{ 'speaker_item--clickable': showSpeakerProfile }"
@@ -189,7 +189,7 @@
         >
           <div class="speaker_img relative mb-3 overflow-hidden">
             <img :src="getImgUrl(item.img)" :alt="item.name" />
-            <div class="absolute z-10 bottom-2 left-2 right-0 bg-white w-fit px-4 py-2">
+            <div class="absolute hidden z-10 bottom-2 left-2 right-0 bg-white w-fit px-4 py-2">
               <h3 class="speaker_name text-xl font-bold mb-1 sm:text-2xl tracking-[0.2em]" :style="{ color: item.color }">{{ item.name }}</h3>
               <h3 class="speaker_name_en text-xs font-bold sm:text-sm" :style="{ color: item.color }">{{ item.name_en }}</h3>
             </div>
@@ -253,6 +253,18 @@
 </template>
 
 <style scoped lang="scss">
+    :deep(.speaker-name){
+        display: inline-block;
+        padding: 0.08em 0.28em;
+        border-radius: 0.2em;
+        background-color: #1c1c1c;
+        color: #fff;
+        font-weight: 800;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+        margin-bottom: 5px;
+        transform: scale(0.8);
+    }
     .speaker_item--clickable:hover{
       transform: translateY(-4px);
       transition: transform 0.3s ease;
