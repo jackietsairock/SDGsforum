@@ -6,7 +6,7 @@
             "name": "侯友宜",
             "name_en": "",
             "color":"#1c1c1c",
-            "title": "新北市<span class=\"speaker-name\">市長</span>",
+            "title": "新北市<span class=\"speaker-name text-xs sm:text-lg\">市長</span>",
             "info": [
                 {
                     "title": "現職",
@@ -38,7 +38,7 @@
             "name": "張善政",
             "name_en": "",
             "color": "#1c1c1c",
-            "title": "桃園市<span class=\"speaker-name\">市長</span>",
+            "title": "桃園市<span class=\"speaker-name text-xs sm:text-lg\">市長</span>",
             "info": [
                 {
                     "title": "現職",
@@ -68,7 +68,7 @@
             "name": "謝國樑",
             "name_en": "",
             "color":"#1c1c1c",
-            "title": "基隆市<span class=\"speaker-name\">市長</span>",
+            "title": "基隆市<span class=\"speaker-name text-xs sm:text-lg\">市長</span>",
             "info": [
                 {
                     "title": "現職",
@@ -96,7 +96,7 @@
             "name": "張麗善",
             "name_en": "",
             "color":"#1c1c1c",
-            "title": "雲林縣<span class=\"speaker-name\">縣長</span>",
+            "title": "雲林縣<span class=\"speaker-name text-xs sm:text-lg\">縣長</span>",
             "info": [
                 {
                     "title": "現職",
@@ -124,7 +124,7 @@
             "name": "張溫德",
             "name_en": "",
             "color":"#1c1c1c",
-            "title": "台北市<span class=\"speaker-name\">副市長</span>",
+            "title": "台北市<span class=\"speaker-name text-xs sm:text-lg\">副市長</span>",
             "info": [
                 {
                     "title": "現職",
@@ -152,7 +152,7 @@
             "name": "張明文",
             "name_en": "",
             "color": "#1c1c1c",
-            "title": "新北市政府教育局<span class=\"speaker-name\">局長</span>",
+            "title": "新北市政府教育局<span class=\"speaker-name text-xs sm:text-lg\">局長</span>",
             "info": [
                 {
                     "title": "現職",
@@ -175,7 +175,7 @@
             "name": "陳桂敏",
             "name_en": "",
             "color":"#1c1c1c",
-            "title": "屏東縣政府長照處<span class=\"speaker-name\">處長</span>",
+            "title": "屏東縣政府長照處<span class=\"speaker-name text-xs sm:text-lg\">處長</span>",
             "info": [
                 {
                     "title": "現職",
@@ -198,7 +198,7 @@
             "name": "張新福",
             "name_en": "",
             "color":"#1c1c1c",
-            "title": "桃園市政府交通局<span class=\"speaker-name\">局長</span>",
+            "title": "桃園市政府交通局<span class=\"speaker-name text-xs sm:text-lg\">局長</span>",
             "info": [
                 {
                     "title": "現職",
@@ -221,7 +221,7 @@
             "name": "李明岳",
             "name_en": "",
             "color": "#1c1c1c",
-            "title": "雲林縣政府計畫處<span class=\"speaker-name\">處長</span>",
+            "title": "雲林縣政府計畫處<span class=\"speaker-name text-xs sm:text-lg\">處長</span>",
             "info": [
                 {
                     "title": "現職",
