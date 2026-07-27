@@ -311,6 +311,13 @@
             {
               "href": "javascript:;",
               "target": "_blank",
+              "img": "logo2-4.png",
+              "imgClass": "logo-size-5-half",
+              "alt": "台北市政府"
+            },
+            {
+              "href": "javascript:;",
+              "target": "_blank",
               "img": "logo2-2.png",
               "imgClass": "logo-size-3-half",
               "alt": "桃園市政府"
