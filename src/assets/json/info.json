@@ -14,6 +14,12 @@
     },
     {
       "tag": false,
+      "tagName": "講者簡介",
+      "tagUrl": "#speaker",
+      "tagClassName": "speaker"
+    },
+    {
+      "tag": false,
       "tagName": "論壇報名",
       "tagUrl": "#signUp",
       "tagClassName": "signUp"
