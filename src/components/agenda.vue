@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-            <p class="agenda_note2 text-center font-bold text-xl text-[#2e362b] mt-0 mb-10">{{ infoData.note2 }}</p>
+            <p class="agenda_note2 text-center font-bold text-xl text-[#2e362b] mt-0 mb-10">{{ infoData.note }}</p>
             <div class="agenda_table_wrap rounded-4xl">
                 <table class="agenda_table">
                     <caption class="sr-only">2026 SDGs永續城市交流論壇議程</caption>
@@ -63,7 +63,7 @@
                     </tbody>
                 </table>
             </div>
-            <p class="agenda_note2 text-center font-bold text-xl text-[#2e362b] mt-4">{{ infoData.note }}</p>
+            <!--<p class="agenda_note2 text-center font-bold text-xl text-[#2e362b] mt-4">{{ infoData.note2 }}</p>-->
         </div>
     </div>
 </template>

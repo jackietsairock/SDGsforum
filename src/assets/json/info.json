@@ -51,8 +51,8 @@
       "titleColor": "#000",
       "titleEn": "亮點議題",
       "titleEnColor": "#20776e",
-      "note2": "※本論壇可申請公務人員學習時數",
-      "note": "※出席縣市首長及講者即將公布，敬請期待！",
+      "note": "※本論壇可申請公務人員學習時數",
+      "note2": "※出席縣市首長及講者即將公布，敬請期待！",
       "event_info": [
         {
           "label": "日期",
@@ -86,12 +86,12 @@
           "topic": "場次一【智慧治理 × 城市韌性：建構具人本關懷的永續生活環境】"
         },
         {
-          "time": "13:30-14:35",
+          "time": "13:30-14:30",
           "topic": "永續城市首長圓桌論壇",
           "speaker": "主持人：<br>・今周刊發行人 <span class=\"speaker-name\">梁永煌</span><br><br>與談人：<br>・新北市市長 <span class=\"speaker-name\">侯友宜</span><br>・桃園市市長 <span class=\"speaker-name\">張善政</span><br>・基隆市市長 <span class=\"speaker-name\">謝國樑</span><br>・雲林縣縣長 <span class=\"speaker-name\">張麗善</span><br>・台北市副市長 <span class=\"speaker-name\">張溫德</span>"
         },
         {
-          "time": "14:35-14:45",
+          "time": "14:30-14:45",
           "topic": "中場休息",
           "speaker": []
         },
