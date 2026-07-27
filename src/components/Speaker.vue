@@ -263,6 +263,7 @@
         box-decoration-break: clone;
         -webkit-box-decoration-break: clone;
         margin-bottom: 5px;
+        transform: scale(0.8);
     }
     .speaker_item--clickable:hover{
       transform: translateY(-4px);
