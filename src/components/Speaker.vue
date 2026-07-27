@@ -12,6 +12,7 @@
 
   const isModalOpen = ref(false)
   const activeSpeaker = ref(null)
+  const showSpeakerProfile = false //隱藏「個人簡介」按鈕及跳窗
 
   const isExternalUrl = (url = '') => /^(https?:)?\/\//.test(url) || url.startsWith('data:')
 
@@ -180,10 +181,11 @@
       <!--<p class="text-4xl text-center ms:text-6xl" :style="['font-weight: 500;',{color: idx === 0 ? 'rgb(93, 246, 254)' : 'rgb(63, 154, 209)'}]">- {{ group.type }} -</p>-->
       <div class="speaker_box max-w-[1366px] p-0 mx-auto flex flex-row flex-wrap items-start justify-center gap-[25px] sm:p-10 sm:gap-[25px] sm:flex-row sm:items-start">
         <div v-for="(item, idx) in group.items" :key="`${group.type}-${idx}`" class="speaker_item text-left flex flex-col items-center py-5 px-1 w-[33%] sm:px-5 lg:w-[18%]"
-          role="button"
-          tabindex="0"
-          @click="openModal(item)"
-          @keyup.enter="openModal(item)"
+          :class="{ 'speaker_item--clickable': showSpeakerProfile }"
+          :role="showSpeakerProfile ? 'button' : undefined"
+          :tabindex="showSpeakerProfile ? 0 : undefined"
+          @click="showSpeakerProfile && openModal(item)"
+          @keyup.enter="showSpeakerProfile && openModal(item)"
         >
           <div class="speaker_img relative mb-3 overflow-hidden">
             <img :src="getImgUrl(item.img)" :alt="item.name" />
@@ -196,6 +198,7 @@
             <p class="text-xs sm:text-sm md:text-base lg:text-lg " v-html="item.title"></p>
           </div>
           <div
+            v-if="showSpeakerProfile"
             class="speaker_button w-full text-left mt-4 hover:cursor-pointer hover:opacity-90"
           >
             <p class="text-xs blcok bg-black text-white w-fit px-1 py-1 rounded-sm sm:text-sm sm:px-5">個人簡介</p>
@@ -208,7 +211,7 @@
   <teleport to="body">
     <transition name="fade">
       <div
-        v-if="isModalOpen && activeSpeaker"
+        v-if="showSpeakerProfile && isModalOpen && activeSpeaker"
         class="modal_backdrop"
         :style="{ backgroundColor: activeSpeaker.color ? `${activeSpeaker.color}50` : 'rgba(0, 0, 0, 0.2)' }"
         @click.self="closeModal"
@@ -250,7 +253,7 @@
 </template>
 
 <style scoped lang="scss">
-    .speaker_item:hover{
+    .speaker_item--clickable:hover{
       transform: translateY(-4px);
       transition: transform 0.3s ease;
       cursor: pointer;
