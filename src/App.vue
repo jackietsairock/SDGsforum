@@ -53,7 +53,8 @@ const eventInfo = getContentByType('event', 5)
     </section>
      <section id="speaker" class="relative w-full z-10" aria-label="講者陣容">
       <Speaker :speakers="speakers.data" :infoData="speakerInfo"/>
-      <div class="dot_bg"></div>
+      <img src="./assets/image/circles_big.png" alt="散狀物件-右" class="object-right object-right1">
+      <div class="dot_bg2"></div>
     </section>
     <section id="signUp" class="relative w-full z-21 overflow-x-hidden" aria-label="立即報名">
       <SignUp :infoData="signUpInfo" />
@@ -124,6 +125,18 @@ const eventInfo = getContentByType('event', 5)
   bottom: 0;
   height: 150%;
   transform: rotate(180deg);
+}
+
+.dot_bg2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./assets/image/dots-b.png') center center no-repeat;
+  background-size: cover;
+  z-index: -3;
+  opacity: 0.5;
 }
 
 .object-left{
