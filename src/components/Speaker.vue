@@ -178,7 +178,7 @@
     <Title :infoData="infoData" />
     <!--<p class="text-black text-base text-center mb-6">*順序依議程表排列</p>-->
     <div v-for="(group, idx)  in speakerGroups" :key="group.type" :class="['speaker_group',{'mb-15': idx === 0}]">
-      <p class="text-4xl block px-6 py-2 rounded-full bg-white shadow-2xl w-fit mx-auto text-center ms:text-6xl" :style="['font-weight: 500;',{color: idx === 0 ? '#168ee2' : '#168ee2'}]">{{ group.type }}</p>
+      <p class="text-2xl block px-6 py-2 rounded-full bg-white shadow-2xl w-fit mx-auto text-center ms:text-4xl" :style="['font-weight: 500;',{color: idx === 0 ? '#168ee2' : '#168ee2'}]">{{ group.type }}</p>
       <div class="speaker_box max-w-[1366px] p-0 mx-auto flex flex-row flex-wrap items-start justify-center gap-[25px] sm:p-10 sm:gap-[25px] sm:flex-row sm:items-start">
         <div v-for="(item, idx) in group.items" :key="`${group.type}-${idx}`" class="speaker_item text-left flex flex-col items-center py-5 px-1 w-[33%] sm:px-5 lg:w-[18%]"
           :class="{ 'speaker_item--clickable': showSpeakerProfile }"
