@@ -53,6 +53,7 @@ const eventInfo = getContentByType('event', 5)
     </section>
      <section id="speaker" class="relative w-full z-10" aria-label="講者陣容">
       <Speaker :speakers="speakers.data" :infoData="speakerInfo"/>
+      <img src="./assets/image/circles_small.png" alt="散狀物件-左" class="object-left">
       <img src="./assets/image/circles_big.png" alt="散狀物件-右" class="object-right object-right1">
       <div class="dot_bg2"></div>
     </section>
