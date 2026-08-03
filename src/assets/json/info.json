@@ -57,7 +57,7 @@
         {
           "label": "日期",
           "title": "2026年8月4日(二)",
-          "detail": "13:15 ~ 16:05 (12:45開放報到)"
+          "detail": "13:15 ~ 16:15 (12:45開放報到)"
         },
         {
           "label": "地點",
@@ -67,19 +67,19 @@
       ],
       "agendaInfo": [
         {
-          "time": "12:45-13:15",
-          "topic": "來賓報到",
+          "time": "13:15-13:18",
+          "topic": "主持人開場",
           "speaker": []
         },
         {
-          "time": "13:15-13:20",
-          "topic": "開場致詞",
-          "speaker": []
-        },
-        {
-          "time": "13:20-13:30",
+          "time": "13:18-13:28",
           "topic": "中央部會長官致詞",
           "speaker": "・數發部部長 <span class=\"speaker-name\">林宜敬</span>"
+        },
+        {
+          "time": "13:28-13:30",
+          "topic": "大合照",
+          "speaker": []
         },
         {
           "type": "session",
@@ -88,7 +88,7 @@
         {
           "time": "13:30-14:30",
           "topic": "永續城市首長圓桌論壇",
-          "speaker": "主持人：<br>・今周刊發行人 <span class=\"speaker-name\">梁永煌</span><br><br>與談人：<br>・新北市市長 <span class=\"speaker-name\">侯友宜</span><br>・桃園市市長 <span class=\"speaker-name\">張善政</span><br>・基隆市市長 <span class=\"speaker-name\">謝國樑</span><br>・雲林縣縣長 <span class=\"speaker-name\">張麗善</span><br>・台北市副市長 <span class=\"speaker-name\">張溫德</span>"
+          "speaker": "主持人：<br>・今周刊發行人 <span class=\"speaker-name\">梁永煌</span><br><br>與談人：<br>・新北市副市長 <span class=\"speaker-name\">劉和然</span><br>・桃園市市長 <span class=\"speaker-name\">張善政</span><br>・雲林縣縣長 <span class=\"speaker-name\">張麗善</span><br>・臺北市副市長 <span class=\"speaker-name\">張溫德</span><br>・基隆市副市長 <span class=\"speaker-name\">方定安</span>"
         },
         {
           "time": "14:30-14:45",
@@ -118,6 +118,11 @@
           "time": "15:45-16:05",
           "topic": "從酸菜廢棄物到農漁循環經濟，營造永續環境",
           "speaker": "・雲林縣政府計畫處處長 <span class=\"speaker-name\">李明岳</span>"
+        },
+        {
+          "time": "16:05-16:15",
+          "topic": "論壇結語",
+          "speaker": "・今周刊發行人 <span class=\"speaker-name\">梁永煌</span>"
         }
       ]
     },
